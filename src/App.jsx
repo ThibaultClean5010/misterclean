@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Toaster } from '@/components/ui/sonner';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -86,7 +85,6 @@ function App() {
         </main>
         <Footer />
       </div>
-      <Toaster position="bottom-right" />
     </Router>
   );
 }
