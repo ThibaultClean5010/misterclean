@@ -8,6 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   const isServicesActive = location.pathname.startsWith('/services');
+  const isBlogActive = location.pathname.startsWith('/blog');
 
   const serviceLinks = [
     { name: 'Commercial Cleaning', path: '/services/commercial-cleaning' },
@@ -44,6 +45,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            <Link to="/blog" className={isBlogActive ? 'header-nav-link underline underline-offset-4 decoration-2' : 'header-nav-link'}>Blog</Link>
             <Link to="/about" className="header-nav-link">About</Link>
             <Link to="/contact" className="header-nav-link">Contact</Link>
           </nav>
@@ -79,6 +81,7 @@ const Header = () => {
                       ))}
                     </div>
                   </div>
+                  <Link to="/blog" onClick={() => setIsOpen(false)} className="header-nav-link-mobile">Blog</Link>
                   <Link to="/about" onClick={() => setIsOpen(false)} className="header-nav-link-mobile">About</Link>
                   <Link to="/contact" onClick={() => setIsOpen(false)} className="header-nav-link-mobile">Contact</Link>
                 </nav>

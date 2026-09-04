@@ -9,6 +9,8 @@ import HomePage from './pages/HomePage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import BlogPage from './pages/BlogPage.jsx';
+import BlogArticlePage from './pages/BlogArticlePage.jsx';
 
 import AfterBuildersCleaningPage from './pages/AfterBuildersCleaningPage.jsx';
 import CommercialCleaningPage from './pages/CommercialCleaningPage.jsx';
@@ -16,6 +18,7 @@ import HospitalClinicCleaningPage from './pages/HospitalClinicCleaningPage.jsx';
 import HeavyDutyCleaningPage from './pages/HeavyDutyCleaningPage.jsx';
 import RetailCleaningPage from './pages/RetailCleaningPage.jsx';
 import OfficeCleaningPage from './pages/OfficeCleaningPage.jsx';
+import RestaurantCleaningPage from './pages/RestaurantCleaningPage.jsx';
 
 function App() {
   const jsonLdData = {
@@ -73,6 +76,9 @@ function App() {
             <Route path="/services/heavy-duty-cleaning" element={<HeavyDutyCleaningPage />} />
             <Route path="/services/retail-cleaning" element={<RetailCleaningPage />} />
             <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
+            <Route path="/services/restaurant-cleaning" element={<RestaurantCleaningPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogArticlePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4 pt-20"><h1 className="text-6xl font-bold mb-4">404</h1><a href="/" className="text-primary hover:underline">Return Home</a></div>} />

@@ -2,10 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, MapPin, Star, Award, HeartHandshake as Handshake } from 'lucide-react';
+import { ArrowRight, ShieldCheck, MapPin, Star, Award, HeartHandshake as Handshake, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/ServiceCard.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
+import { blogPosts } from '@/data/blogPosts.js';
 
 const HomePage = () => {
   const services = [
@@ -61,6 +62,8 @@ const HomePage = () => {
       description: 'Consistent, high-quality service you can always count on.'
     }
   ];
+
+  const latestPosts = blogPosts.slice(0, 3);
 
   return (
     <>
@@ -161,6 +164,55 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, idx) => (
               <ServiceCard key={idx} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm uppercase tracking-wide mb-4">
+                <BookOpen className="h-4 w-4" />
+                Cleaning Resources
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Latest Cleaning Guides</h2>
+              <p className="text-lg text-muted-foreground">
+                Practical advice for Adelaide businesses planning commercial cleaning, deep cleaning, post-construction cleaning, and hygiene routines.
+              </p>
+            </div>
+            <Button asChild variant="ghost" className="text-primary hover:text-primary hover:bg-primary/5">
+              <Link to="/blog" className="inline-flex items-center">
+                Visit Blog <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {latestPosts.map((post, idx) => (
+              <motion.article
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="blog-card"
+              >
+                <Link to={`/blog/${post.slug}`} className="block aspect-[16/10] overflow-hidden">
+                  <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
+                </Link>
+                <div className="p-6">
+                  <span className="text-xs font-bold uppercase tracking-wide text-primary">{post.category}</span>
+                  <Link to={`/blog/${post.slug}`} className="group block mt-3">
+                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{post.title}</h3>
+                  </Link>
+                  <p className="text-sm text-muted-foreground mt-3 mb-5">{post.excerpt}</p>
+                  <Link to={`/blog/${post.slug}`} className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80">
+                    Read Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
