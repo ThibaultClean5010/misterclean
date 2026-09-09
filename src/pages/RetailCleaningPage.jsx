@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Store, ShieldCheck, Sparkles, Users, Clock, CheckCircle } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -22,11 +21,6 @@ const RetailCleaningPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Retail Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Professional retail cleaning services in Adelaide. We keep your store, boutique, or showroom spotless to enhance customer experience and boost sales." />
-      </Helmet>
-
       <ServiceHero 
         title="Retail Cleaning Services"
         tagline="Create an inviting shopping experience. We ensure your retail space is immaculate, reflecting the quality of your brand and products."
@@ -36,12 +30,12 @@ const RetailCleaningPage = () => {
       <ServiceNavigation />
       <CertificationsSection />
 
-      <main>
+      <div>
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-3xl font-bold mb-6">Professional Retail Cleaning in Adelaide</h1>
+                <h2 className="text-3xl font-bold mb-6">Professional Retail Cleaning in Adelaide</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   First impressions matter in retail. A clean, well-maintained store not only attracts customers but also encourages them to stay longer and return. Our specialized retail cleaning services are designed to keep your boutique, showroom, or large retail space looking its absolute best.
                 </p>
@@ -71,8 +65,8 @@ const RetailCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={ShieldCheck}
-                  title="Fully Insured"
-                  description="Comprehensive coverage for your peace of mind"
+                  title="Agreed Scope"
+                  description="Tasks and cleaning areas agreed with you"
                   index={3}
                 />
               </div>
@@ -113,15 +107,15 @@ const RetailCleaningPage = () => {
               />
               <GuaranteeCard 
                 icon={Users}
-                title="Trained & Trustworthy Staff"
-                description="Our cleaning professionals are fully vetted, police-cleared, and trained specifically in retail environments to handle your space with care and respect."
+                title="Your Site Requirements"
+                description="Tell us about access, stock displays and any surfaces requiring particular care. We include these requirements when planning your clean."
                 index={1}
               />
             </div>
           </div>
         </section>
         <ServiceCTA serviceName="Retail Cleaning" />
-      </main>
+      </div>
     </>
   );
 };

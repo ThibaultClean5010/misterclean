@@ -3,16 +3,14 @@
 	RewriteBase /
 	RewriteRule ^services/hospital-clinic-cleaning/?$ /services/window-cleaning [R=301,L]
 	RewriteRule ^services/heavy-duty-cleaning/?$ /services/commercial-deep-cleaning [R=301,L]
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^ index.html [L]
+	RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+	RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
 
-<IfModule mod_headers.c>
-	Header set X-Powered-By "Hostinger Horizons"
+ErrorDocument 404 /404.html
 
-	# Cache everything on CDN by default
-	Header set Cache-Control "public, s-maxage=604800, max-age=0"
+<IfModule mod_headers.c>
+	Header set Cache-Control "public, max-age=0, must-revalidate"
 
 	# Cache in browser all assets
 	<If "%{REQUEST_URI} =~ m#^/assets/.*$#">

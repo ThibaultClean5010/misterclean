@@ -15,7 +15,7 @@ const BlogPage = () => {
     '@type': 'Blog',
     name: 'MisterClean Cleaning Blog',
     description: 'Commercial cleaning advice, checklists, and hygiene guides for Adelaide businesses.',
-    url: 'https://misterclean.com.au/blog',
+    url: 'https://www.mistercleanb2b.com/blog',
     publisher: {
       '@type': 'LocalBusiness',
       name: 'MisterClean'
@@ -23,7 +23,7 @@ const BlogPage = () => {
     blogPost: blogPosts.map((post) => ({
       '@type': 'BlogPosting',
       headline: post.title,
-      url: `https://misterclean.com.au/blog/${post.slug}`,
+      url: `https://www.mistercleanb2b.com/blog/${post.slug}`,
       datePublished: post.date,
       image: post.image
     }))
@@ -32,12 +32,6 @@ const BlogPage = () => {
   return (
     <>
       <Helmet>
-        <title>Cleaning Blog Adelaide | Commercial Cleaning Tips | MisterClean</title>
-        <meta
-          name="description"
-          content="Read MisterClean's commercial cleaning blog for Adelaide office cleaning checklists, after-builders cleaning advice, retail cleaning tips, and deep cleaning guidance."
-        />
-        <link rel="canonical" href="https://misterclean.com.au/blog" />
         <script type="application/ld+json">{JSON.stringify(blogJsonLd)}</script>
       </Helmet>
 
@@ -67,7 +61,7 @@ const BlogPage = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.article
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -102,7 +96,7 @@ const BlogPage = () => {
             {otherPosts.map((post, index) => (
               <motion.article
                 key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}

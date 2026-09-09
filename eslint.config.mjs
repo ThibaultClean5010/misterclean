@@ -5,7 +5,7 @@ import globals from 'globals';
 import unicodeEscapePlugin from './eslint.unicode-escapes-plugin.mjs';
 
 export default [
-	{ ignores: ['node_modules/**', 'dist/**', 'build/**', 'vite.config.js'] },
+	{ ignores: ['node_modules/**', 'dist/**', '.prerender/**', 'build/**', 'vite.config.js'] },
 	{
 		files: ['**/*.js', '**/*.jsx'],
 		plugins: { react, 'react-hooks': reactHooks, 'import': importPlugin },
@@ -30,6 +30,8 @@ export default [
 
 			// Non-critical rules - disabled since code works fine without them
 			'react/prop-types': 'off',
+			// React 18 passes this browser attribute through using its lowercase name.
+			'react/no-unknown-property': ['error', { ignore: ['fetchpriority'] }],
 			'react/no-unescaped-entities': 'off',
 			'react/display-name': 'off', // Non-critical, component works without displayName
 			'react/jsx-uses-react': 'off', // Not needed in React 17+, non-critical

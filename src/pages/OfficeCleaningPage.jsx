@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Briefcase, ShieldCheck, Monitor, Users, Clock, CheckCircle } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -22,11 +21,6 @@ const OfficeCleaningPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Office Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Professional office cleaning services in Adelaide. Boost productivity and employee health with our reliable, thorough corporate cleaning solutions." />
-      </Helmet>
-
       <ServiceHero 
         title="Office Cleaning Services"
         tagline="A clean office is a productive office. We provide comprehensive cleaning solutions tailored to your corporate environment."
@@ -36,17 +30,17 @@ const OfficeCleaningPage = () => {
       <ServiceNavigation />
       <CertificationsSection />
 
-      <main>
+      <div>
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-3xl font-bold mb-6">Professional Office Cleaning in Adelaide</h1>
+                <h2 className="text-3xl font-bold mb-6">Professional Office Cleaning in Adelaide</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Maintaining a clean and hygienic office is essential for employee health, morale, and productivity. Our professional office cleaning services in Adelaide are designed to create a welcoming and safe workspace for your team and visiting clients.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Whether you need daily maintenance or weekly deep cleaning, we customize our services to fit your schedule and specific requirements. We use eco-friendly products and advanced cleaning techniques to ensure a spotless corporate environment.
+                  Whether you need daily maintenance or weekly deep cleaning, we customize our services to fit your schedule and specific requirements. We discuss the surfaces, access and tasks required for your workplace.
                 </p>
               </div>
 
@@ -113,15 +107,15 @@ const OfficeCleaningPage = () => {
               />
               <GuaranteeCard 
                 icon={Users}
-                title="Dedicated Account Management"
-                description="Enjoy peace of mind with a dedicated account manager who ensures consistent service quality and is always available to address your requests."
+                title="Direct Contact"
+                description="Contact us by phone or email to discuss your cleaning plan, ask a question or arrange a change to your requirements."
                 index={1}
               />
             </div>
           </div>
         </section>
         <ServiceCTA serviceName="Office Cleaning" />
-      </main>
+      </div>
     </>
   );
 };

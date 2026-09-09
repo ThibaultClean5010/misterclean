@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -38,7 +37,7 @@ const ServicesPage = () => {
         'Workstation and IT equipment sanitization',
         'Washroom deep cleaning and restocking',
         'Carpet vacuuming and spot removal',
-        'Eco-friendly, low-odor products'
+        'Cleaning methods suited to your surfaces'
       ]
     },
     {
@@ -78,11 +77,6 @@ const ServicesPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Explore commercial, after-builders, window and deep cleaning in Adelaide. One-off visits, regular schedules and hard-to-reach window assessments." />
-      </Helmet>
-
       {/* Header */}
       <section className="py-20 bg-slate-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -102,7 +96,7 @@ const ServicesPage = () => {
                 
                 {/* Content */}
                 <motion.div 
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  initial={false}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
@@ -127,7 +121,7 @@ const ServicesPage = () => {
                     </ul>
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-4">
                     <Button asChild size="lg" className="h-12 px-8 bg-primary hover:bg-primary/90">
                       <Link to={`/contact?service=${service.id}`}>
                         Request Quote <ArrowRight className="ml-2 h-4 w-4" />
@@ -143,7 +137,7 @@ const ServicesPage = () => {
 
                 {/* Images */}
                 <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={false}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
@@ -152,6 +146,10 @@ const ServicesPage = () => {
                   <div className="space-y-4 pt-12">
                     <img 
                       src={service.images[0]} 
+                      loading="lazy"
+                      decoding="async"
+                      width="640"
+                      height="400"
                       alt={`${service.title} demonstration shot`} 
                       className={`rounded-2xl shadow-lg w-full object-cover ${service.images.length > 1 ? 'h-[300px]' : 'h-[400px]'}`}
                     />
@@ -159,6 +157,10 @@ const ServicesPage = () => {
                   {service.images[1] && <div className="space-y-4">
                     <img 
                       src={service.images[1]} 
+                      loading="lazy"
+                      decoding="async"
+                      width="640"
+                      height="400"
                       alt={`Professional ${service.title.toLowerCase()} in progress`} 
                       className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
                     />

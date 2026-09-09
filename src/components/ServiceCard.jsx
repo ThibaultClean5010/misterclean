@@ -11,11 +11,15 @@ const ServiceCard = ({ title, description, image, benefits, link = '/services' }
         <img 
           src={image} 
           alt={`${title} service`} 
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <CardContent className="p-6 flex flex-col flex-1">
-        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
+        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors"><Link to={link}>{title}</Link></h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
           {description}
         </p>
@@ -33,6 +37,7 @@ const ServiceCard = ({ title, description, image, benefits, link = '/services' }
         
         <Link 
           to={link} 
+          aria-label={`Explore ${title}`}
           className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors mt-auto"
         >
           Explore Service <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />

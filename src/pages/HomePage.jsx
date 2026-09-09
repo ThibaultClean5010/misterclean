@@ -1,237 +1,58 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, MapPin, Star, Award, HeartHandshake as Handshake, BookOpen } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/ServiceCard.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
+import QuoteProcess from '@/components/QuoteProcess.jsx';
+import CleaningFAQ from '@/components/CleaningFAQ.jsx';
 import { blogPosts } from '@/data/blogPosts.js';
-
-const HomePage = () => {
-  const services = [
-    {
-      title: 'Commercial Cleaning',
-      description: 'Comprehensive cleaning solutions for offices and corporate facilities, ensuring a pristine environment for your staff and clients.',
-      image: 'https://horizons-cdn.hostinger.com/dcd817cd-3e58-4158-995e-355bc699404e/c3a657c328e246cb4ea6b53fa48d6096.png',
-      benefits: ['Daily or weekly scheduling', 'Sanitization protocols', 'Eco-friendly products'],
-      link: '/services/commercial-cleaning'
-    },
-    {
-      title: 'After-Builders Cleaning',
-      description: 'Specialized post-construction cleanup to remove hazardous dust, debris, and final touches before handover.',
-      image: 'https://horizons-cdn.hostinger.com/dcd817cd-3e58-4158-995e-355bc699404e/90499e1e10edc56f55909756253aae91.jpg',
-      benefits: ['Fine dust removal', 'Window and frame detailing', 'Safe waste disposal'],
-      link: '/services/after-builders-cleaning'
-    },
-    {
-      title: 'Window Cleaning',
-      description: 'Internal and external window cleaning for your business, available as a one-off visit or a regular service.',
-      image: '/images/window-cleaning.jpg',
-      benefits: ['One-off window cleans', 'Regular cleaning schedules', 'Hard-to-reach windows assessed on site'],
-      link: '/services/window-cleaning'
-    },
-    {
-      title: 'Commercial Deep Cleaning',
-      description: 'A thorough refresh of your premises, covering workspaces, amenities and the areas everyday cleaning can miss.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952',
-      benefits: ['Complete premises refresh', 'Kitchens, bathrooms and shared spaces', 'One-off resets and periodic deep cleans'],
-      link: '/services/commercial-deep-cleaning'
-    }
-  ];
-
-  const trustBadges = [
-    {
-      icon: MapPin,
-      title: 'Locally Owned',
-      description: 'Proudly serving the Adelaide community with dedicated local support.'
-    },
-    {
-      icon: Star,
-      title: 'Customer Satisfaction',
-      description: 'Committed to exceeding expectations on every single clean.'
-    },
-    {
-      icon: Award,
-      title: 'Certified Team',
-      description: 'Fully trained, insured, and vetted cleaning professionals.'
-    },
-    {
-      icon: Handshake,
-      title: 'Professional & Reliable',
-      description: 'Consistent, high-quality service you can always count on.'
-    }
-  ];
-
-  const latestPosts = blogPosts.slice(0, 3);
-
-  return (
-    <>
-      <Helmet>
-        <title>Professional Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Commercial, after-builders, window and deep cleaning for Adelaide businesses. One-off visits and regular cleaning plans tailored to your premises." />
-      </Helmet>
-
-      {/* Hero Section */}
-      <section className="relative min-h-[90dvh] flex items-center bg-slate-950 overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-          <img 
-            src="https://images.unsplash.com/photo-1649665839727-f4e9cf1f2a82" 
-            alt="Pristine corporate office environment showcasing professional cleaning" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-primary-foreground border border-primary/30 mb-8 backdrop-blur-sm">
-              <ShieldCheck className="h-4 w-4" />
-              <span className="text-sm font-semibold tracking-wide uppercase">Adelaide's Trusted Commercial Cleaners</span>
-            </div>
-            
-            <h1 className="text-white text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Professional Cleaning Services in Adelaide
-            </h1>
-            
-            <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-              Keep your Adelaide business clean and presentable with <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link>, <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, <Link to="/services/after-builders-cleaning" className="text-primary hover:underline">after-builders cleaning</Link> and <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep cleans</Link>. Choose a one-off service or a regular plan suited to your premises.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="h-14 px-8 text-base shadow-lg hover:shadow-primary/25 transition-all">
-                <Link to="/contact">Request a Quote</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="h-14 px-8 text-base bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white">
-                <Link to="/services">Explore Our Services</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <CertificationsSection />
-
-      {/* Trust Badges Section */}
-      <section className="py-16 bg-slate-50 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {trustBadges.map((badge, idx) => {
-              const Icon = badge.icon;
-              return (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 text-primary">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{badge.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{badge.description}</p>
-                </motion.div>
-              );
-            })}
+import { PHONE_HREF } from '@/data/site.js';
+import { trackEnquiry } from '@/lib/quote.js';
+const services = [
+  { title: 'Commercial Cleaning', description: 'Regular upkeep for offices, shops and business premises, with tasks and times agreed around your workplace.', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=640&q=75', benefits: ['One-off and regular visits', 'Workspaces and shared areas', 'Cleaning times agreed with you'], link: '/services/commercial-cleaning' },
+  { title: 'After Builders Cleaning', description: 'A detailed clean after construction or renovation to prepare your premises for handover.', image: 'https://horizons-cdn.hostinger.com/dcd817cd-3e58-4158-995e-355bc699404e/90499e1e10edc56f55909756253aae91.jpg', benefits: ['Dust and surface detailing', 'Windows, frames and tracks', 'Final handover clean'], link: '/services/after-builders-cleaning' },
+  { title: 'Window Cleaning', description: 'Internal and external glass for your business, with one-off visits, regular schedules and access assessments.', image: '/images/window-cleaning.jpg', benefits: ['One-off window cleans', 'Regular cleaning schedules', 'Hard-to-reach windows assessed'], link: '/services/window-cleaning' },
+  { title: 'Commercial Deep Cleaning', description: 'A thorough premises refresh that reaches the areas everyday cleaning can miss.', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=640&q=75', benefits: ['Complete premises refresh', 'Kitchens, bathrooms and shared spaces', 'One-off and periodic deep cleans'], link: '/services/commercial-deep-cleaning' }
+];
+export default function HomePage() {
+  return <>
+    <section className="relative bg-slate-950 text-white pt-16 md:pt-20 overflow-hidden">
+      <div className="absolute inset-0 opacity-30"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80" alt="Office desks and meeting areas in a commercial workplace" width="1600" height="900" fetchpriority="high" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/30" /></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal-200 mb-5">Cleaning for Adelaide businesses</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-5">Commercial cleaning in Adelaide</h1>
+          <p className="text-lg md:text-xl text-slate-200 mb-7">One-off and regular cleaning for workplaces, shops and commercial premises. From everyday upkeep to windows, after-builders cleans and complete deep cleaning.</p>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg" className="h-12 px-6"><Link to="/contact">Request a Quote</Link></Button>
+            <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"><a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')}><Phone className="h-4 w-4 mr-2" />Call us</a></Button>
           </div>
+          <p className="mt-5 text-sm text-slate-300">Scope, access and timing agreed before you book.</p>
         </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold mb-4">Our Service Categories</h2>
-              <p className="text-lg text-muted-foreground">
-                Tailored protocols designed specifically for the rigorous demands of commercial operations and post-construction requirements.
-              </p>
-            </div>
-            <Button asChild variant="ghost" className="text-primary hover:text-primary hover:bg-primary/5">
-              <Link to="/services" className="inline-flex items-center">
-                View All Services <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
-              <ServiceCard key={idx} {...service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm uppercase tracking-wide mb-4">
-                <BookOpen className="h-4 w-4" />
-                Cleaning Resources
-              </div>
-              <h2 className="text-3xl font-bold mb-4">Latest Cleaning Guides</h2>
-              <p className="text-lg text-muted-foreground">
-                Practical advice for Adelaide businesses planning commercial cleaning, deep cleaning, post-construction cleaning, and hygiene routines.
-              </p>
-            </div>
-            <Button asChild variant="ghost" className="text-primary hover:text-primary hover:bg-primary/5">
-              <Link to="/blog" className="inline-flex items-center">
-                Visit Blog <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {latestPosts.map((post, idx) => (
-              <motion.article
-                key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="blog-card"
-              >
-                <Link to={`/blog/${post.slug}`} className="block aspect-[16/10] overflow-hidden">
-                  <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
-                </Link>
-                <div className="p-6">
-                  <span className="text-xs font-bold uppercase tracking-wide text-primary">{post.category}</span>
-                  <Link to={`/blog/${post.slug}`} className="group block mt-3">
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{post.title}</h3>
-                  </Link>
-                  <p className="text-sm text-muted-foreground mt-3 mb-5">{post.excerpt}</p>
-                  <Link to={`/blog/${post.slug}`} className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80">
-                    Read Guide <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 bg-slate-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6">Ready to elevate your facility's standards?</h2>
-          <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-            Contact our Adelaide-based team today for a comprehensive site assessment and customized commercial cleaning proposal.
-          </p>
-          <Button asChild size="lg" className="h-14 px-10 text-base bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link to="/contact">Get Your Custom Quote</Link>
-          </Button>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default HomePage;
+      </div>
+    </section>
+    <CertificationsSection />
+    <section className="py-14 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-10"><div><h2 className="mb-4">Cleaning for your business</h2><p className="text-lg text-muted-foreground">Find the service that suits your premises, from everyday upkeep to a thorough refresh.</p></div><Link to="/services" className="text-primary font-semibold inline-flex items-center gap-2 py-3">All services <ArrowRight className="h-4 w-4" /></Link></div>
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">{services.map(service => <ServiceCard key={service.link} {...service} />)}</div>
+        <p className="mt-7 text-muted-foreground">Looking for your business type? Explore <Link className="text-primary underline" to="/services/office-cleaning">office cleaning</Link>, <Link className="text-primary underline" to="/services/retail-cleaning">retail cleaning</Link> or <Link className="text-primary underline" to="/services/restaurant-cleaning">restaurant cleaning</Link>.</p>
+      </div>
+    </section>
+    <QuoteProcess />
+    <CleaningFAQ />
+    <section className="py-14 md:py-20 bg-slate-50 border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-between items-end gap-4 mb-10"><div><h2 className="mb-3">Practical cleaning guides</h2><p className="text-muted-foreground">Checklists and advice for planning your next clean.</p></div><Link to="/blog" className="text-primary font-semibold py-3">All cleaning guides</Link></div>
+        <div className="grid md:grid-cols-3 gap-6">{blogPosts.slice(0, 3).map(post => <article key={post.slug} className="blog-card">
+          <Link to={'/blog/' + post.slug} className="block aspect-[16/10] overflow-hidden"><img src={post.image} alt={post.imageAlt} width="640" height="400" loading="lazy" decoding="async" className="w-full h-full object-cover" /></Link>
+          <div className="p-6"><p className="text-xs font-bold uppercase tracking-wide text-primary">{post.category}</p><h3 className="text-xl my-3"><Link to={'/blog/' + post.slug}>{post.title}</Link></h3><p className="text-sm text-muted-foreground mb-5">{post.excerpt}</p><Link to={'/blog/' + post.slug} className="text-primary font-semibold text-sm">Read guide</Link></div>
+        </article>)}</div>
+      </div>
+    </section>
+    <section className="py-14 md:py-20 bg-slate-950 text-white text-center">
+      <div className="max-w-3xl mx-auto px-4"><h2 className="mb-5">Tell us what needs cleaning</h2><p className="text-slate-300 text-lg mb-7 mx-auto">Share a few details about your premises. We will discuss the scope, access and suitable cleaning arrangements.</p><Button asChild size="lg"><Link to="/contact">Request a Quote</Link></Button></div>
+    </section>
+  </>;
+}

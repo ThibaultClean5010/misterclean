@@ -4,23 +4,14 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { blogPosts, getBlogPostBySlug } from '@/data/blogPosts.js';
+import NotFound from '@/components/NotFound.jsx';
 
 const BlogArticlePage = () => {
   const { slug } = useParams();
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return (
-      <section className="pt-32 pb-24 min-h-[60vh] bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-6">Article not found</h1>
-          <p className="text-muted-foreground mb-8 mx-auto">The cleaning article you are looking for may have moved.</p>
-          <Button asChild>
-            <Link to="/blog">Back to Blog</Link>
-          </Button>
-        </div>
-      </section>
-    );
+    return <NotFound />;
   }
 
   const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
@@ -48,17 +39,13 @@ const BlogArticlePage = () => {
         addressCountry: 'AU'
       }
     },
-    mainEntityOfPage: `https://misterclean.com.au/blog/${post.slug}`,
+    mainEntityOfPage: `https://www.mistercleanb2b.com/blog/${post.slug}`,
     keywords: post.keywords.join(', ')
   };
 
   return (
     <>
       <Helmet>
-        <title>{post.title} | MisterClean Adelaide</title>
-        <meta name="description" content={post.excerpt} />
-        <meta name="keywords" content={post.keywords.join(', ')} />
-        <link rel="canonical" href={`https://misterclean.com.au/blog/${post.slug}`} />
         <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
       </Helmet>
 

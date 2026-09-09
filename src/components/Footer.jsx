@@ -1,23 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF } from '@/data/site.js';
+import { trackEnquiry } from '@/lib/quote.js';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 text-slate-300">
+    <footer className="bg-slate-950 text-slate-300 pb-24 lg:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-6">
             <p className="text-sm leading-relaxed">
-              Adelaide's premier commercial and B2B cleaning specialists. Delivering immaculate environments for businesses across South Australia.
+              Commercial, window, after-builders and deep cleaning for Adelaide businesses. One-off visits and regular cleaning plans.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors" aria-label="Facebook"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-            </div>
           </div>
 
           <div>
@@ -44,17 +41,17 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-6">Contact Us</h3>
             <div className="flex flex-col gap-4">
-              <a href="tel:0474597325" className="flex items-center gap-3 text-sm hover:text-white transition-colors">
-                <Phone className="h-4 w-4 text-primary" /> <span>0474 597 325</span>
+              <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="flex items-center gap-3 text-sm hover:text-white transition-colors">
+                <Phone className="h-4 w-4 text-teal-300 shrink-0" /> <span>{PHONE}</span>
               </a>
-              <a href="mailto:mistercleanadelaide@gmail.com" className="flex items-center gap-3 text-sm hover:text-white transition-colors">
-                <Mail className="h-4 w-4 text-primary" /> <span>mistercleanadelaide@gmail.com</span>
+              <a href={'mailto:' + CONTACT_EMAIL} onClick={() => trackEnquiry('email_click')} className="flex items-center gap-3 text-sm hover:text-white transition-colors">
+                <Mail className="h-4 w-4 text-teal-300 shrink-0" /> <span className="break-all">{CONTACT_EMAIL}</span>
               </a>
               <div className="flex items-start gap-3 text-sm">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" /> <span>Adelaide, South Australia</span>
               </div>
               <div className="flex items-start gap-3 text-sm">
-                <Clock className="h-4 w-4 text-primary mt-0.5 shrink-0" /> <span>Mon-Sun: 24/7 Operations</span>
+                <Clock className="h-4 w-4 text-teal-300 mt-0.5 shrink-0" /> <span>Cleaning times arranged with you</span>
               </div>
             </div>
           </div>
@@ -63,8 +60,8 @@ const Footer = () => {
         <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm">© {currentYear} MisterClean Services. All rights reserved.</p>
           <div className="flex gap-6 text-sm">
-            <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy information</Link>
+            <Link to="/contact#how-it-works" className="hover:text-white transition-colors">How to request a quote</Link>
           </div>
         </div>
       </div>

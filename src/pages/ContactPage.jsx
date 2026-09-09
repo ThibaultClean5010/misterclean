@@ -1,61 +1,32 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Building, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-const ContactPage = () => (
-  <>
-    <Helmet>
-      <title>Contact MisterClean | Cleaning Services Adelaide</title>
-      <meta name="description" content="Contact MisterClean for professional commercial cleaning services in Adelaide by phone or email." />
-    </Helmet>
-
-    <section className="py-20 bg-slate-50 border-b mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch with MisterClean</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to upgrade your facility&apos;s hygiene standards? Contact our team directly for a consultation and customised proposal. View our{' '}
-            <Link to="/services" className="text-primary hover:underline">services</Link> or learn more{' '}
-            <Link to="/about" className="text-primary hover:underline">about our company</Link>.
-          </p>
-        </motion.div>
+import { Phone, Mail, MapPin } from 'lucide-react';
+import QuoteForm from '@/components/QuoteForm.jsx';
+import QuoteProcess from '@/components/QuoteProcess.jsx';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF } from '@/data/site.js';
+import { trackEnquiry } from '@/lib/quote.js';
+export default function ContactPage() {
+  return <>
+    <section className="pt-28 pb-8 md:pt-32 md:pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h1 className="text-3xl md:text-5xl mb-4">Request a cleaning quote</h1>
+      <p className="text-lg text-muted-foreground">Tell us what needs cleaning, where you are in Adelaide and when you need the service.</p>
+    </section>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+      <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-8 items-start">
+        <QuoteForm />
+        <aside className="space-y-5">
+          <div className="rounded-2xl bg-slate-950 text-white p-6 sm:p-8">
+            <h2 className="text-2xl mb-5">Prefer to speak with us?</h2>
+            <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="flex gap-3 items-center text-xl font-bold text-teal-200 py-3"><Phone className="h-5 w-5 shrink-0" />{PHONE}</a>
+            <a href={'mailto:' + CONTACT_EMAIL} onClick={() => trackEnquiry('email_click')} className="flex gap-3 items-start text-base text-teal-200 py-3"><Mail className="h-5 w-5 shrink-0 mt-1" /><span className="break-all">{CONTACT_EMAIL}</span></a>
+            <p className="text-slate-300 text-sm mt-4">A quote enquiry does not book a clean. We confirm the scope, price and timing with you first.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 p-6">
+            <h2 className="text-xl mb-3 flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" />Adelaide businesses</h2>
+            <p className="text-muted-foreground">Include your suburb so we can confirm availability for your location. For windows at height, tell us about access before requesting a quote.</p>
+          </div>
+        </aside>
       </div>
     </section>
-
-    <section className="py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <a href="tel:0474597325" className="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
-            <div className="p-3 bg-primary/10 rounded-lg text-primary w-fit mb-5"><Phone className="h-7 w-7" /></div>
-            <h2 className="text-2xl font-bold mb-2">Call us</h2>
-            <p className="text-2xl font-bold text-primary">0474 597 325</p>
-            <p className="text-muted-foreground mt-3">For quotes and urgent enquiries.</p>
-          </a>
-          <a href="mailto:mistercleanadelaide@gmail.com?subject=Cleaning%20quote%20request" className="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
-            <div className="p-3 bg-primary/10 rounded-lg text-primary w-fit mb-5"><Mail className="h-7 w-7" /></div>
-            <h2 className="text-2xl font-bold mb-2">Email us</h2>
-            <p className="text-lg font-semibold text-primary break-all">mistercleanadelaide@gmail.com</p>
-            <p className="text-muted-foreground mt-3">Tell us about your site and cleaning requirements.</p>
-          </a>
-        </motion.div>
-
-        <div className="mt-12 p-8 rounded-3xl border border-slate-200 bg-white">
-          <h2 className="text-2xl font-bold mb-6">Service information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-muted-foreground">
-            <div className="flex items-start gap-3"><MapPin className="h-5 w-5 text-secondary shrink-0 mt-0.5" /><span>Adelaide Metropolitan Area &amp; Surrounds</span></div>
-            <div className="flex items-start gap-3"><Building className="h-5 w-5 text-secondary shrink-0 mt-0.5" /><span>Commercial &amp; B2B Properties</span></div>
-            <div className="flex items-start gap-3"><Clock className="h-5 w-5 text-secondary shrink-0 mt-0.5" /><span>24/7 Cleaning Operations Available</span></div>
-          </div>
-          <div className="mt-8">
-            <Button asChild size="lg"><a href="mailto:mistercleanadelaide@gmail.com?subject=Cleaning%20quote%20request">Request a quote by email</a></Button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </>
-);
-
-export default ContactPage;
+    <QuoteProcess />
+  </>;
+}

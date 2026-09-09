@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Building2, ShieldCheck, ClipboardList, Users, Clock, CheckCircle } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -12,21 +11,6 @@ import CertificationsSection from '@/components/CertificationsSection.jsx';
 const CommercialCleaningPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Commercial Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Professional commercial cleaning in Adelaide for offices, retail, warehouses. Customized B2B cleaning solutions, reliable service, competitive rates." />
-        
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17867444680"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17867444680');
-          `}
-        </script>
-      </Helmet>
 
       <ServiceHero 
         title="Commercial Cleaning Services for Adelaide Businesses"
@@ -37,38 +21,38 @@ const CommercialCleaningPage = () => {
       <ServiceNavigation />
       <CertificationsSection />
 
-      <main>
+      <div>
         {/* Intro & Certifications */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-3xl font-bold mb-6">Commercial Cleaning Services for Adelaide Businesses</h1>
+                <h2 className="text-3xl font-bold mb-6">Commercial Cleaning Services for Adelaide Businesses</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   The cleanliness of your commercial facility directly impacts employee productivity, operational health, and the critical first impressions formed by visiting clients. Whether you need reliable office maintenance, <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, or a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep clean</Link>, we have a dedicated solution for you.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We don't just supply cleaners; we implement a fully managed facility hygiene system. Backed by rigorous Service Level Agreements (SLAs), regular auditing, and dedicated account management, we ensure your premises consistently reflect the high standards of your organization.
+                  We discuss your opening hours, the areas to be cleaned and how often each task is needed. Your quote sets out the agreed work, with a direct contact for questions or changes to your requirements.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CertificationBadge 
                   icon={ShieldCheck}
-                  title="Liability Insured"
-                  description="$20M coverage for commercial properties"
+                  title="Agreed Scope"
+                  description="Tasks and areas confirmed before booking"
                   index={0}
                 />
                 <CertificationBadge 
                   icon={ClipboardList}
-                  title="Audited Standards"
-                  description="Monthly KPI checks by operations managers"
+                  title="Cleaning Plan"
+                  description="Frequency suited to your premises"
                   index={1}
                 />
                 <CertificationBadge 
                   icon={Users}
-                  title="Police Cleared Staff"
-                  description="Vetted personnel for secure environments"
+                  title="Access Planning"
+                  description="Entry and security requirements discussed"
                   index={2}
                 />
                 <CertificationBadge 
@@ -88,7 +72,7 @@ const CommercialCleaningPage = () => {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold mb-4">Flexible Service Scheduling</h2>
               <p className="text-lg text-muted-foreground">
-                We align our operations with your business hours to ensure zero disruption to your daily workflow. Discover our specialized Office Cleaning and Retail Cleaning solutions.
+                Tell us your opening hours so we can discuss suitable cleaning times. Explore the office and retail tasks below.
               </p>
             </div>
 
@@ -185,21 +169,21 @@ const CommercialCleaningPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={ClipboardList}
-                title="Service Level Agreement (SLA) Commitment"
-                description="We operate under strict, customized SLAs. Our transparent reporting ensures you receive the exact standard of cleaning promised, backed by regular management audits."
+                title="A Clear Cleaning Scope"
+                description="We agree the cleaning tasks and frequency before work begins. Discuss any particular presentation standards or areas that need extra attention when requesting your quote."
                 index={0}
               />
               <GuaranteeCard 
                 icon={ShieldCheck}
-                title="Consumables & Inventory Management"
-                description="Never run out of supplies. We monitor, supply, and restock all washroom and kitchen consumables seamlessly as part of our comprehensive commercial contracts."
+                title="Consumables by Arrangement"
+                description="If you need help restocking washroom or kitchen supplies, include this in your enquiry so the products, quantities and costs can be discussed."
                 index={1}
               />
             </div>
           </div>
         </section>
         <ServiceCTA serviceName="Commercial Cleaning" />
-      </main>
+      </div>
     </>
   );
 };

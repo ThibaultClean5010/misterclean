@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Building2, CalendarDays, ClipboardCheck } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -21,13 +20,6 @@ const CommercialDeepCleaningPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Commercial Deep Cleaning Adelaide | MisterClean</title>
-        <meta name="description" content="Comprehensive commercial deep cleaning in Adelaide. Refresh workspaces, kitchens, bathrooms and shared areas with a scope tailored to your premises." />
-        <link rel="canonical" href="https://www.mistercleanb2b.com/services/commercial-deep-cleaning" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRM3569S3G"></script>
-        <script>{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-JRM3569S3G');`}</script>
-      </Helmet>
       <ServiceHero
         title="Commercial Deep Cleaning in Adelaide"
         tagline="Bring your premises back to a clean, presentable condition with a comprehensive deep clean. A fresh start for offices, shops and other commercial spaces."

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Utensils, CalendarDays, Sparkles, Droplets, Wind, Trash2, Users, CheckCircle } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -21,11 +20,6 @@ const RestaurantCleaningPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Restaurant Maintenance Cleaning Adelaide | MisterClean</title>
-        <meta name="description" content="Reliable, ongoing restaurant cleaning in Adelaide. We maintain dining areas, restrooms, and general spaces to keep your venue pristine every single day." />
-      </Helmet>
-
       <ServiceHero 
         title="Restaurant Maintenance Cleaning Services"
         tagline="Consistent, high-quality upkeep for your dining areas and general spaces. We ensure your venue looks immaculate and inviting for every single guest."
@@ -34,13 +28,13 @@ const RestaurantCleaningPage = () => {
       
       <ServiceNavigation />
 
-      <main>
+      <div>
         {/* Intro & Certifications */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-3xl font-bold mb-6">Routine Cleaning for Adelaide Restaurants</h1>
+                <h2 className="text-3xl font-bold mb-6">Routine Cleaning for Adelaide Restaurants</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   The atmosphere and cleanliness of your front-of-house are just as important as the food you serve. A pristine dining room, sparkling restrooms, and well-maintained entryways are critical to your customer's overall experience. For wider facility needs, we also offer general <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link>.
                 </p>
@@ -104,18 +98,18 @@ const RestaurantCleaningPage = () => {
         {/* Guarantees */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-bold text-center mb-16">Our Service Guarantees</h3>
+            <h3 className="text-3xl font-bold text-center mb-16">Planning Your Restaurant Clean</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={Utensils}
                 title="Seamless After-Hours Service"
-                description="We offer true flexibility to match your operating hours. Our crews operate entirely outside of your service times, entering after close or before open, ensuring zero disruption to your staff and patrons."
+                description="Tell us your opening hours and preferred cleaning times. We discuss available options and agree access before the visit."
                 index={0}
               />
               <GuaranteeCard 
                 icon={CheckCircle}
                 title="Consistent Quality Standard"
-                description="You shouldn't have to micro-manage your cleaners. We guarantee a reliable, consistent standard of cleanliness day in and day out, backed by regular supervisor check-ins and responsive communication."
+                description="We agree the areas and tasks to be cleaned so your restaurant has a clear plan. Contact us to discuss anything that needs extra attention."
                 index={1}
               />
             </div>
@@ -123,7 +117,7 @@ const RestaurantCleaningPage = () => {
         </section>
 
         <ServiceCTA serviceName="Restaurant Maintenance" />
-      </main>
+      </div>
     </>
   );
 };

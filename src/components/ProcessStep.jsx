@@ -7,7 +7,7 @@ const ProcessStep = ({ number, title, description, isLast = false }) => {
       {!isLast && <div className="process-step-line group-hover:bg-primary/30 transition-colors duration-300" />}
       
       <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }}
+        initial={false}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.4 }}
@@ -17,7 +17,7 @@ const ProcessStep = ({ number, title, description, isLast = false }) => {
       </motion.div>
       
       <motion.div 
-        initial={{ opacity: 0, x: 20 }}
+        initial={false}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, delay: 0.2 }}

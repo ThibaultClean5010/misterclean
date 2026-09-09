@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { CalendarDays, ScanLine, Sparkles, ClipboardCheck } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -25,13 +24,6 @@ const WindowCleaningPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Commercial Window Cleaning Adelaide | MisterClean</title>
-        <meta name="description" content="One-off and recurring commercial window cleaning in Adelaide. Internal and external glass, with hard-to-reach windows assessed before quoting." />
-        <link rel="canonical" href="https://www.mistercleanb2b.com/services/window-cleaning" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17867444680"></script>
-        <script>{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17867444680');`}</script>
-      </Helmet>
       <ServiceHero
         title="Commercial Window Cleaning in Adelaide"
         tagline="One-off cleans, regular visits and solutions for hard-to-reach windows. Keep your shopfront and workplace glass looking clean, with a service tailored to your premises."

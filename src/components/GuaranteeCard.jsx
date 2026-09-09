@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const GuaranteeCard = ({ icon: Icon, title, description, index = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}

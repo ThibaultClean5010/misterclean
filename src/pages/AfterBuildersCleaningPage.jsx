@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, HardHat, CheckCircle2, Award, ClipboardCheck, Clock, Sparkles, Droplets, Wrench, CheckSquare, Trash2, Wind } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
@@ -13,12 +12,12 @@ const AfterBuildersCleaningPage = () => {
   const steps = [
     { title: 'Initial Site Audit', description: 'Comprehensive assessment of the construction site to identify hazardous materials, dust accumulation levels, and specific handover requirements.' },
     { title: 'Debris Cleanup', description: 'Safe removal of remaining construction debris, protective films, and large-scale waste using compliant disposal methods.' },
-    { title: 'Dust Removal', description: 'Utilization of industrial-grade HEPA filtration vacuums to extract fine plaster, cement, and brick dust from all surfaces and ventilation areas.' },
+    { title: 'Dust Removal', description: 'Remove construction dust from the agreed areas using methods suited to the surfaces and site conditions.' },
     { title: 'Hard Surface Detailing', description: 'Removal of paint splatters, render drops, and adhesive residue from floors, glass, and fixtures using specialized non-abrasive solvents.' },
     { title: 'Window & Track Deep Clean', description: 'Meticulous cleaning of all internal and external glazing, frames, and sliding door tracks to ensure pristine clarity.' },
     { title: 'Floor Treatment & Sealing', description: 'Professional machine scrubbing, polishing, and sealing of hard floor surfaces to remove construction traffic marks.' },
     { title: 'Sanitization Phase', description: 'Wiping down and sanitizing all touchpoints, cabinetry interiors, and washroom fixtures to ensure readiness for immediate occupation.' },
-    { title: 'Final Inspection', description: 'Rigorous quality assurance walk-through by a senior supervisor to guarantee the property meets our strict handover standards.' }
+    { title: 'Final Inspection', description: 'Review the agreed cleaning areas and discuss any remaining details before handover.' }
   ];
 
   const serviceCategories = [
@@ -26,7 +25,7 @@ const AfterBuildersCleaningPage = () => {
       title: 'Surface Cleaning & Dust Control',
       icon: Wind,
       items: [
-        { name: 'Dust removal from all areas', description: 'Extensive HEPA-filtered vacuuming to eliminate hazardous silica, plaster, and brick dust from walls, ceilings, and high ledges.' },
+        { name: 'Dust removal from all areas', description: 'Dust removal from accessible surfaces included in the quote, with site-specific requirements assessed before work.' },
         { name: 'Sanitizing all surfaces', description: 'Cleaning and sanitizing touchpoints, workbenches, and handles with products suited to each surface after construction.' },
         { name: 'Removal of protective coverings', description: 'Careful peeling and disposal of manufacturer films from windows, floors, and newly installed appliances without scratching surfaces.' },
         { name: 'Paint splatter removal', description: 'Delicate scraping and solvent treatment to safely remove rogue paint drops, render, and overspray from hard surfaces.' }
@@ -36,7 +35,7 @@ const AfterBuildersCleaningPage = () => {
       title: 'Deep Cleaning Solutions',
       icon: Droplets,
       items: [
-        { name: 'Bathroom deep cleaning', description: 'Acid-washing new tiles to remove grout haze, sanitizing toilets, and polishing tapware and mirrors to a flawless shine.' },
+        { name: 'Bathroom deep cleaning', description: 'Clean bathrooms, toilets, tapware and mirrors, with any tile or grout treatments agreed after assessing the surfaces.' },
         { name: 'Kitchen deep cleaning', description: 'Degreasing and detailing brand new cabinetry inside and out, polishing sinks, and ensuring food-prep areas are entirely dust-free.' },
         { name: 'Floor cleaning and polishing', description: 'Industrial machine scrubbing of hard floors and buffing/sealing to completely remove heavy construction traffic marks and scuffs.' },
         { name: 'Carpet and upholstery cleaning', description: 'Hot water extraction and deep steam cleaning to pull embedded construction dust and allergens from soft fibers.' }
@@ -48,7 +47,7 @@ const AfterBuildersCleaningPage = () => {
       items: [
         { name: 'Window and glass cleaning', description: 'Meticulous streak-free cleaning of all internal and external glazing, including detailed vacuuming and wiping of sliding door tracks.' },
         { name: 'Grout and tile cleaning', description: 'Restoring grout lines that have been dulled by construction dust, using specialized brushes and lifting agents.' },
-        { name: 'HVAC system cleaning', description: 'Vacuuming vents, grilles, and replacing superficial filters to ensure the air conditioning circulates clean, dust-free air.' },
+        { name: 'Accessible vent detailing', description: 'Clean accessible exterior vent covers and grilles included in the scope; additional equipment work is discussed separately.' },
         { name: 'Appliance cleaning and sanitization', description: 'Detailing newly installed ovens, rangehoods, fridges, and dishwashers inside and out to remove factory residues.' }
       ]
     },
@@ -57,18 +56,13 @@ const AfterBuildersCleaningPage = () => {
       icon: CheckSquare,
       items: [
         { name: 'Debris and construction waste removal', description: 'Clearing material offcuts, bulk packaging, and sweeping the final site to transition it from a work zone to a habitable space.' },
-        { name: 'Final quality inspection', description: 'A rigorous, multi-point walk-through by our senior supervisors to guarantee a defect-free handover to the client or property owner.' }
+        { name: 'Final quality inspection', description: 'Review the completed cleaning against the agreed scope and discuss any areas needing further attention.' }
       ]
     }
   ];
 
   return (
     <>
-      <Helmet>
-        <title>After-Builders Cleaning Adelaide | MisterClean</title>
-        <meta name="description" content="Post-construction cleaning in Adelaide. Dust removal, debris cleanup, final site cleaning. Professional after-builders cleaning for residential & commercial." />
-      </Helmet>
-
       <ServiceHero 
         title="After-Builders Cleaning Services Adelaide"
         tagline="Flawless post-construction handover cleaning. We manage the hazardous dust, debris, and fine detailing so your project is ready for immediate occupation."
@@ -77,44 +71,44 @@ const AfterBuildersCleaningPage = () => {
       
       <ServiceNavigation />
 
-      <main>
+      <div>
         {/* Intro & Certifications */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
-                <h1 className="text-3xl font-bold mb-6">After-Builders Cleaning Services Adelaide</h1>
+                <h2 className="text-3xl font-bold mb-6">After-Builders Cleaning Services Adelaide</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Transitioning a site from an active construction zone to a pristine, habitable environment requires specialized expertise. Standard cleaning methods fall short when dealing with volatile fine dust, industrial adhesives, and construction debris. We frequently transition our building clients into our ongoing <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> or standard <Link to="/services" className="text-primary hover:underline">residential cleaning</Link> programs post-handover.
+                  After construction or renovation, a detailed clean helps prepare your premises for handover. Tell us about the surfaces, remaining dust and access so we can agree the cleaning scope. After handover, explore our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> or <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link> services.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  MisterClean partners with Adelaide's leading construction firms, shopfitters, and property developers. We deploy heavily trained, WHS-compliant teams equipped with industrial-grade machinery to execute complex builders cleans under strict handover deadlines.
+                  We plan the clean around the condition of the premises and the handover date. Cleaning methods and any additional treatments are agreed after assessing the surfaces and site conditions.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CertificationBadge 
                   icon={ShieldCheck}
-                  title="Fully Insured"
-                  description="$20M Public Liability & Workers Compensation"
+                  title="Agreed Scope"
+                  description="Cleaning tasks confirmed before work starts"
                   index={0}
                 />
                 <CertificationBadge 
                   icon={HardHat}
-                  title="WHS Compliant"
-                  description="Strict adherence to construction site safety protocols"
+                  title="Site Access"
+                  description="Access and site requirements discussed"
                   index={1}
                 />
                 <CertificationBadge 
                   icon={Award}
-                  title="ISO Standards"
-                  description="Quality management systems implementation"
+                  title="Surface Assessment"
+                  description="Methods matched to the materials"
                   index={2}
                 />
                 <CertificationBadge 
                   icon={ClipboardCheck}
-                  title="Vetted Staff"
-                  description="White-card holding, heavily trained personnel"
+                  title="Handover Planning"
+                  description="Timing agreed with your site contact"
                   index={3}
                 />
               </div>
@@ -188,7 +182,7 @@ const AfterBuildersCleaningPage = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4 text-white">Service Benefits & Guarantees</h2>
               <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                We take the stress out of the final handover phase, providing reliable, rapid, and defect-free results every time.
+                Plan the final clean around your handover, with the areas and timing agreed before work begins.
               </p>
             </div>
             
@@ -206,9 +200,9 @@ const AfterBuildersCleaningPage = () => {
                 <div className="p-3 bg-secondary/20 text-secondary rounded-xl mb-6">
                   <Award className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Defect-Free Guarantee</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Review of the Agreed Areas</h3>
                 <p className="text-slate-400 leading-relaxed">
-                  If our clean does not pass the site manager's final inspection regarding our agreed scope of work, we will return within 24 hours to rectify the issue at absolutely no additional cost.
+                  We review the completed cleaning against the agreed scope and discuss any areas requiring further attention.
                 </p>
               </div>
             </div>
@@ -216,7 +210,7 @@ const AfterBuildersCleaningPage = () => {
         </section>
 
         <ServiceCTA serviceName="After-Builders Cleaning" />
-      </main>
+      </div>
     </>
   );
 };
