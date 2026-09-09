@@ -154,6 +154,12 @@
 .skip-link:focus { top: 0.5rem; }
 :focus-visible { outline: 3px solid hsl(var(--primary)); outline-offset: 4px; }
 input, textarea { font-size: 1rem; }
+.choice-chip { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 0.65rem; font-size: 0.875rem; cursor: pointer; transition: border-color 160ms, background-color 160ms; }
+.choice-chip:hover { border-color: hsl(var(--primary)); }
+.choice-chip:focus-within { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
+.choice-chip-selected { border-color: hsl(var(--primary)); background: hsl(var(--primary) / 0.07); color: hsl(var(--primary)); }
+.service-panel[data-state="active"] { animation: service-appear 280ms ease-out; }
+@keyframes service-appear { from { opacity: 0.75; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

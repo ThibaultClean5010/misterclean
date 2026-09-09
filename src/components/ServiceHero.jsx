@@ -3,24 +3,18 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { serviceOptions } from '@/data/site.js';
 import { Button } from '@/components/ui/button';
+import CleaningPhoto from '@/components/CleaningPhoto.jsx';
 
-const ServiceHero = ({ title, tagline, image }) => {
+const ServiceHero = ({ title, tagline }) => {
   const { pathname } = useLocation();
   const service = serviceOptions.find(item => item.path === pathname);
-  const heroImage = image.startsWith('https://images.unsplash.com/') && !image.includes('?')
-    ? image + '?auto=format&fit=crop&w=1600&q=75' : image;
+  const photo = ['window-cleaning', 'retail'].includes(service?.value) ? 'windows'
+    : ['after-builders', 'commercial-deep-cleaning', 'restaurant'].includes(service?.value) ? 'deep' : 'workplace';
   return (
     <section className="relative flex items-center bg-slate-950 overflow-hidden pt-16 md:pt-20">
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-        <img 
-          src={heroImage}
-          alt={title} 
-          fetchpriority="high"
-          width="1600"
-          height="900"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/40" />
+      <div className="absolute inset-0 z-0">
+        <CleaningPhoto photo={photo} priority className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-slate-950/45 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 md:py-20">

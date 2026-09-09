@@ -23,7 +23,6 @@ const CommercialDeepCleaningPage = () => {
       <ServiceHero
         title="Commercial Deep Cleaning in Adelaide"
         tagline="Bring your premises back to a clean, presentable condition with a comprehensive deep clean. A fresh start for offices, shops and other commercial spaces."
-        image="https://images.unsplash.com/photo-1581578731548-c64695cc6952"
       />
       <ServiceNavigation />
       <CertificationsSection />

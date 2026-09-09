@@ -15,7 +15,6 @@ const CommercialCleaningPage = () => {
       <ServiceHero 
         title="Commercial Cleaning Services for Adelaide Businesses"
         tagline="Elevate your corporate environment. Consistent, discreet, and immaculate cleaning protocols tailored specifically for professional B2B spaces."
-        image="https://images.unsplash.com/photo-1612396970400-2f359e5c5bb3"
       />
       
       <ServiceNavigation />

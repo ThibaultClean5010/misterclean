@@ -8,19 +8,26 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CONTACT_EMAIL, serviceOptions } from '@/data/site.js';
 import { quoteEmail, trackEnquiry } from '@/lib/quote.js';
+import { cleaningPlans, windowAccessOptions } from '@/data/cleaningExperience.js';
 
 export default function QuoteForm() {
   const [params] = useSearchParams();
   const requested = params.get('service');
+  const requestedPlan = params.get('plan');
+  const requestedAccess = params.get('access');
   const [service, setService] = useState('commercial');
+  const [plan, setPlan] = useState('not-sure');
+  const [access, setAccess] = useState('standard');
   const [ready, setReady] = useState(false);
   useEffect(() => {
     setReady(true);
-    if (serviceOptions.some(item => item.value === requested)) setService(requested);
+    setService(serviceOptions.some(item => item.value === requested) ? requested : 'commercial');
+    setPlan(cleaningPlans.some(item => item.value === requestedPlan) ? requestedPlan : 'not-sure');
+    setAccess(windowAccessOptions.some(item => item.value === requestedAccess) ? requestedAccess : 'standard');
     setPrepared(null);
     setCopied(false);
     setCopyError(false);
-  }, [requested]);
+  }, [requested, requestedPlan, requestedAccess]);
   const [prepared, setPrepared] = useState(null);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
@@ -36,7 +43,7 @@ export default function QuoteForm() {
         return;
       }
     }
-    const email = quoteEmail({ ...values, service });
+    const email = quoteEmail({ ...values, service, plan, access: service === 'window-cleaning' ? access : '' });
     setPrepared(email);
     setCopied(false);
     setCopyError(false);
@@ -65,6 +72,8 @@ export default function QuoteForm() {
           <Label htmlFor="quote-service">Cleaning service *</Label>
           <Select value={service} onValueChange={value => { setService(value); invalidate(); }}><SelectTrigger id="quote-service"><SelectValue /></SelectTrigger><SelectContent>{serviceOptions.map(item => <SelectItem key={item.value} value={item.value}>{item.label}</SelectItem>)}</SelectContent></Select>
         </div>
+        <div className="space-y-2"><Label htmlFor="quote-plan">Cleaning frequency</Label><Select value={plan} onValueChange={value => { setPlan(value); invalidate(); }}><SelectTrigger id="quote-plan"><SelectValue /></SelectTrigger><SelectContent>{cleaningPlans.map(option => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select></div>
+        {service === 'window-cleaning' && <div className="space-y-2"><Label htmlFor="quote-access">Window access</Label><Select value={access} onValueChange={value => { setAccess(value); invalidate(); }}><SelectTrigger id="quote-access"><SelectValue /></SelectTrigger><SelectContent>{windowAccessOptions.map(option => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select></div>}
       </div>
       <div className="space-y-2"><Label htmlFor="quote-details">What needs cleaning? (optional)</Label><Textarea id="quote-details" name="details" maxLength={1200} rows={4} placeholder="Approximate size, one-off or regular cleaning, preferred times and access requirements." /></div>
       <p className="text-sm text-muted-foreground">Your details stay in this page until you choose to send the email. Read our <a href="/privacy" className="text-primary underline">privacy information</a>.</p>

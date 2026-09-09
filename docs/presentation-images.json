@@ -1,0 +1,39 @@
+{
+  "created": "2026-09-09",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "batch": "Three independent requests in a single parallel batch; one request per asset; no variants or retries.",
+  "provenance": "Original AI-generated illustrative scenes. No input or source photographs. These do not document MisterClean personnel or client sites.",
+  "assets": [
+    {
+      "key": "office",
+      "prompt": "Use case: photorealistic-natural\nAsset type: landscape hero photograph for a commercial cleaning website in Adelaide, Australia, intended as an illustrative scene, not a portrayal of any real company's staff or client site.\nPrimary request: A bright contemporary commercial workspace with one adult professional cleaner in unbranded subtle teal and navy workwear carefully wiping an office surface, positioned on the right third.\nScene/backdrop: Finished modern office with natural wood, neutral upholstered office furniture and large windows, uncluttered and believable.\nStyle/medium: Premium editorial photography with authentic textures, anatomically natural human features, realistic hands and cleaning technique.\nComposition/framing: Wide landscape around 1536x1024, camera at adult eye level; cleaner and cleaning action clearly on the right third; left half is quiet visually simple office context with no important subjects, suitable for later overlay of white hero copy. No text is drawn into the photograph.\nLighting/mood: Soft natural daylight, calm professional atmosphere, subtle natural contrast.\nColor palette: Neutral warm grey and wood, sparse teal and navy accents.\nConstraints: A single original photograph; no collage, no before/after split; no text, logos, watermarks, endorsements or branded products; no medical setting; avoid exaggerated shine, render-like smoothness or staged celebration.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/commercial-workspace.jpg",
+      "mobilePath": "public/images/commercial-workspace-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+    },
+    {
+      "key": "windows",
+      "prompt": "Use case: photorealistic-natural\nAsset type: landscape service photograph for a commercial cleaning website in Adelaide, Australia; an illustrative fictional scene, not any real company's workers or premises.\nPrimary request: Professional commercial window cleaning on a large shopfront glass pane, with one adult worker using a realistic handheld squeegee at comfortable reachable height.\nScene/backdrop: Contemporary urban business exterior in natural daylight, expansive clear shopfront glass and visible aluminium window framing; no readable storefront branding.\nSubject: Adult professional in unbranded navy workwear with restrained teal detail; standing safely on the pavement, feet grounded; natural arm and wrist position with squeegee blade contacting glass; believable thin water traces near the blade.\nStyle/medium: Clean premium editorial photography, authentic documentary realism, natural skin and material texture.\nComposition/framing: Wide landscape around 1536x1024; strong visual action on the right side with worker and glass-contact point legible; enough surrounding glazing and commercial facade to clearly communicate window cleaning. Natural reflections that do not obscure the work.\nLighting/mood: Soft natural daylight, professional and calm.\nConstraints: Exactly one original photographic scene; no ladder or dangerous pose, no text, logos, watermarks, fake endorsements, before/after split, medical scenes, dramatic artificial shine or plastic render aesthetic.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/commercial-windows.jpg",
+      "mobilePath": "public/images/commercial-windows-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+    },
+    {
+      "key": "deep_clean",
+      "prompt": "Use case: photorealistic-natural\nAsset type: landscape commercial deep-cleaning service photograph for a commercial cleaning website in Adelaide, Australia; illustrative fictional people and premises, not actual company workers or client sites.\nPrimary request: Full commercial premises deep cleaning, with one adult professional using a realistic compact walk-behind floor scrubber in a spacious, completed commercial interior.\nScene/backdrop: An airy finished business premises with a large neutral hard floor, contemporary architectural details, a few work tables or waiting chairs at the edges, freshly cleaned surfaces and plenty of visible interior context. No construction site or medical setting.\nSubject: Adult cleaner wearing unbranded navy workwear with subtle teal accents, naturally gripping the compact floor scrubber handle, standing in a plausible walking posture behind the machine.\nStyle/medium: Premium editorial photography, real-world documentary appearance and natural materials.\nComposition/framing: Wide landscape around 1536x1024, human and floor scrubber in the middle-right, spacious coherent interior and broad floor area showing the scale of commercial deep cleaning.\nLighting/mood: Natural documentary daylight from broad windows, restrained highlights and realistic matte-to-satin surfaces.\nConstraints: Exactly one original photograph, no text, logos, watermarks, fake endorsements, medical scenes, before/after splits, exaggerated mirror shine, sparks, dramatic mist or unreal machinery; correct human anatomy and coherent machine geometry.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/premises-deep-clean.jpg",
+      "mobilePath": "public/images/premises-deep-clean-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+    }
+  ]
+}

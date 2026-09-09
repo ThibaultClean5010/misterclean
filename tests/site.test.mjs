@@ -4,6 +4,7 @@ import { readFile, access } from 'node:fs/promises';
 import { publicPaths, SITE_URL, CONTACT_EMAIL, serviceOptions } from '../src/data/site.js';
 import { quoteEmail } from '../src/lib/quote.js';
 import { render } from '../.prerender/entry-server.js';
+import { cleaningOffers, cleaningPlans, cleaningQuotePath, cleaningPhotos } from '../src/data/cleaningExperience.js';
 
 const fileFor = route => 'dist/' + (route === '/' ? 'index' : route.slice(1)) + '.html';
 const matches = (html, pattern) => [...html.matchAll(pattern)];
@@ -36,6 +37,34 @@ test('every public page has visible content, unique SEO metadata and valid links
       assert.ok(publicPaths.includes(destination), route + ': valid internal link ' + destination);
     }
     for (const asset of matches(html, /<(?:img|script)\b[^>]*src="(\/[^"]*)"/g)) await access('dist' + asset[1].split('?')[0]);
+  }
+});
+
+test('service choices carry frequency and relevant access into the quote email', () => {
+  for (const service of cleaningOffers) {
+    for (const plan of cleaningPlans) {
+      const url = new URL(cleaningQuotePath(service.value, plan.value, 'hard-to-reach'), SITE_URL);
+      assert.equal(url.pathname, '/contact');
+      assert.equal(url.searchParams.get('service'), service.value);
+      assert.equal(url.searchParams.get('plan'), plan.value);
+      assert.equal(url.searchParams.get('access'), service.value === 'window-cleaning' ? 'hard-to-reach' : null);
+      const email = quoteEmail({ ...Object.fromEntries(url.searchParams), name: 'Test', business: 'Example', email: 'test@example.com', suburb: 'Adelaide' });
+      assert.ok(email.body.includes('Frequency: ' + plan.label));
+      assert.equal(email.body.includes('Window access: Hard-to-reach windows'), service.value === 'window-cleaning');
+    }
+  }
+  const invalid = new URL(cleaningQuotePath('window-cleaning', 'unrecognised', 'unrecognised'), SITE_URL);
+  assert.ok(!invalid.searchParams.has('plan'));
+  assert.ok(!invalid.searchParams.has('access'));
+});
+
+test('each presentation photo has full size and mobile assets in the published output', async () => {
+  for (const photo of Object.values(cleaningPhotos)) {
+    for (const path of [photo.src, photo.src.replace('.jpg', '-800.jpg')]) {
+      const bytes = await readFile('dist' + path);
+      assert.equal(bytes.readUInt16BE(0), 0xffd8, path + ': JPEG file');
+      assert.ok(bytes.length < 300000, path + ': optimised image size');
+    }
   }
 });
 

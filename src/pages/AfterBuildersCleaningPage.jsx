@@ -66,7 +66,6 @@ const AfterBuildersCleaningPage = () => {
       <ServiceHero 
         title="After-Builders Cleaning Services Adelaide"
         tagline="Flawless post-construction handover cleaning. We manage the hazardous dust, debris, and fine detailing so your project is ready for immediate occupation."
-        image="https://images.unsplash.com/photo-1699109076552-58db1cccae82"
       />
       
       <ServiceNavigation />

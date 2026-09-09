@@ -23,7 +23,6 @@ const RestaurantCleaningPage = () => {
       <ServiceHero 
         title="Restaurant Maintenance Cleaning Services"
         tagline="Consistent, high-quality upkeep for your dining areas and general spaces. We ensure your venue looks immaculate and inviting for every single guest."
-        image="https://images.unsplash.com/photo-1679788486952-7f2e1386fc17"
       />
       
       <ServiceNavigation />

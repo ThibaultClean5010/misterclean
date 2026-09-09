@@ -24,7 +24,6 @@ const RetailCleaningPage = () => {
       <ServiceHero 
         title="Retail Cleaning Services"
         tagline="Create an inviting shopping experience. We ensure your retail space is immaculate, reflecting the quality of your brand and products."
-        image="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5"
       />
       
       <ServiceNavigation />

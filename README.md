@@ -32,4 +32,6 @@ Automatic delivery would require an email provider and a server-side integration
 
 The existing Google Analytics (`G-JRM3569S3G`) and Google Ads (`AW-17867444680`) accounts are initialized once by `src/components/Analytics.jsx`. Route views use canonical page paths. Enquiry events report actions and service categories; they do not include the personal fields entered in the form. Opening an email is not tracked as a confirmed enquiry or booking. Google Analytics enhanced-measurement settings should avoid an additional history-based page-view event if manual route views are used.
 
-The logo and window cleaning photo are local. Some other images still load from Unsplash and the original Hostinger CDN; fonts load from Google Fonts. Keep those asset dependencies available or replace them with licensed local assets before discontinuing the original hosting services.
+Presentation images are local JPEGs with responsive 1536px and 800px sources. They are original AI-generated illustrative scenes, not photographs of MisterClean staff or client sites; prompts and output paths are recorded in `docs/presentation-images.json`. Blog images still use external sources, and fonts load from Google Fonts.
+
+The home page service explorer carries the selected service, frequency and window access into the contact form through allowlisted query options. It does not calculate a price or book a clean. Tab and radio controls support keyboard navigation; entrance animations preserve server-rendered content and respect reduced-motion preferences.

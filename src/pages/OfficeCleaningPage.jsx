@@ -24,7 +24,6 @@ const OfficeCleaningPage = () => {
       <ServiceHero 
         title="Office Cleaning Services"
         tagline="A clean office is a productive office. We provide comprehensive cleaning solutions tailored to your corporate environment."
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c"
       />
       
       <ServiceNavigation />

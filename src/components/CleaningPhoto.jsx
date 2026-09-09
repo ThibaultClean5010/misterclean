@@ -1,0 +1,9 @@
+import React from 'react';
+import { cleaningPhotos } from '@/data/cleaningExperience.js';
+
+export default function CleaningPhoto({ photo = 'workplace', priority = false, className = '', sizes = '100vw' }) {
+  const asset = cleaningPhotos[photo];
+  return <img src={asset.src} srcSet={asset.src.replace('.jpg', '-800.jpg') + ' 800w, ' + asset.src + ' 1536w'} sizes={sizes}
+    alt={asset.alt} width="1536" height="1024" loading={priority ? 'eager' : 'lazy'} decoding="async"
+    fetchpriority={priority ? 'high' : 'auto'} className={className} style={{ objectPosition: asset.position }} />;
+}

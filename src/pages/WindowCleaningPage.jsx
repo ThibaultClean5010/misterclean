@@ -27,7 +27,6 @@ const WindowCleaningPage = () => {
       <ServiceHero
         title="Commercial Window Cleaning in Adelaide"
         tagline="One-off cleans, regular visits and solutions for hard-to-reach windows. Keep your shopfront and workplace glass looking clean, with a service tailored to your premises."
-        image="/images/window-cleaning.jpg"
       />
       <ServiceNavigation />
       <CertificationsSection />
