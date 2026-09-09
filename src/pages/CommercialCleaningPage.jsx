@@ -45,7 +45,7 @@ const CommercialCleaningPage = () => {
               <div>
                 <h1 className="text-3xl font-bold mb-6">Commercial Cleaning Services for Adelaide Businesses</h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The cleanliness of your commercial facility directly impacts employee productivity, operational health, and the critical first impressions formed by visiting clients. Whether you need reliable office maintenance, specialized <Link to="/services/hospital-clinic-cleaning" className="text-primary hover:underline">hospital/clinic cleaning</Link>, or robust <Link to="/services/heavy-duty-cleaning" className="text-primary hover:underline">heavy-duty cleaning</Link>, we have a dedicated solution for you.
+                  The cleanliness of your commercial facility directly impacts employee productivity, operational health, and the critical first impressions formed by visiting clients. Whether you need reliable office maintenance, <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, or a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep clean</Link>, we have a dedicated solution for you.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We don't just supply cleaners; we implement a fully managed facility hygiene system. Backed by rigorous Service Level Agreements (SLAs), regular auditing, and dedicated account management, we ensure your premises consistently reflect the high standards of your organization.
@@ -73,8 +73,8 @@ const CommercialCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={CheckCircle}
-                  title="Health Compliant"
-                  description="Infection control & sanitization protocols"
+                  title="Workplace Hygiene"
+                  description="Cleaning of shared surfaces and touchpoints"
                   index={3}
                 />
               </div>

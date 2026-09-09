@@ -85,52 +85,6 @@ export const blogPosts = [
     }
   },
   {
-    slug: 'medical-clinic-cleaning-infection-control',
-    title: 'Medical Clinic Cleaning and Infection Control Basics',
-    excerpt: 'A clear guide to cleaning priorities for clinics, treatment rooms, waiting areas, and healthcare reception spaces.',
-    category: 'Healthcare Cleaning',
-    date: '2026-08-21',
-    readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3',
-    imageAlt: 'Clean healthcare treatment room prepared for patients',
-    keywords: ['medical clinic cleaning Adelaide', 'healthcare cleaning', 'infection control cleaning'],
-    intro: 'Healthcare cleaning needs repeatable systems. The goal is not only to make a clinic look clean, but to reduce cross-contamination risk across patient and staff areas.',
-    sections: [
-      {
-        heading: 'Separate zones by risk',
-        body: [
-          'A clinic cleaning plan should distinguish between waiting rooms, reception desks, staff rooms, consultation rooms, treatment rooms, washrooms, and clinical waste areas. Each zone has different touchpoints and hygiene expectations.',
-          'Higher-risk spaces need more deliberate sequencing, correct product contact times, and careful handling of cloths, mop heads, and cleaning equipment.'
-        ]
-      },
-      {
-        heading: 'High-touch surfaces need consistency',
-        body: [
-          'Door handles, chair arms, EFTPOS terminals, counters, switches, taps, dispensers, bed rails, and shared equipment surfaces can be touched repeatedly throughout the day. These surfaces should be included in every routine clean.',
-          'Consistency matters because missed touchpoints can undermine the rest of the cleaning program. A checklist-based approach makes outcomes easier to audit.'
-        ]
-      },
-      {
-        heading: 'Product choice and contact time',
-        body: [
-          'Disinfectants need to be suitable for the surface and used according to label instructions. Some products require a surface to remain wet for a specific contact time to perform properly.',
-          'For healthcare environments, the cleaning provider should understand the difference between cleaning, sanitising, and disinfecting, and should avoid product combinations that damage equipment or create unnecessary odour.'
-        ]
-      },
-      {
-        heading: 'After-hours cleaning reduces disruption',
-        body: [
-          'Many clinics benefit from cleaning outside patient hours. It gives cleaners safer access to treatment rooms, lowers disruption to reception teams, and allows floors and surfaces to dry before reopening.',
-          'For busy practices, a combination of daytime touchpoint support and after-hours detailed cleaning can be the most practical option.'
-        ]
-      }
-    ],
-    cta: {
-      text: 'Explore healthcare cleaning',
-      path: '/services/hospital-clinic-cleaning'
-    }
-  },
-  {
     slug: 'retail-cleaning-first-impressions',
     title: 'Retail Cleaning: How Clean Stores Improve First Impressions',
     excerpt: 'Clean floors, glass, fitting rooms, counters, and entryways help retail businesses protect presentation and customer trust.',
@@ -230,7 +184,7 @@ export const blogPosts = [
       {
         heading: 'Match the schedule to the industry',
         body: [
-          'Medical, hospitality, retail, and industrial environments have very different cleaning needs. A clinic may require detailed disinfection routines, while a warehouse may need high-reach dusting, floor scrubbing, and debris control.',
+          'Offices, shops, hospitality venues and warehouses have different cleaning needs. Staff kitchens and bathrooms may need more frequent attention, while floor edges, shelving and shared workspaces benefit from periodic detailing.',
           'For office environments, quarterly deep cleans are common, but busy shared workplaces may need monthly or bi-monthly detailing.'
         ]
       },
@@ -243,8 +197,8 @@ export const blogPosts = [
       }
     ],
     cta: {
-      text: 'Build a custom cleaning plan',
-      path: '/services/commercial-cleaning'
+      text: 'Arrange a commercial deep clean',
+      path: '/services/commercial-deep-cleaning'
     }
   }
 ];

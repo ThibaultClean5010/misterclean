@@ -35,9 +35,9 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-6">Services</h3>
             <nav className="flex flex-col gap-3">
               <Link to="/services/commercial-cleaning" className="text-sm hover:text-white transition-colors">Commercial Cleaning</Link>
-              <Link to="/services/hospital-clinic-cleaning" className="text-sm hover:text-white transition-colors">Hospital/Clinic Cleaning</Link>
+              <Link to="/services/window-cleaning" className="text-sm hover:text-white transition-colors">Window Cleaning</Link>
               <Link to="/services/after-builders-cleaning" className="text-sm hover:text-white transition-colors">After Builders Cleaning</Link>
-              <Link to="/services/heavy-duty-cleaning" className="text-sm hover:text-white transition-colors">Heavy Duty Cleaning</Link>
+              <Link to="/services/commercial-deep-cleaning" className="text-sm hover:text-white transition-colors">Commercial Deep Cleaning</Link>
             </nav>
           </div>
 

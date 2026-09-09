@@ -42,37 +42,36 @@ const ServicesPage = () => {
       ]
     },
     {
-      id: 'hospital-clinic',
-      title: 'Hospital & Clinic Cleaning',
-      slug: '/services/hospital-clinic-cleaning',
-      description: 'In the healthcare sector, hygiene is critical to patient safety. We provide specialized medical-grade cleaning services for clinics, dental practices, and medical centers, adhering strictly to clinical infection control standards. We utilize hospital-grade disinfectants and rigorous cross-contamination prevention protocols to ensure a sterile environment.',
+      id: 'window-cleaning',
+      title: 'Window Cleaning',
+      slug: '/services/window-cleaning',
+      description: 'Keep your shopfront and workplace glass looking clean with internal and external window cleaning across Adelaide. Arrange a one-off clean, a recurring schedule or an assessment for hard-to-reach windows. We agree the areas and access before confirming your quote.',
       images: [
-        'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
-        'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b'
+        '/images/window-cleaning.jpg'
       ],
       benefits: [
-        'Terminal cleaning and sanitization',
-        'Hospital-grade disinfectant application',
-        'Strict cross-contamination prevention',
-        'Biohazard and clinical waste management',
-        'TGA and health standard compliance'
+        'One-off and recurring window cleans',
+        'Internal and external glass',
+        'Shopfronts, entrance doors and partitions',
+        'Accessible frames, sills and tracks',
+        'Hard-to-reach windows assessed before quoting'
       ]
     },
     {
-      id: 'heavy-duty',
-      title: 'Heavy-Duty Cleaning',
-      slug: '/services/heavy-duty-cleaning',
-      description: 'Warehouses, industrial sites, and manufacturing facilities face unique cleaning challenges. Our heavy-duty cleaning teams are equipped with industrial-grade machinery and safety certifications to manage large-scale spaces. We focus on hazard mitigation, machinery degreasing, and maintaining a safe environment for your workforce.',
+      id: 'commercial-deep-cleaning',
+      title: 'Commercial Deep Cleaning',
+      slug: '/services/commercial-deep-cleaning',
+      description: 'Bring your premises back to a clean, presentable condition with a comprehensive deep clean. We focus on accumulated dirt, overlooked areas and the finishing details across workspaces and amenities. Arrange a one-off reset, prepare for handover or add periodic deep cleaning to your regular maintenance.',
       images: [
-        'https://images.unsplash.com/photo-1604834794887-2e7d25c3ca15',
+        'https://images.unsplash.com/photo-1581578731548-c64695cc6952',
         'https://images.unsplash.com/photo-1691522137720-1e456609b679' 
       ],
       benefits: [
-        'High-pressure washing systems',
-        'Industrial floor sweeping and scrubbing',
-        'High-reach cleaning and dusting',
-        'Machinery and equipment degreasing',
-        'Strict adherence to WHS protocols'
+        'Thorough cleaning across the agreed premises',
+        'Kitchens, bathrooms and staff rooms',
+        'Floors, edges, corners and skirting boards',
+        'Accessible glass, doors and touchpoints',
+        'One-off resets and periodic deep cleans'
       ]
     }
   ];
@@ -81,7 +80,7 @@ const ServicesPage = () => {
     <>
       <Helmet>
         <title>Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="Explore MisterClean's full range of professional cleaning services in Adelaide. Commercial, hospital/clinic, after-builders, and heavy-duty cleaning." />
+        <meta name="description" content="Explore commercial, after-builders, window and deep cleaning in Adelaide. One-off visits, regular schedules and hard-to-reach window assessments." />
       </Helmet>
 
       {/* Header */}
@@ -148,22 +147,22 @@ const ServicesPage = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
-                  className={`grid grid-cols-2 gap-4 ${index % 2 !== 0 ? 'lg:col-start-1' : ''}`}
+                  className={`grid ${service.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-4 ${index % 2 !== 0 ? 'lg:col-start-1' : ''}`}
                 >
                   <div className="space-y-4 pt-12">
                     <img 
                       src={service.images[0]} 
                       alt={`${service.title} demonstration shot`} 
-                      className="rounded-2xl shadow-lg w-full h-[300px] object-cover"
+                      className={`rounded-2xl shadow-lg w-full object-cover ${service.images.length > 1 ? 'h-[300px]' : 'h-[400px]'}`}
                     />
                   </div>
-                  <div className="space-y-4">
+                  {service.images[1] && <div className="space-y-4">
                     <img 
                       src={service.images[1]} 
                       alt={`Professional ${service.title.toLowerCase()} in progress`} 
                       className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
                     />
-                  </div>
+                  </div>}
                 </motion.div>
 
               </div>

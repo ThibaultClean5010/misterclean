@@ -13,8 +13,8 @@ const Header = () => {
   const serviceLinks = [
     { name: 'Commercial Cleaning', path: '/services/commercial-cleaning' },
     { name: 'After Builders Cleaning', path: '/services/after-builders-cleaning' },
-    { name: 'Hospital/Clinic Cleaning', path: '/services/hospital-clinic-cleaning' },
-    { name: 'Heavy Duty Cleaning', path: '/services/heavy-duty-cleaning' },
+    { name: 'Window Cleaning', path: '/services/window-cleaning' },
+    { name: 'Commercial Deep Cleaning', path: '/services/commercial-deep-cleaning' },
   ];
 
   return (

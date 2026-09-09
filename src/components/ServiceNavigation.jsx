@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Building2, HardHat, HeartPulse, AlertTriangle } from 'lucide-react';
+import { Building2, HardHat, ScanLine, Sparkles } from 'lucide-react';
 
 const ServiceNavigation = () => {
   const location = useLocation();
@@ -17,14 +17,14 @@ const ServiceNavigation = () => {
       icon: HardHat
     },
     {
-      name: 'Hospital/Clinic',
-      path: '/services/hospital-clinic-cleaning',
-      icon: HeartPulse
+      name: 'Window Cleaning',
+      path: '/services/window-cleaning',
+      icon: ScanLine
     },
     {
-      name: 'Heavy Duty',
-      path: '/services/heavy-duty-cleaning',
-      icon: AlertTriangle
+      name: 'Deep Cleaning',
+      path: '/services/commercial-deep-cleaning',
+      icon: Sparkles
     }
   ];
 

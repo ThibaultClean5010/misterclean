@@ -25,18 +25,18 @@ const HomePage = () => {
       link: '/services/after-builders-cleaning'
     },
     {
-      title: 'Hospital/Clinic Cleaning',
-      description: 'Medical-grade cleaning and infection control for healthcare facilities, strictly adhering to clinical safety standards.',
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
-      benefits: ['Terminal cleaning protocols', 'Hospital-grade disinfectants', 'Cross-contamination prevention'],
-      link: '/services/hospital-clinic-cleaning'
+      title: 'Window Cleaning',
+      description: 'Internal and external window cleaning for your business, available as a one-off visit or a regular service.',
+      image: '/images/window-cleaning.jpg',
+      benefits: ['One-off window cleans', 'Regular cleaning schedules', 'Hard-to-reach windows assessed on site'],
+      link: '/services/window-cleaning'
     },
     {
-      title: 'Heavy-Duty Cleaning',
-      description: 'Intensive industrial and warehouse cleaning focusing on safety, compliance, and heavy machinery areas.',
-      image: 'https://horizons-cdn.hostinger.com/dcd817cd-3e58-4158-995e-355bc699404e/99d800f5d10603f01af5202b41444e41.jpg',
-      benefits: ['High-pressure washing', 'Industrial floor scrubbing', 'Hazard mitigation'],
-      link: '/services/heavy-duty-cleaning'
+      title: 'Commercial Deep Cleaning',
+      description: 'A thorough refresh of your premises, covering workspaces, amenities and the areas everyday cleaning can miss.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952',
+      benefits: ['Complete premises refresh', 'Kitchens, bathrooms and shared spaces', 'One-off resets and periodic deep cleans'],
+      link: '/services/commercial-deep-cleaning'
     }
   ];
 
@@ -69,7 +69,7 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Professional Cleaning Services Adelaide | MisterClean</title>
-        <meta name="description" content="MisterClean offers professional residential & commercial cleaning services in Adelaide. Expert cleaners, eco-friendly solutions, 100% satisfaction guaranteed." />
+        <meta name="description" content="Commercial, after-builders, window and deep cleaning for Adelaide businesses. One-off visits and regular cleaning plans tailored to your premises." />
       </Helmet>
 
       {/* Hero Section */}
@@ -100,7 +100,7 @@ const HomePage = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-              We deliver uncompromising B2B cleaning services across Adelaide. From daily office maintenance to heavy-duty industrial cleaning, we ensure your facility reflects your business excellence. Looking for specifics? Explore our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning services</Link>, <Link to="/services/hospital-clinic-cleaning" className="text-primary hover:underline">hospital/clinic cleaning</Link>, or <Link to="/services/after-builders-cleaning" className="text-primary hover:underline">after-builders cleaning</Link> solutions.
+              Keep your Adelaide business clean and presentable with <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link>, <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, <Link to="/services/after-builders-cleaning" className="text-primary hover:underline">after-builders cleaning</Link> and <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep cleans</Link>. Choose a one-off service or a regular plan suited to your premises.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

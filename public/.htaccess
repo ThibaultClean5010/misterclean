@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
+	RewriteRule ^services/hospital-clinic-cleaning/?$ /services/window-cleaning [R=301,L]
+	RewriteRule ^services/heavy-duty-cleaning/?$ /services/commercial-deep-cleaning [R=301,L]
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^ index.html [L]

@@ -27,7 +27,7 @@ const AfterBuildersCleaningPage = () => {
       icon: Wind,
       items: [
         { name: 'Dust removal from all areas', description: 'Extensive HEPA-filtered vacuuming to eliminate hazardous silica, plaster, and brick dust from walls, ceilings, and high ledges.' },
-        { name: 'Sanitizing all surfaces', description: 'Hospital-grade disinfection of all touchpoints, workbenches, and handles to ensure a hygienic environment post-construction.' },
+        { name: 'Sanitizing all surfaces', description: 'Cleaning and sanitizing touchpoints, workbenches, and handles with products suited to each surface after construction.' },
         { name: 'Removal of protective coverings', description: 'Careful peeling and disposal of manufacturer films from windows, floors, and newly installed appliances without scratching surfaces.' },
         { name: 'Paint splatter removal', description: 'Delicate scraping and solvent treatment to safely remove rogue paint drops, render, and overspray from hard surfaces.' }
       ]

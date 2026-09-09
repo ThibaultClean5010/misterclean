@@ -35,7 +35,7 @@ const BlogPage = () => {
         <title>Cleaning Blog Adelaide | Commercial Cleaning Tips | MisterClean</title>
         <meta
           name="description"
-          content="Read MisterClean's commercial cleaning blog for Adelaide office cleaning checklists, after-builders cleaning advice, medical cleaning tips, and deep cleaning guidance."
+          content="Read MisterClean's commercial cleaning blog for Adelaide office cleaning checklists, after-builders cleaning advice, retail cleaning tips, and deep cleaning guidance."
         />
         <link rel="canonical" href="https://misterclean.com.au/blog" />
         <script type="application/ld+json">{JSON.stringify(blogJsonLd)}</script>
@@ -58,7 +58,7 @@ const BlogPage = () => {
             </div>
             <h1 className="mb-6">Commercial Cleaning Blog</h1>
             <p className="text-lg md:text-xl text-slate-300">
-              Practical cleaning guides, maintenance checklists, and hygiene insights for offices, clinics, retailers, restaurants, builders, and commercial facilities across Adelaide.
+              Practical cleaning guides, maintenance checklists, and cleaning advice for offices, retailers, restaurants, builders, and commercial facilities across Adelaide.
             </p>
           </div>
         </div>

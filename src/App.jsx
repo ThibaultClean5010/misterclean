@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Navigate, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Header from './components/Header.jsx';
@@ -13,8 +13,8 @@ import BlogArticlePage from './pages/BlogArticlePage.jsx';
 
 import AfterBuildersCleaningPage from './pages/AfterBuildersCleaningPage.jsx';
 import CommercialCleaningPage from './pages/CommercialCleaningPage.jsx';
-import HospitalClinicCleaningPage from './pages/HospitalClinicCleaningPage.jsx';
-import HeavyDutyCleaningPage from './pages/HeavyDutyCleaningPage.jsx';
+import WindowCleaningPage from './pages/WindowCleaningPage.jsx';
+import CommercialDeepCleaningPage from './pages/CommercialDeepCleaningPage.jsx';
 import RetailCleaningPage from './pages/RetailCleaningPage.jsx';
 import OfficeCleaningPage from './pages/OfficeCleaningPage.jsx';
 import RestaurantCleaningPage from './pages/RestaurantCleaningPage.jsx';
@@ -71,8 +71,10 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/after-builders-cleaning" element={<AfterBuildersCleaningPage />} />
             <Route path="/services/commercial-cleaning" element={<CommercialCleaningPage />} />
-            <Route path="/services/hospital-clinic-cleaning" element={<HospitalClinicCleaningPage />} />
-            <Route path="/services/heavy-duty-cleaning" element={<HeavyDutyCleaningPage />} />
+            <Route path="/services/window-cleaning" element={<WindowCleaningPage />} />
+            <Route path="/services/commercial-deep-cleaning" element={<CommercialDeepCleaningPage />} />
+            <Route path="/services/hospital-clinic-cleaning" element={<Navigate to="/services/window-cleaning" replace />} />
+            <Route path="/services/heavy-duty-cleaning" element={<Navigate to="/services/commercial-deep-cleaning" replace />} />
             <Route path="/services/retail-cleaning" element={<RetailCleaningPage />} />
             <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
             <Route path="/services/restaurant-cleaning" element={<RestaurantCleaningPage />} />

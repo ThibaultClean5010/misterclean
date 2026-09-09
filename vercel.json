@@ -1,3 +1,7 @@
 {
+  "redirects": [
+    { "source": "/services/hospital-clinic-cleaning", "destination": "/services/window-cleaning", "permanent": true },
+    { "source": "/services/heavy-duty-cleaning", "destination": "/services/commercial-deep-cleaning", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
