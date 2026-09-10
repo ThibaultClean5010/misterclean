@@ -31,6 +31,26 @@
       "file": "entrance-glass-before-cleaning.jpg",
       "original": "dirty windows .jpg",
       "use": "Window cleaning before image only"
+    },
+    {
+      "file": "cafe-fitout-floor-before.jpg",
+      "original": "zitto avant cleaning.jpg",
+      "use": "Project gallery, before cleaning"
+    },
+    {
+      "file": "cafe-service-counter-before.jpg",
+      "original": "used/pre clean bar zitto.jpg",
+      "use": "Project gallery, before cleaning"
+    },
+    {
+      "file": "cafe-service-aisle-before.jpg",
+      "original": "used/pre clean zitto bar 2_2.jpg",
+      "use": "Project gallery, before cleaning; portrait orientation retained"
+    },
+    {
+      "file": "cafe-kitchen-installation-before.jpg",
+      "original": "used/pre clean zitto dirty kitchen.jpg",
+      "use": "Project gallery, before cleaning"
     }
   ],
   "excluded": "Supplied PNG after views were not used as cleaning-result evidence because changed fittings and unavailable provenance make a cleaning-only comparison uncertain."

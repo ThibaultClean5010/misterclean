@@ -1,128 +1,32 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, CalendarDays, Clock, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BlogImage from '@/components/BlogImage.jsx';
 import { blogPosts } from '@/data/blogPosts.js';
+import { SITE_URL } from '@/data/site.js';
+import { readingTime, formatBlogDate, articleSchema } from '@/lib/blog.js';
 
-const BlogPage = () => {
-  const featuredPost = blogPosts[0];
-  const otherPosts = blogPosts.slice(1);
-
-  const blogJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'MisterClean Cleaning Blog',
-    description: 'Commercial cleaning advice, checklists, and hygiene guides for Adelaide businesses.',
-    url: 'https://www.mistercleanb2b.com/blog',
-    publisher: {
-      '@type': 'LocalBusiness',
-      name: 'MisterClean'
-    },
-    blogPost: blogPosts.map((post) => ({
-      '@type': 'BlogPosting',
-      headline: post.title,
-      url: `https://www.mistercleanb2b.com/blog/${post.slug}`,
-      datePublished: post.date,
-      image: post.image
-    }))
-  };
-
-  return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(blogJsonLd)}</script>
-      </Helmet>
-
-      <section className="pt-32 pb-20 bg-[#203f3a] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-35">
-          <img
-            src="https://images.unsplash.com/photo-1649665839727-f4e9cf1f2a82"
-            alt="Clean commercial office used as a blog header"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#203f3a]/70" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-sm font-semibold text-teal-100 mb-6">
-
-              Cleaning advice from MisterClean
-            </div>
-            <h1 className="mb-6">Commercial Cleaning Blog</h1>
-            <p className="text-lg md:text-xl text-slate-300">
-              Checklists and notes to help you plan office, shop and restaurant cleaning.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.article
-            initial={false}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white border border-slate-100 rounded-lg  overflow-hidden mb-14"
-          >
-            <Link to={`/blog/${featuredPost.slug}`} className="block min-h-[320px]">
-              <img
-                src={featuredPost.image}
-                alt={featuredPost.imageAlt}
-                className="h-full w-full object-cover"
-              />
-            </Link>
-            <div className="p-8 md:p-10 flex flex-col justify-center">
-              <span className="text-sm font-bold  text-primary mb-4">{featuredPost.category}</span>
-              <Link to={`/blog/${featuredPost.slug}`} className="group">
-                <h2 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{featuredPost.title}</h2>
-              </Link>
-              <p className="text-muted-foreground mb-6">{featuredPost.excerpt}</p>
-              <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-8">
-                <span className="inline-flex items-center gap-2"><CalendarDays className="h-4 w-4" /> {featuredPost.date}</span>
-                <span className="inline-flex items-center gap-2"><Clock className="h-4 w-4" /> {featuredPost.readTime}</span>
-              </div>
-              <Button asChild className="w-fit">
-                <Link to={`/blog/${featuredPost.slug}`}>
-                  Read Article <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </motion.article>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherPosts.map((post, index) => (
-              <motion.article
-                key={post.slug}
-                initial={false}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="blog-card"
-              >
-                <Link to={`/blog/${post.slug}`} className="block aspect-[16/10] overflow-hidden">
-                  <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
-                </Link>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-bold  text-primary mb-3">{post.category}</span>
-                  <Link to={`/blog/${post.slug}`} className="group">
-                    <h2 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{post.title}</h2>
-                  </Link>
-                  <p className="text-sm text-muted-foreground mb-5 flex-1">{post.excerpt}</p>
-                  <div className="flex items-center justify-between gap-4 text-xs text-slate-500 pt-5 border-t border-slate-100">
-                    <span>{post.date}</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default BlogPage;
+export default function BlogPage() {
+  const [featured, ...others] = blogPosts;
+  const schema = { '@context': 'https://schema.org', '@type': 'Blog', '@id': SITE_URL + '/blog#blog', name: 'MisterClean Cleaning Blog', description: 'Cleaning advice for Adelaide business premises.', url: SITE_URL + '/blog', publisher: { '@id': SITE_URL + '/#business' }, blogPost: blogPosts.map(post => { const { '@context': _context, ...article } = articleSchema(post); return article; }) };
+  return <>
+    <Helmet><script type="application/ld+json">{JSON.stringify(schema)}</script></Helmet>
+    <section className="pt-28 md:pt-36 pb-12 bg-[#203f3a] text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-sm text-teal-100 font-semibold mb-4">Cleaning advice from MisterClean</p><h1 className="mb-5">Cleaning blog for Adelaide businesses</h1><p className="text-lg text-slate-200">Practical answers about windows, workplace cleaning, deep cleans and getting a quote. Start with the job you’re planning.</p></div>
+    </section>
+    <section className="py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article className="grid lg:grid-cols-2 bg-white border border-slate-200 rounded-md overflow-hidden mb-10">
+          <Link to={'/blog/' + featured.slug} className="block"><BlogImage post={featured} priority sizes="(min-width: 1024px) 50vw, 100vw" className="w-full h-full min-h-64 max-h-[480px] object-cover" /></Link>
+          <div className="p-6 sm:p-8 flex flex-col justify-center"><p className="text-primary text-sm font-semibold mb-3">{featured.category}</p><h2 className="text-2xl md:text-3xl mb-5"><Link to={'/blog/' + featured.slug}>{featured.title}</Link></h2><p className="text-slate-600 mb-5">{featured.excerpt}</p><p className="text-sm text-slate-500 mb-6"><time dateTime={featured.date}>{formatBlogDate(featured.date)}</time> · {readingTime(featured)}</p><Button asChild className="w-fit"><Link to={'/blog/' + featured.slug}>Read article <ArrowRight className="w-4 h-4" /></Link></Button></div>
+        </article>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">{others.map(post => <article key={post.slug} className="blog-card">
+          <Link to={'/blog/' + post.slug} className="block"><BlogImage post={post} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="w-full aspect-[4/3] object-cover" /></Link>
+          <div className="p-5 flex-1 flex flex-col"><p className="text-sm text-primary mb-3">{post.category}</p><h2 className="text-xl mb-4"><Link to={'/blog/' + post.slug}>{post.title}</Link></h2><p className="text-sm text-slate-600 mb-5 flex-1">{post.excerpt}</p><p className="text-xs text-slate-500"><time dateTime={post.date}>{formatBlogDate(post.date)}</time> · {readingTime(post)}</p><Link to={'/blog/' + post.slug} className="text-primary font-semibold py-3 mt-2">Read article</Link></div>
+        </article>)}</div>
+      </div>
+    </section>
+  </>;
+}

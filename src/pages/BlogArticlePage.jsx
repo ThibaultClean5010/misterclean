@@ -1,133 +1,53 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CalendarDays, Clock, Tag } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { blogPosts, getBlogPostBySlug } from '@/data/blogPosts.js';
+import BlogImage from '@/components/BlogImage.jsx';
+import { getBlogPostBySlug } from '@/data/blogPosts.js';
+import { readingTime, formatBlogDate, relatedArticles, articleSchema } from '@/lib/blog.js';
 import NotFound from '@/components/NotFound.jsx';
 
-const BlogArticlePage = () => {
+export default function BlogArticlePage() {
   const { slug } = useParams();
   const post = getBlogPostBySlug(slug);
-
-  if (!post) {
-    return <NotFound />;
-  }
-
-  const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
-
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.date,
-    dateModified: post.date,
-    author: {
-      '@type': 'Organization',
-      name: 'MisterClean'
-    },
-    publisher: {
-      '@type': 'LocalBusiness',
-      name: 'MisterClean',
-      telephone: '0474597325',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Adelaide',
-        addressRegion: 'SA',
-        addressCountry: 'AU'
-      }
-    },
-    mainEntityOfPage: `https://www.mistercleanb2b.com/blog/${post.slug}`,
-    keywords: post.keywords.join(', ')
-  };
-
-  return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
-      </Helmet>
-
-      <article>
-        <section className="pt-32 pb-16 bg-[#203f3a] text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Button asChild variant="ghost" className="mb-8 text-white hover:bg-white/10 hover:text-white px-0">
-              <Link to="/blog"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog</Link>
-            </Button>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-300 mb-6">
-              <span className="inline-flex items-center gap-2 text-primary font-semibold"><Tag className="h-4 w-4" /> {post.category}</span>
-              <span className="inline-flex items-center gap-2"><CalendarDays className="h-4 w-4" /> {post.date}</span>
-              <span className="inline-flex items-center gap-2"><Clock className="h-4 w-4" /> {post.readTime}</span>
-            </div>
-            <h1 className="mb-6">{post.title}</h1>
-            <p className="text-xl text-slate-300">{post.intro}</p>
-          </div>
-        </section>
-
-        <div className="bg-background">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="-mt-10 rounded-lg overflow-hidden shadow-xl border border-slate-100 bg-white">
-              <img src={post.image} alt={post.imageAlt} className="h-[280px] md:h-[440px] w-full object-cover" />
-            </div>
-          </div>
+  if (!post) return <NotFound />;
+  const related = relatedArticles(post);
+  return <>
+    <Helmet><script type="application/ld+json">{JSON.stringify(articleSchema(post))}</script></Helmet>
+    <article>
+      <section className="pt-28 md:pt-36 pb-14 bg-[#203f3a] text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-teal-100 py-3 mb-5"><ArrowLeft className="w-4 h-4" />Back to the blog</Link>
+          <p className="text-sm text-teal-100 font-semibold mb-4">{post.category}</p>
+          <h1 className="mb-5">{post.title}</h1>
+          <p className="text-base text-slate-200 mb-6">By <Link to="/about" className="underline">MisterClean</Link> · <time dateTime={post.date}>{formatBlogDate(post.date)}</time> · {readingTime(post)}</p>
+          {post.modified && <p className="text-sm text-slate-200 mb-5">Updated <time dateTime={post.modified}>{formatBlogDate(post.modified)}</time></p>}
+          <p className="text-lg text-slate-200">{post.intro}</p>
         </div>
-
-        <section className="py-16 bg-background">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-slate max-w-none">
-              {post.sections.map((section) => (
-                <section key={section.heading} className="mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-5">{section.heading}</h2>
-                  {section.body.map((paragraph) => (
-                    <p key={paragraph} className="text-lg text-slate-700 mb-5">{paragraph}</p>
-                  ))}
-                </section>
-              ))}
-            </div>
-
-            <div className="mt-14 p-8 rounded-lg bg-primary/5 border border-primary/10">
-              <h2 className="text-2xl font-bold mb-4">Need a hand with the cleaning?</h2>
-              <p className="text-slate-700 mb-6">
-                We clean offices, shops and business premises in Adelaide. Tell us what you need done and we’ll discuss a quote.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild>
-                  <Link to={post.cta.path}>{post.cta.text}</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link to="/contact">Get a quote</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <section className="py-16 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between gap-6 mb-10">
-            <div>
-              <h2 className="text-3xl font-bold mb-3">More Cleaning Guides</h2>
-              <p className="text-muted-foreground">Keep improving your cleaning standards with practical advice for commercial facilities.</p>
-            </div>
-            <Button asChild variant="ghost" className="hidden md:inline-flex text-primary hover:text-primary">
-              <Link to="/blog">View All <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedPosts.map((relatedPost) => (
-              <Link key={relatedPost.slug} to={`/blog/${relatedPost.slug}`} className="blog-card p-6">
-                <span className="text-xs font-bold  text-primary mb-3">{relatedPost.category}</span>
-                <h3 className="text-xl font-bold mb-3 hover:text-primary transition-colors">{relatedPost.title}</h3>
-                <p className="text-sm text-muted-foreground">{relatedPost.excerpt}</p>
-              </Link>
-            ))}
+      </section>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <figure><BlogImage post={post} sizes="(min-width: 1024px) 850px, 100vw" priority className="w-full max-h-[480px] object-cover rounded-md border border-slate-200" />{post.imageCaption && <figcaption className="text-sm text-slate-500 mt-3">{post.imageCaption}</figcaption>}</figure>
+      </div>
+      <section className="py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav aria-label="In this article" className="border-y border-slate-200 py-5 mb-10"><p className="font-semibold mb-3">In this article</p><ol className="space-y-2">{post.sections.map((section, index) => <li key={section.heading}><a className="text-primary underline underline-offset-2 py-1 inline-block" href={'#section-' + (index + 1)}>{section.heading}</a></li>)}</ol></nav>
+          {post.sections.map((section, index) => <section id={'section-' + (index + 1)} key={section.heading} className="mb-10 scroll-mt-24">
+            <h2 className="text-2xl mb-5">{section.heading}</h2>
+            {section.body.map(paragraph => <p key={paragraph} className="text-lg text-slate-700 mb-5">{paragraph}</p>)}
+            {section.bullets && <ul className="list-disc pl-6 space-y-3 text-lg text-slate-700 mb-5">{section.bullets.map(item => <li key={item}>{item}</li>)}</ul>}
+            {section.links?.map(link => <Link key={link.path} to={link.path} className="block text-primary underline font-semibold py-3">{link.text}</Link>)}
+          </section>)}
+          <div className="mt-12 p-6 sm:p-8 rounded-md bg-white border border-slate-200">
+            <h2 className="text-2xl mb-4">Need a hand with the cleaning?</h2><p className="text-slate-600 mb-6">We clean offices, shops and business premises in Adelaide. Tell us what you need done and we’ll discuss a quote.</p>
+            <div className="flex flex-wrap gap-3"><Button asChild className="h-auto min-h-11 whitespace-normal text-center"><Link to={post.cta.path}>{post.cta.text}</Link></Button><Button asChild variant="outline"><Link to="/contact">Get a quote</Link></Button></div>
           </div>
         </div>
       </section>
-    </>
-  );
-};
-
-export default BlogArticlePage;
+    </article>
+    <section className="py-12 md:py-16 bg-white border-t border-slate-200"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-8"><h2>More cleaning advice</h2><Link to="/blog" className="inline-flex items-center gap-2 py-3 text-primary font-semibold">All articles <ArrowRight className="w-4 h-4" /></Link></div>
+      <div className="grid md:grid-cols-3 gap-6">{related.map(item => <Link key={item.slug} to={'/blog/' + item.slug} className="blog-card p-6"><p className="text-sm text-primary mb-3">{item.category}</p><h3 className="text-xl mb-3">{item.title}</h3><p className="text-slate-600 text-sm">{item.excerpt}</p></Link>)}</div>
+    </div></section>
+  </>;
+}

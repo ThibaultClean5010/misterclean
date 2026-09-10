@@ -9,6 +9,7 @@ import Reveal from '@/components/Reveal.jsx';
 import QuoteProcess from '@/components/QuoteProcess.jsx';
 import CleaningFAQ from '@/components/CleaningFAQ.jsx';
 import { PHONE, PHONE_HREF } from '@/data/site.js';
+import { blogPosts } from '@/data/blogPosts.js';
 import { trackEnquiry } from '@/lib/quote.js';
 
 const priorities = [
@@ -42,7 +43,10 @@ export default function HomePage() {
     <Reveal><ServiceExplorer /></Reveal>
     <Reveal><QuoteProcess /></Reveal>
     <Reveal><CleaningFAQ /></Reveal>
-    <section className="py-14 md:py-20 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-5 justify-between items-center"><div><h2 className="text-2xl mb-3">Planning your next clean?</h2><p className="text-slate-600">A few useful checklists for keeping offices, shops and other workplaces clean.</p></div><Link to="/blog" className="inline-flex items-center gap-2 text-primary font-semibold py-3">Read the cleaning guides <ArrowRight className="w-4 h-4" /></Link></div></section>
+    <section className="py-14 md:py-20 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-wrap gap-5 justify-between items-center mb-8"><div><h2 className="text-2xl mb-3">From the blog</h2><p className="text-slate-600">Practical advice for planning the cleaning at your workplace.</p></div><Link to="/blog" className="inline-flex items-center gap-2 text-primary font-semibold py-3">All cleaning articles <ArrowRight className="w-4 h-4" /></Link></div>
+      <div className="grid md:grid-cols-3 gap-8">{blogPosts.slice(0, 3).map(post => <article key={post.slug} className="border-t border-slate-200 pt-5"><p className="text-sm text-primary mb-3">{post.category}</p><h3 className="text-xl mb-3"><Link className="hover:underline" to={'/blog/' + post.slug}>{post.title}</Link></h3><p className="text-slate-600 text-sm mb-3">{post.excerpt}</p><Link to={'/blog/' + post.slug} className="inline-flex items-center gap-2 text-primary font-semibold py-3">Read article <ArrowRight className="w-4 h-4" /></Link></article>)}</div>
+    </div></section>
     <section className="py-14 md:py-20 bg-[#203f3a] text-white text-center">
       <div className="max-w-3xl mx-auto px-4"><h2 className="mb-5">Tell us what needs cleaning</h2><p className="text-slate-300 text-lg mb-7 mx-auto">Send us your suburb and a few details about the job, or give us a call. We’ll talk through the work and provide a quote.</p><Button asChild size="lg"><a href="#quick-quote">Get a cleaning quote <ArrowRight className="w-4 h-4 ml-2" /></a></Button></div>
     </section>

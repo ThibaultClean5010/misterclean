@@ -8,12 +8,12 @@ import { trackEnquiry } from '@/lib/quote.js';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const pages = [['Home', '/'], ['Our Work', '/projects'], ['About', '/about'], ['Contact', '/contact']];
+  const pages = [['Home', '/'], ['Our Work', '/projects'], ['Blog', '/blog'], ['About', '/about'], ['Contact', '/contact']];
   return <header className="header-wrapper">
     <a href="#main-content" className="skip-link">Skip to content</a>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 md:h-20 items-center justify-between gap-4">
       <Link to="/" aria-label="MisterClean home" className="shrink-0"><img src={LOGO} alt="MisterClean" width="128" height="56" className="w-28 md:w-32 h-12 object-contain" /></Link>
-      <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
+      <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-4 xl:gap-6">
         <Link to="/" className="header-nav-link" aria-current={pathname === '/' ? 'page' : undefined}>Home</Link>
         <DropdownMenu>
           <DropdownMenuTrigger className="header-nav-link inline-flex items-center gap-1 py-3">Services <ChevronDown className="h-4 w-4" /></DropdownMenuTrigger>
@@ -22,7 +22,7 @@ export default function Header() {
             {serviceOptions.map(item => <DropdownMenuItem key={item.path} asChild><Link to={item.path}>{item.label}</Link></DropdownMenuItem>)}
           </DropdownMenuContent>
         </DropdownMenu>
-        {pages.slice(1).map(([label, href]) => <Link key={href} to={href} className="header-nav-link" aria-current={pathname === href ? 'page' : undefined}>{label}</Link>)}
+        {pages.slice(1).map(([label, href]) => <Link key={href} to={href} className="header-nav-link" aria-current={(pathname === href || (href === '/blog' && pathname.startsWith('/blog/'))) ? 'page' : undefined}>{label}</Link>)}
       </nav>
       <div className="hidden lg:flex items-center gap-4">
         <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="header-phone-link"><Phone className="h-4 w-4" />{PHONE}</a>

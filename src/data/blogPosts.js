@@ -1,4 +1,5 @@
-export const blogPosts = [
+import { newBlogPosts } from './newBlogPosts.js';
+const existingPosts = [
   {
     slug: 'commercial-cleaning-checklist-adelaide-offices',
     title: 'Commercial Cleaning Checklist for Adelaide Offices',
@@ -203,5 +204,7 @@ export const blogPosts = [
     }
   }
 ];
+
+export const blogPosts = [...newBlogPosts, ...existingPosts];
 
 export const getBlogPostBySlug = (slug) => blogPosts.find((post) => post.slug === slug);
