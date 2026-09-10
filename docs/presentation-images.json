@@ -2,7 +2,7 @@
   "created": "2026-09-09",
   "tool": "built-in image_gen.imagegen",
   "mode": "generate",
-  "batch": "Three independent requests in a single parallel batch; one request per asset; no variants or retries.",
+  "batch": "Three original images retained only for their matching services; six additional distinct images generated once each on2026-09-10.",
   "provenance": "Original AI-generated illustrative scenes. No input or source photographs. These do not document MisterClean personnel or client sites.",
   "assets": [
     {
@@ -13,7 +13,8 @@
       "format": "JPEG",
       "path": "public/images/commercial-workspace.jpg",
       "mobilePath": "public/images/commercial-workspace-800.jpg",
-      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "presentation": "Office cleaning only"
     },
     {
       "key": "windows",
@@ -23,17 +24,86 @@
       "format": "JPEG",
       "path": "public/images/commercial-windows.jpg",
       "mobilePath": "public/images/commercial-windows-800.jpg",
-      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "presentation": "Window cleaning only"
     },
     {
-      "key": "deep_clean",
+      "key": "commercial",
       "prompt": "Use case: photorealistic-natural\nAsset type: landscape commercial deep-cleaning service photograph for a commercial cleaning website in Adelaide, Australia; illustrative fictional people and premises, not actual company workers or client sites.\nPrimary request: Full commercial premises deep cleaning, with one adult professional using a realistic compact walk-behind floor scrubber in a spacious, completed commercial interior.\nScene/backdrop: An airy finished business premises with a large neutral hard floor, contemporary architectural details, a few work tables or waiting chairs at the edges, freshly cleaned surfaces and plenty of visible interior context. No construction site or medical setting.\nSubject: Adult cleaner wearing unbranded navy workwear with subtle teal accents, naturally gripping the compact floor scrubber handle, standing in a plausible walking posture behind the machine.\nStyle/medium: Premium editorial photography, real-world documentary appearance and natural materials.\nComposition/framing: Wide landscape around 1536x1024, human and floor scrubber in the middle-right, spacious coherent interior and broad floor area showing the scale of commercial deep cleaning.\nLighting/mood: Natural documentary daylight from broad windows, restrained highlights and realistic matte-to-satin surfaces.\nConstraints: Exactly one original photograph, no text, logos, watermarks, fake endorsements, medical scenes, before/after splits, exaggerated mirror shine, sparks, dramatic mist or unreal machinery; correct human anatomy and coherent machine geometry.",
       "width": 1536,
       "height": 1024,
       "format": "JPEG",
       "path": "public/images/premises-deep-clean.jpg",
       "mobilePath": "public/images/premises-deep-clean-800.jpg",
-      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged."
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "presentation": "Commercial floor maintenance only"
+    },
+    {
+      "key": "builders",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: Clearly show AFTER BUILDERS FINAL CLEANING in a newly renovated empty commercial unit at completion. On the right third, one adult cleaner in practical site workwear, safety boots, gloves, protective glasses and a correctly worn dust respirator uses an industrial dry vacuum, floor nozzle directed precisely along a floor-to-skirting edge to remove settled plaster dust. The industrial vacuum canister and hose are clearly visible near the cleaner. Newly fitted plain cabinetry and a window with remnants of protective film provide unmistakable post-renovation context. Finished yet lightly dusty surfaces, with light settled construction dust near the edge being vacuumed. The left half shows quiet open commercial floor and wall, useful for a hero text overlay. Wide ground-level view. No active construction tools, no demolition, no airborne dust cloud, no wet mess or trip hazards, no asbestos.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/after-builders-dust-removal.jpg",
+      "mobilePath": "public/images/after-builders-dust-removal-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified visible industrial vacuum removing light settled dust near skirting, finished new cabinetry, protective window film, safety glasses/respirator/gloves/boots, quiet left space. A tiny out-of-focus green emergency exit pictogram appears at the rear, with no legible text."
+    },
+    {
+      "key": "deep",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: Clearly show COMMERCIAL PREMISES DEEP CLEANING. In a vacant, modest commercial staff kitchenette with tiled floor, tiled lower wall and a stainless steel bench, a gloved adult cleaner on the right third kneels with suitable knee protection and uses a small hand scrub brush to detail the ingrained floor-to-wall tile edge beside the stainless bench. The hand brush visibly touches the edge, with a small controlled amount of ordinary soil being loosened; this is thorough edge detailing beyond routine cleaning. A reasonable small mop bucket and a folded cleaning cloth nearby support the task. Recognisable workplace amenities, not a residential kitchen. Left side shows quiet tile and commercial kitchenette context for hero overlay. Camera low enough that the brush, tile edge and hands read clearly. No biohazard, no excessive filth, no luxury interior, no domestic home cleaning.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/commercial-deep-clean-detailing.jpg",
+      "mobilePath": "public/images/commercial-deep-clean-detailing-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified kneeling gloved adult brushing tile edge with knee protection; wide enough to retain commercial kitchenette context including stainless benches, sink, urn and microwave. Ordinary soil, bucket and cloth visible."
+    },
+    {
+      "key": "retail",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: Clearly show RETAIL CLEANING in a recognisable modest clothing boutique, with racks of hanging garments, a display table of folded clothing, simple mannequins without visible text and retail shelving. One adult cleaner on the right third in plain unbranded professional workwear is vacuuming the shop floor between the retail fixtures using a compact canister vacuum with a hose and floor head that visibly contacts the floor. Left side retains clear store context and a relatively quiet aisle for hero overlay. Realistic ordinary boutique, soft daylight before opening. No office, no cafe, no emphasis on windows or window washing, no clothing labels or signage.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/retail-shop-cleaning.jpg",
+      "mobilePath": "public/images/retail-shop-cleaning-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified clear clothing boutique with garment racks, mannequins and display table; compact canister vacuum and cleaner at right, no office/cafe ambiguity."
+    },
+    {
+      "key": "restaurant",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: Clearly show RESTAURANT MAINTENANCE CLEANING in an unmistakable restaurant dining room before opening. One adult cleaner on the right third in plain unbranded workwear is wiping a dining table with a microfibre cloth in contact with the table, other hand resting naturally on table edge. Several separate dining tables and chairs, simple upholstered banquettes, a few tidy basic table settings on the other tables, and warm practical dining-room lighting make the setting immediately clear. Left side has relatively quiet dining room context for hero text overlay. The work is ordinary daily maintenance. No commercial kitchen, no extractor cleaning, no industrial machinery, no food hygiene certification imagery, no diners, no excessive staged polish.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/restaurant-dining-cleaning.jpg",
+      "mobilePath": "public/images/restaurant-dining-cleaning-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified recognisable dining room with table settings and banquettes; cleaner wiping table at right. Front-of-house daily maintenance only."
+    },
+    {
+      "key": "home",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: PRIMARY HOME PAGE HERO for a commercial cleaning business. Wide ground-level view of the foyer of an ordinary modern business building, with a matte tile floor, simple reception desk at the far left edge and a discreet commercial waiting area. On the right third, one adult professional cleaner in plain unbranded workwear is mopping using a flat mop with its pad fully resting on the tiled floor. Clearly a business building foyer rather than an office workstation scene or residence. Compose the left 50 percent as visually quiet space, subdued neutral wall and floor, suitable for white headline overlay; no blown-out white background. The scene should be welcoming and credible, not a luxury glass corporate lobby. No text or corporate branding.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/business-foyer-cleaning.jpg",
+      "mobilePath": "public/images/business-foyer-cleaning-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified commercial reception foyer with desk far left, waiting chairs and tiled floor; cleaner flat-mopping at right, quiet neutral wall at left for overlay."
+    },
+    {
+      "key": "about",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: an illustrative photograph for a commercial cleaning business website in Adelaide, Australia. Generate a single landscape image, 1536x1024 pixels, 3:2 aspect ratio.\nStyle: natural editorial photography, realistic materials and ordinary real commercial premises, soft plausible daylight, honest everyday working scene, neutral colors, photographic depth. This is illustrative imagery, not a claim to document an actual company job.\nConstraints: no text, no letters, no logos, no brand marks, no watermark, no collage, no before-and-after split, no exaggerated shine, no staged luxury glass office. Anatomically plausible adult people and sensible cleaning equipment.\nPrimary request: A close editorial detail photograph of an organised UNBRANDED commercial cleaning cart in a modest business utility room. Clearly recognisable cleaning equipment: several neutral unlabeled bottles with closed caps and simple blank label areas, neatly folded microfibre cloths, practical cleaning gloves, a small bucket, and a compact vacuum parked beside the cart. Focus on authentic materials, organized useful supplies and realistic commercial cleaning tools. Tight-to-medium landscape framing at cart height with cart and equipment occupying most of frame, subtly defocused utility room behind, natural window light. No person, no team claim, no abstract stock composition, no household decorations, no bottles with text, no chemical mixing, no branding.",
+      "width": 1536,
+      "height": 1024,
+      "format": "JPEG",
+      "path": "public/images/commercial-cleaning-equipment.jpg",
+      "mobilePath": "public/images/commercial-cleaning-equipment-800.jpg",
+      "export": "JPEG quality82, full1536x1024 and mobile800x533; composition unchanged.",
+      "inspection": "Verified no people, organised commercial cleaning cart with unlabeled capped bottles, cloths, gloves, buckets and compact vacuum in utility room."
     }
-  ]
+  ],
+  "updated": "2026-09-10"
 }

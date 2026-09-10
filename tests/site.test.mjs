@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { publicPaths, SITE_URL, CONTACT_EMAIL, serviceOptions } from '../src/data/site.js';
 import { quoteEmail } from '../src/lib/quote.js';
 import { render } from '../.prerender/entry-server.js';
-import { cleaningOffers, cleaningPlans, cleaningQuotePath, cleaningPhotos } from '../src/data/cleaningExperience.js';
+import { cleaningOffers, cleaningPlans, cleaningQuotePath, cleaningPhotos, servicePhotoKeys } from '../src/data/cleaningExperience.js';
 
 const fileFor = route => 'dist/' + (route === '/' ? 'index' : route.slice(1)) + '.html';
 const matches = (html, pattern) => [...html.matchAll(pattern)];
@@ -66,6 +67,31 @@ test('each presentation photo has full size and mobile assets in the published o
       assert.ok(bytes.length < 300000, path + ': optimised image size');
     }
   }
+});
+
+test('each service uses its own relevant image, with separate home and about images', async () => {
+  const sources = new Set(Object.values(cleaningPhotos).map(photo => photo.src));
+  const imagesOn = async route => matches(await readFile(fileFor(route), 'utf8'), /<img\b[^>]*src="([^"]+)"/g).map(match => match[1]).filter(src => sources.has(src));
+  const used = new Set();
+  const hashes = new Set();
+  for (const service of serviceOptions) {
+    const photo = cleaningPhotos[servicePhotoKeys[service.value]];
+    assert.ok(photo, service.value + ': assigned photo');
+    assert.deepEqual(await imagesOn(service.path), [photo.src], service.value + ': rendered service image');
+    assert.ok(!used.has(photo.src), service.value + ': no reuse between services');
+    used.add(photo.src);
+    const hash = createHash('sha256').update(await readFile('dist' + photo.src)).digest('hex');
+    assert.ok(!hashes.has(hash), service.value + ': not a renamed duplicate');
+    hashes.add(hash);
+  }
+  assert.deepEqual(await imagesOn('/'), [cleaningPhotos.home.src, cleaningPhotos.commercial.src]);
+  assert.deepEqual(await imagesOn('/about'), [cleaningPhotos.about.src]);
+  assert.ok(!used.has(cleaningPhotos.home.src));
+  assert.ok(!used.has(cleaningPhotos.about.src));
+  assert.notEqual(cleaningPhotos.home.src, cleaningPhotos.about.src);
+  const catalogue = await imagesOn('/services');
+  assert.equal(new Set(catalogue).size, cleaningOffers.length, 'service catalogue has no repeated images');
+  for (const offer of cleaningOffers) assert.equal(offer.photo, servicePhotoKeys[offer.value], offer.value + ': consistent image in selector and detail page');
 });
 
 test('sitemap and robots expose only canonical public pages', async () => {

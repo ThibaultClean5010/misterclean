@@ -4,17 +4,17 @@ import { Link, useLocation } from 'react-router-dom';
 import { serviceOptions } from '@/data/site.js';
 import { Button } from '@/components/ui/button';
 import CleaningPhoto from '@/components/CleaningPhoto.jsx';
+import { servicePhotoKeys } from '@/data/cleaningExperience.js';
 
 const ServiceHero = ({ title, tagline }) => {
   const { pathname } = useLocation();
-  const service = serviceOptions.find(item => item.path === pathname);
-  const photo = ['window-cleaning', 'retail'].includes(service?.value) ? 'windows'
-    : ['after-builders', 'commercial-deep-cleaning', 'restaurant'].includes(service?.value) ? 'deep' : 'workplace';
+  const service = serviceOptions.find(item => item.path === pathname.replace(/\/$/, ''));
+  const photo = servicePhotoKeys[service?.value];
   return (
     <section className="relative flex items-center bg-slate-950 overflow-hidden pt-16 md:pt-20">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-y-0 right-0 z-0 w-full lg:w-[58%] lg:max-w-[1100px]">
         <CleaningPhoto photo={photo} priority className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-slate-950/45 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/20" />
+        <div className="absolute inset-0 bg-slate-950/65 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 md:py-20">

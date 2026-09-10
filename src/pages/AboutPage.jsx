@@ -23,7 +23,7 @@ export default function AboutPage() {
           <p className="text-lg text-muted-foreground">For hard-to-reach windows or other areas requiring closer assessment, we confirm suitable access before booking.</p>
           <div className="flex flex-wrap gap-3"><Button asChild><Link to="/contact">Request a Quote</Link></Button><Button asChild variant="outline"><Link to="/services">View our services</Link></Button></div>
         </div>
-        <CleaningPhoto photo="workplace" sizes="(min-width: 1024px) 50vw, 100vw" className="w-full aspect-[5/4] object-cover rounded-2xl" />
+        <CleaningPhoto photo="about" sizes="(min-width: 1024px) 50vw, 100vw" className="w-full aspect-[5/4] object-cover rounded-2xl" />
       </div>
     </section>
     <CertificationsSection />

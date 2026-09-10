@@ -14,7 +14,7 @@ import { trackEnquiry } from '@/lib/quote.js';
 export default function HomePage() {
   return <>
     <section className="relative bg-slate-950 text-white pt-16 md:pt-20 overflow-hidden">
-      <div className="absolute inset-0"><CleaningPhoto photo="workplace" priority className="w-full h-full object-cover" /><div className="absolute inset-0 bg-slate-950/65 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/10" /></div>
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[58%] lg:max-w-[1100px]"><CleaningPhoto photo="home" priority className="w-full h-full object-cover" /><div className="absolute inset-0 bg-slate-950/65 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/10" /></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-teal-200 mb-5">Cleaning for Adelaide businesses</p>
