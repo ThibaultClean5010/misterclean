@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { trackEnquiry } from '@/lib/quote.js';
 import { serviceOptions } from '@/data/site.js';
 import { Button } from '@/components/ui/button';
 
@@ -20,7 +21,7 @@ const ServiceCTA = ({ serviceName }) => {
             <Link to={service ? '/contact?service=' + service.value : '/contact'}>Request a Quote</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="h-14 px-10 text-base font-semibold border-white/20 text-white bg-transparent hover:bg-white/10 hover:text-white">
-            <a href="tel:0474597325">Call 0474 597 325</a>
+            <a href="tel:+61474597325" onClick={() => trackEnquiry('phone_click', service?.value)}>Call 0474 597 325</a>
           </Button>
         </div>
       </div>

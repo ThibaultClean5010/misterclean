@@ -38,6 +38,7 @@ function App({ serverPages = {} }) {
             <Route path="/services/restaurant-cleaning" element={page('RestaurantCleaningPage')} />
             <Route path="/blog" element={page('BlogPage')} />
             <Route path="/blog/:slug" element={page('BlogArticlePage')} />
+            <Route path="/projects" element={page('ProjectsPage')} />
             <Route path="/about" element={page('AboutPage')} />
             <Route path="/contact" element={page('ContactPage')} />
             <Route path="/privacy" element={page('PrivacyPage')} />

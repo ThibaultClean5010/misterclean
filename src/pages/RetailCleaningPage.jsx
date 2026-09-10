@@ -11,18 +11,18 @@ import CertificationsSection from '@/components/CertificationsSection.jsx';
 
 const RetailCleaningPage = () => {
   const steps = [
-    { title: 'Floor Care & Maintenance', description: 'Comprehensive floor cleaning including sweeping, mopping, buffing, and waxing to ensure a pristine shopping environment.' },
+    { title: 'Floor Care & Maintenance', description: 'Sweep, vacuum and mop the agreed floors using methods suited to their materials.' },
     { title: 'Display & Shelf Dusting', description: 'Meticulous dusting and wiping of display cases, shelving units, and product areas to highlight your merchandise.' },
     { title: 'Fitting Room Sanitization', description: 'Regular cleaning and sanitization of fitting rooms, mirrors, and seating areas for customer comfort and hygiene.' },
     { title: 'Checkout & POS Cleaning', description: 'Disinfection of high-touch areas including checkout counters, payment terminals, and customer service desks.' },
     { title: 'Window & Storefront Cleaning', description: 'Streak-free cleaning of interior and exterior windows, glass doors, and storefront displays to attract foot traffic.' },
-    { title: 'Restroom Maintenance', description: 'Thorough cleaning and restocking of customer and staff restrooms to maintain high hygiene standards.' }
+    { title: 'Restroom Maintenance', description: 'Clean customer and staff washrooms, with any restocking requirements agreed in advance.' }
   ];
 
   return (
     <>
       <ServiceHero 
-        title="Retail Cleaning Services"
+        title="Retail & Shop Cleaning in Adelaide"
         tagline="Create an inviting shopping experience. We ensure your retail space is immaculate, reflecting the quality of your brand and products."
       />
       
@@ -46,8 +46,8 @@ const RetailCleaningPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CertificationBadge 
                   icon={Store}
-                  title="Retail Specialists"
-                  description="Trained in retail-specific cleaning protocols"
+                  title="Retail Cleaning Plans"
+                  description="Tasks planned around your shop layout and trading hours"
                   index={0}
                 />
                 <CertificationBadge 

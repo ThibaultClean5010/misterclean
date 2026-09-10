@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Mail, Copy, Check } from 'lucide-react';
+import { Mail, Copy, Check, ArrowRight, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { CONTACT_EMAIL, serviceOptions } from '@/data/site.js';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF, serviceOptions } from '@/data/site.js';
 import { quoteEmail, trackEnquiry } from '@/lib/quote.js';
+import { validateQuote } from '@/lib/quoteValidation.js';
 import { cleaningPlans, windowAccessOptions } from '@/data/cleaningExperience.js';
 
-export default function QuoteForm() {
+const selectStyle = 'w-full min-h-12 rounded-lg border border-slate-300 bg-white px-3 text-base';
+export default function QuoteForm({ compact = false }) {
+  const id = useId();
   const [params] = useSearchParams();
   const requested = params.get('service');
   const requestedPlan = params.get('plan');
@@ -18,78 +20,132 @@ export default function QuoteForm() {
   const [service, setService] = useState('commercial');
   const [plan, setPlan] = useState('not-sure');
   const [access, setAccess] = useState('standard');
+  const [contactMethod, setContactMethod] = useState('email');
+  const [contacts, setContacts] = useState({ email: '', phone: '' });
   const [ready, setReady] = useState(false);
-  useEffect(() => {
-    setReady(true);
-    setService(serviceOptions.some(item => item.value === requested) ? requested : 'commercial');
-    setPlan(cleaningPlans.some(item => item.value === requestedPlan) ? requestedPlan : 'not-sure');
-    setAccess(windowAccessOptions.some(item => item.value === requestedAccess) ? requestedAccess : 'standard');
-    setPrepared(null);
-    setCopied(false);
-    setCopyError(false);
-  }, [requested, requestedPlan, requestedAccess]);
+  const [directSend, setDirectSend] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [accepted, setAccepted] = useState(false);
   const [prepared, setPrepared] = useState(null);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
-  const [validationError, setValidationError] = useState('');
-  function invalidate() { setPrepared(null); setCopied(false); setCopyError(false); setValidationError(''); }
-  function prepare(event) {
+  const [error, setError] = useState('');
+  const sending = useRef(false);
+  const submissionId = useRef('');
+  const started = useRef(false);
+  const resultRef = useRef(null);
+  useEffect(() => {
+    setReady(true);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 5000);
+    fetch('/api/quote', { signal: controller.signal, cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null)
+      .then(data => { if (!controller.signal.aborted) setDirectSend(data?.directSend === true); })
+      .catch(() => {}).finally(() => clearTimeout(timer));
+    return () => { controller.abort(); clearTimeout(timer); };
+  }, []);
+  useEffect(() => {
+    setService(serviceOptions.some(item => item.value === requested) ? requested : 'commercial');
+    setPlan(cleaningPlans.some(item => item.value === requestedPlan) ? requestedPlan : 'not-sure');
+    setAccess(windowAccessOptions.some(item => item.value === requestedAccess) ? requestedAccess : 'standard');
+    setPrepared(null); setError(''); setAccepted(false);
+  }, [requested, requestedPlan, requestedAccess]);
+  useEffect(() => { if (accepted) resultRef.current?.focus(); }, [accepted]);
+  function invalidate() { setPrepared(null); setCopied(false); setCopyError(false); setError(''); }
+  function start() {
+    if (!started.current) { started.current = true; trackEnquiry('quote_form_started', service); }
+  }
+  async function submit(event) {
     event.preventDefault();
-    const values = Object.fromEntries(new FormData(event.currentTarget));
-    for (const key of ['name', 'business', 'email', 'suburb']) {
-      if (!values[key]?.trim()) {
-        setValidationError('Please complete each required field.');
-        event.currentTarget.elements.namedItem(key)?.focus();
-        return;
-      }
+    if (sending.current || !ready) return;
+    const form = event.currentTarget;
+    const fields = Object.fromEntries(new FormData(form));
+    const checked = validateQuote({ ...fields, service, plan, access });
+    if (checked.error) {
+      setError(checked.error);
+      form.elements.namedItem(checked.field)?.focus();
+      return;
     }
-    const email = quoteEmail({ ...values, service, plan, access: service === 'window-cleaning' ? access : '' });
-    setPrepared(email);
-    setCopied(false);
-    setCopyError(false);
-    trackEnquiry('quote_email_prepared', service);
+    const email = quoteEmail(checked.values);
+    setError(''); setCopied(false); setCopyError(false);
+    if (!directSend) {
+      setPrepared(email);
+      trackEnquiry('quote_email_opened', service);
+      window.location.assign(email.href);
+      return;
+    }
+    sending.current = true; setBusy(true);
+    if (!submissionId.current) submissionId.current = globalThis.crypto?.randomUUID?.() || Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 18000);
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: controller.signal,
+        body: JSON.stringify({ ...checked.values, website: fields.website || '', submissionId: submissionId.current })
+      });
+      const data = await response.json();
+      if (!response.ok || data.accepted !== true) throw new Error(data.error || 'We could not confirm submission. Please try again or use email below.');
+      setAccepted(true); setPrepared(null);
+      // Provider acceptance, not a claim that the email has reached the inbox.
+      trackEnquiry('quote_submission_accepted', service);
+    } catch (failure) {
+      setPrepared(email);
+      setError(failure.name === 'AbortError' ? 'We could not confirm submission. Your details are still here. Retry or use email below.' : failure.message);
+      trackEnquiry('quote_submission_failed', service);
+    } finally { clearTimeout(timer); sending.current = false; setBusy(false); }
   }
   async function copy() {
-    try {
-      await navigator.clipboard.writeText(prepared.subject + '\n\n' + prepared.body);
-      setCopied(true);
-      setCopyError(false);
-    } catch { setCopyError(true); }
+    try { await navigator.clipboard.writeText(prepared.subject + '\n\n' + prepared.body); setCopied(true); setCopyError(false); }
+    catch { setCopyError(true); }
   }
-  return <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-    <h2 className="text-2xl mb-2">Tell us about your premises</h2>
-    <p className="text-muted-foreground mb-6">Complete these details to prepare your quote email. You can review it before sending.</p>
-    <noscript>Please enable JavaScript to prepare an email here, or use the phone and email contact links on this page.</noscript>
-    <form onSubmit={prepare} onChange={invalidate} className="space-y-5">
-      <fieldset disabled={!ready} className="space-y-5">
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div className="space-y-2"><Label htmlFor="quote-name">Your name *</Label><Input id="quote-name" name="name" autoComplete="name" required maxLength={100} /></div>
-        <div className="space-y-2"><Label htmlFor="quote-business">Business name *</Label><Input id="quote-business" name="business" autoComplete="organization" required maxLength={120} /></div>
-        <div className="space-y-2"><Label htmlFor="quote-email">Email *</Label><Input id="quote-email" name="email" type="email" autoComplete="email" required maxLength={160} /></div>
-        <div className="space-y-2"><Label htmlFor="quote-phone">Phone (optional)</Label><Input id="quote-phone" name="phone" type="tel" autoComplete="tel" maxLength={40} /></div>
-        <div className="space-y-2"><Label htmlFor="quote-suburb">Suburb *</Label><Input id="quote-suburb" name="suburb" autoComplete="address-level2" required maxLength={100} /></div>
-        <div className="space-y-2">
-          <Label htmlFor="quote-service">Cleaning service *</Label>
-          <Select value={service} onValueChange={value => { setService(value); invalidate(); }}><SelectTrigger id="quote-service"><SelectValue /></SelectTrigger><SelectContent>{serviceOptions.map(item => <SelectItem key={item.value} value={item.value}>{item.label}</SelectItem>)}</SelectContent></Select>
-        </div>
-        <div className="space-y-2"><Label htmlFor="quote-plan">Cleaning frequency</Label><Select value={plan} onValueChange={value => { setPlan(value); invalidate(); }}><SelectTrigger id="quote-plan"><SelectValue /></SelectTrigger><SelectContent>{cleaningPlans.map(option => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select></div>
-        {service === 'window-cleaning' && <div className="space-y-2"><Label htmlFor="quote-access">Window access</Label><Select value={access} onValueChange={value => { setAccess(value); invalidate(); }}><SelectTrigger id="quote-access"><SelectValue /></SelectTrigger><SelectContent>{windowAccessOptions.map(option => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select></div>}
-      </div>
-      <div className="space-y-2"><Label htmlFor="quote-details">What needs cleaning? (optional)</Label><Textarea id="quote-details" name="details" maxLength={1200} rows={4} placeholder="Approximate size, one-off or regular cleaning, preferred times and access requirements." /></div>
-      <p className="text-sm text-muted-foreground">Your details stay in this page until you choose to send the email. Read our <a href="/privacy" className="text-primary underline">privacy information</a>.</p>
-      <Button type="submit" size="lg" className="w-full sm:w-auto"><Mail className="h-4 w-4 mr-2" /> Prepare quote email</Button>
-      {validationError && <p role="alert" className="text-destructive">{validationError}</p>}
-      </fieldset>
-    </form>
-    {prepared && <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-5" aria-live="polite">
-      <h3 className="text-lg mb-2">Your enquiry is ready to send</h3>
-      <p className="text-sm mb-4">Nothing has been sent yet. Open the email in your mail app, or copy the details and send them to <a className="text-primary underline break-all" href={'mailto:' + CONTACT_EMAIL}>{CONTACT_EMAIL}</a>.</p>
-      <Textarea readOnly aria-label="Prepared quote email" value={prepared.subject + '\n\n' + prepared.body} rows={8} className="bg-white mb-4" />
-      <div className="flex flex-wrap gap-3">
-        <Button asChild><a href={prepared.href} onClick={() => trackEnquiry('quote_email_opened', service)}>Open email to send</a></Button>
-        <Button variant="outline" onClick={copy}>{copied ? <Check className="h-4 w-4 mr-2" /> : <Copy className="h-4 w-4 mr-2" />}{copied ? 'Copied' : 'Copy details'}</Button>
-      </div>
-      {copyError && <p className="mt-3 text-sm" role="status">Please select and copy the text above, then paste it into your email.</p>}
+  return <div className={'bg-white rounded-2xl border border-slate-200 shadow-xl shadow-teal-950/5 ' + (compact ? 'p-5 sm:p-7' : 'p-6 sm:p-8')}>
+    {accepted ? <div ref={resultRef} tabIndex={-1} role="status" className="py-8 space-y-4">
+      <span className="inline-flex p-3 bg-teal-50 rounded-full text-primary"><Check className="w-7 h-7" /></span>
+      <h2 className="text-2xl">Thank you — your enquiry has been submitted</h2>
+      <p>We will review the details and contact you to discuss the scope and quote. Your clean is booked only after we agree the arrangements with you.</p>
+      <a href={PHONE_HREF} className="inline-flex text-primary font-semibold py-3" onClick={() => trackEnquiry('phone_click')}>Prefer to talk? {PHONE}</a>
+    </div> : <>
+      <h2 className="text-2xl mb-2">Get a cleaning quote</h2>
+      <p className="text-sm text-muted-foreground mb-5">A few details to get started. Scope and price agreed before you book.</p>
+      <noscript>Call <a href={PHONE_HREF}>{PHONE}</a> or email <a href={'mailto:' + CONTACT_EMAIL}>{CONTACT_EMAIL}</a> to request your quote.</noscript>
+      <form onSubmit={submit} onChange={invalidate} onFocus={start} aria-label="Cleaning quote enquiry">
+        <fieldset disabled={!ready || busy} className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5"><Label htmlFor={id + '-service'}>Cleaning service</Label>
+              <select id={id + '-service'} name="service" className={selectStyle} value={service} onChange={event => setService(event.target.value)}>{serviceOptions.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}</select>
+            </div>
+            <div className="space-y-1.5"><Label htmlFor={id + '-suburb'}>Suburb *</Label><Input id={id + '-suburb'} name="suburb" autoComplete="address-level2" required maxLength={100} placeholder="e.g. Hindmarsh" className="h-12" /></div>
+            <div className="space-y-1.5 sm:col-span-2"><Label htmlFor={id + '-name'}>Your name *</Label><Input id={id + '-name'} name="name" autoComplete="name" required maxLength={100} className="h-12" /></div>
+          </div>
+          <fieldset><legend className="text-sm font-medium mb-2">How should we contact you?</legend><div className="flex gap-4 mb-3">
+            {['email', 'phone'].map(method => <label key={method} className="inline-flex gap-2 items-center text-sm min-h-8 cursor-pointer"><input type="radio" name="contactMethod" value={method} checked={contactMethod === method} onChange={() => setContactMethod(method)} className="accent-teal-700 w-4 h-4" />{method === 'email' ? 'Email' : 'Phone'}</label>)}
+          </div>
+            <Label htmlFor={id + '-contact'} className="sr-only">{contactMethod === 'email' ? 'Email address' : 'Phone number'} *</Label>
+            <Input value={contacts[contactMethod]} onChange={event => setContacts(previous => ({ ...previous, [contactMethod]: event.target.value }))} id={id + '-contact'} name={contactMethod} type={contactMethod === 'email' ? 'email' : 'tel'} autoComplete={contactMethod === 'email' ? 'email' : 'tel'} placeholder={contactMethod === 'email' ? 'you@business.com.au' : 'Your best contact number'} required maxLength={contactMethod === 'email' ? 160 : 40} className="h-12" />
+          </fieldset>
+          {service === 'window-cleaning' && <div className="space-y-1.5"><Label htmlFor={id + '-access'}>Window access</Label><select id={id + '-access'} name="access" value={access} onChange={event => setAccess(event.target.value)} className={selectStyle}>{windowAccessOptions.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}</select></div>}
+          <details className="rounded-lg border border-slate-200 px-4 py-3">
+            <summary className="text-sm font-semibold cursor-pointer">Add timing or requirements (optional)</summary>
+            <div className="space-y-4 pt-4">
+              <div className="space-y-1.5"><Label htmlFor={id + '-plan'}>Cleaning frequency</Label><select id={id + '-plan'} name="plan" value={plan} onChange={event => setPlan(event.target.value)} className={selectStyle}>{cleaningPlans.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}</select></div>
+              <div className="space-y-1.5"><Label htmlFor={id + '-business'}>Business name</Label><Input id={id + '-business'} name="business" autoComplete="organization" maxLength={120} /></div>
+              <div className="space-y-1.5"><Label htmlFor={id + '-details'}>What needs attention?</Label><Textarea id={id + '-details'} name="details" maxLength={1200} rows={3} placeholder="Approximate size, preferred times and areas to clean." /></div>
+            </div>
+          </details>
+          <div className="hidden" aria-hidden="true"><label htmlFor={id + '-website'}>Leave this field empty</label><input id={id + '-website'} name="website" tabIndex={-1} autoComplete="off" /></div>
+          <p className="text-xs text-slate-600">{directSend ? 'Send your details to MisterClean so we can respond to your enquiry.' : 'Opens a ready-to-send email in your mail app. Review it and press Send there.'} <a href="/privacy" className="text-primary underline">Privacy</a>.</p>
+          <Button type="submit" size="lg" className="w-full min-h-12">{busy ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : directSend ? <ArrowRight className="w-4 h-4 mr-2" /> : <Mail className="w-4 h-4 mr-2" />}{busy ? 'Submitting…' : directSend ? 'Send quote request' : 'Continue by email'}</Button>
+          {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+        </fieldset>
+      </form>
+    </>}
+    {prepared && <div className="mt-5 rounded-xl border border-primary/20 bg-teal-50 p-4" aria-live="polite">
+      <h3 className="text-lg mb-2">{directSend ? 'You can also send your details by email' : 'Send the email to finish your enquiry'}</h3>
+      <p className="text-sm mb-3">{directSend ? 'If the request already reached us, mention that this is a follow-up.' : 'Nothing has been sent by this page. If your mail app did not open, use the link or copy your details below.'}</p>
+      <Textarea readOnly aria-label="Prepared quote email" value={prepared.subject + '\n\n' + prepared.body} rows={5} className="bg-white mb-3" />
+      <div className="flex flex-wrap gap-2"><Button asChild><a href={prepared.href} onClick={() => trackEnquiry('quote_email_opened', service)}>Open email</a></Button><Button variant="outline" onClick={copy}>{copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}{copied ? 'Copied' : 'Copy details'}</Button></div>
+      <p className="text-xs mt-3 break-all">Send to <a className="underline" href={'mailto:' + CONTACT_EMAIL}>{CONTACT_EMAIL}</a></p>
+      {copyError && <p className="mt-3 text-sm" role="status">Select and copy the text above, then paste it into your email.</p>}
     </div>}
   </div>;
 }

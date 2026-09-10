@@ -8,7 +8,7 @@ import { trackEnquiry } from '@/lib/quote.js';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const pages = [['Home', '/'], ['Blog', '/blog'], ['About', '/about'], ['Contact', '/contact']];
+  const pages = [['Home', '/'], ['Our Work', '/projects'], ['About', '/about'], ['Contact', '/contact']];
   return <header className="header-wrapper">
     <a href="#main-content" className="skip-link">Skip to content</a>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 md:h-20 items-center justify-between gap-4">

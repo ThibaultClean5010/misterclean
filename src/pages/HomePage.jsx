@@ -1,48 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowDown, Phone } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ArrowRight, Phone, Check, Building2, PanelsTopLeft, Sparkles, HardHat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import QuoteForm from '@/components/QuoteForm.jsx';
+import ProjectShowcase from '@/components/ProjectShowcase.jsx';
 import ServiceExplorer from '@/components/ServiceExplorer.jsx';
-import CleaningPhoto from '@/components/CleaningPhoto.jsx';
 import Reveal from '@/components/Reveal.jsx';
-import CertificationsSection from '@/components/CertificationsSection.jsx';
 import QuoteProcess from '@/components/QuoteProcess.jsx';
 import CleaningFAQ from '@/components/CleaningFAQ.jsx';
-import { blogPosts } from '@/data/blogPosts.js';
-import { PHONE_HREF } from '@/data/site.js';
+import { PHONE, PHONE_HREF } from '@/data/site.js';
 import { trackEnquiry } from '@/lib/quote.js';
+
+const priorities = [
+  { value: 'commercial', title: 'Regular cleaning', detail: 'Workplaces, shops & shared areas', icon: Building2 },
+  { value: 'window-cleaning', title: 'Windows & glass', detail: 'One-off, recurring & hard-to-reach', icon: PanelsTopLeft },
+  { value: 'commercial-deep-cleaning', title: 'A complete deep clean', detail: 'A thorough premises refresh', icon: Sparkles },
+  { value: 'after-builders', title: 'After building work', detail: 'Dust, detailing & handover', icon: HardHat }
+];
 export default function HomePage() {
+  const [params] = useSearchParams();
+  const selected = params.get('service');
   return <>
-    <section className="relative bg-slate-950 text-white pt-16 md:pt-20 overflow-hidden">
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[58%] lg:max-w-[1100px]"><CleaningPhoto photo="home" priority className="w-full h-full object-cover" /><div className="absolute inset-0 bg-slate-950/65 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/80 lg:to-slate-950/10" /></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-teal-200 mb-5">Cleaning for Adelaide businesses</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-5">Commercial cleaning in Adelaide</h1>
-          <p className="text-lg md:text-xl text-slate-200 mb-7">One-off and regular cleaning for workplaces, shops and commercial premises. From everyday upkeep to windows, after-builders cleans and complete deep cleaning.</p>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="h-12 px-6"><Link to="/contact">Request a Quote</Link></Button>
-            <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"><a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')}><Phone className="h-4 w-4 mr-2" />Call us</a></Button>
-          </div>
-          <p className="mt-5 text-sm text-slate-300">Scope, access and timing agreed before you book.</p><a href="#find-your-clean" className="inline-flex items-center gap-2 text-teal-200 hover:text-white font-semibold py-3 mt-2">Help me choose a clean <ArrowDown className="w-4 h-4" /></a>
+    <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-gradient-to-br from-white via-teal-50/70 to-slate-50 border-b border-teal-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-8 lg:gap-14 items-start">
+        <div className="lg:pt-5">
+          <p className="text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.16em] mb-4">For Adelaide businesses</p>
+          <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4">Commercial cleaning <span className="text-primary">in Adelaide.</span></h1>
+          <p className="text-xl sm:text-2xl font-semibold text-slate-800 mb-4">A cleaner space. A better working day.</p>
+          <p className="text-base sm:text-lg text-slate-600 mb-7">From regular workplace upkeep to windows, after-builders cleans and a complete premises refresh. Tell us what needs attention.</p>
+          <div className="grid grid-cols-2 gap-3">{priorities.map(item => <Link key={item.value} to={'/?service=' + item.value + '#quick-quote'} onClick={() => trackEnquiry('service_selected', item.value)} className={'group rounded-xl border bg-white p-3 sm:p-4 flex gap-3 transition-colors hover:border-primary focus-visible:border-primary ' + (selected === item.value ? 'border-primary ring-1 ring-primary' : 'border-slate-200')}>
+            <item.icon className="hidden sm:block w-5 h-5 mt-0.5 shrink-0 text-primary" /><div className="min-w-0"><span className="block font-semibold text-sm mb-1">{item.title}</span><span className="block text-xs text-slate-600">{item.detail}</span></div><ArrowRight className="hidden sm:block w-4 h-4 ml-auto shrink-0 mt-1 text-slate-400 group-hover:text-primary" />
+          </Link>)}</div>
+          <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="inline-flex items-center gap-2 font-semibold text-primary py-3 mt-4"><Phone className="w-4 h-4" />Prefer to talk? {PHONE}</a>
+          <Link to="/projects" className="block underline text-sm text-slate-600 py-2">See our project photos</Link>
         </div>
+        <div id="quick-quote" className="scroll-mt-24"><QuoteForm compact /></div>
       </div>
+      <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-3 mt-8 text-sm text-slate-600">{['One-off and recurring visits', 'Scope and price agreed before booking', 'Access and timing arranged with you'].map(item => <li key={item} className="inline-flex items-center gap-2"><Check className="w-4 h-4 shrink-0 text-primary" />{item}</li>)}</ul>
     </section>
-    <CertificationsSection />
+    <Reveal><ProjectShowcase /></Reveal>
     <Reveal><ServiceExplorer /></Reveal>
     <Reveal><QuoteProcess /></Reveal>
     <Reveal><CleaningFAQ /></Reveal>
-    <section className="py-14 md:py-20 bg-slate-50 border-y border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-between items-end gap-4 mb-10"><div><h2 className="mb-3">Practical cleaning guides</h2><p className="text-muted-foreground">Checklists and advice for planning your next clean.</p></div><Link to="/blog" className="text-primary font-semibold py-3">All cleaning guides</Link></div>
-        <div className="grid md:grid-cols-3 gap-6">{blogPosts.slice(0, 3).map(post => <article key={post.slug} className="blog-card">
-          <Link to={'/blog/' + post.slug} className="block aspect-[16/10] overflow-hidden"><img src={post.image} alt={post.imageAlt} width="640" height="400" loading="lazy" decoding="async" className="w-full h-full object-cover" /></Link>
-          <div className="p-6"><p className="text-xs font-bold uppercase tracking-wide text-primary">{post.category}</p><h3 className="text-xl my-3"><Link to={'/blog/' + post.slug}>{post.title}</Link></h3><p className="text-sm text-muted-foreground mb-5">{post.excerpt}</p><Link to={'/blog/' + post.slug} className="text-primary font-semibold text-sm">Read guide</Link></div>
-        </article>)}</div>
-      </div>
-    </section>
+    <section className="py-14 md:py-20 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-5 justify-between items-center"><div><h2 className="text-2xl mb-3">Planning your next clean?</h2><p className="text-slate-600">Explore our practical checklists for offices, shops and commercial premises.</p></div><Link to="/blog" className="inline-flex items-center gap-2 text-primary font-semibold py-3">Read the cleaning guides <ArrowRight className="w-4 h-4" /></Link></div></section>
     <section className="py-14 md:py-20 bg-slate-950 text-white text-center">
-      <div className="max-w-3xl mx-auto px-4"><h2 className="mb-5">Tell us what needs cleaning</h2><p className="text-slate-300 text-lg mb-7 mx-auto">Share a few details about your premises. We will discuss the scope, access and suitable cleaning arrangements.</p><Button asChild size="lg"><Link to="/contact">Request a Quote</Link></Button></div>
+      <div className="max-w-3xl mx-auto px-4"><h2 className="mb-5">One less thing on your business to-do list</h2><p className="text-slate-300 text-lg mb-7 mx-auto">Start with your service and suburb. We will discuss what your premises need and put together the cleaning scope.</p><Button asChild size="lg"><a href="#quick-quote">Get a cleaning quote <ArrowRight className="w-4 h-4 ml-2" /></a></Button></div>
     </section>
   </>;
 }

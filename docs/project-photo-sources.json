@@ -1,0 +1,37 @@
+{
+  "source": "Photos supplied by MisterClean for website use",
+  "processing": "Web copies resized and JPEG-compressed; original composition and cleaning state retained. Camera/GPS metadata not copied. Original source files untouched.",
+  "photos": [
+    {
+      "file": "cafe-fitout-kitchen-before.jpg",
+      "original": "zitto pre clean kitchen a prendre.jpg",
+      "use": "Before floor cleaning during ongoing café fit-out"
+    },
+    {
+      "file": "cafe-fitout-kitchen-after.jpg",
+      "original": "zitto pre clean kitchen.jpg",
+      "use": "After floor cleaning; not a completed kitchen or hygiene certification"
+    },
+    {
+      "file": "hindmarsh-retail-after-builders.jpg",
+      "original": "Post construction hindmarsh 3_3.jpg",
+      "use": "After-builders service hero"
+    },
+    {
+      "file": "hindmarsh-shopfront-interior.jpg",
+      "original": "Post contrcution hindmarsh 1_3.jpg",
+      "use": "Retail service and Hindmarsh project"
+    },
+    {
+      "file": "hindmarsh-retail-counter.jpg",
+      "original": "Post construction Hindmarsh 2_3.jpg",
+      "use": "About page"
+    },
+    {
+      "file": "entrance-glass-before-cleaning.jpg",
+      "original": "dirty windows .jpg",
+      "use": "Window cleaning before image only"
+    }
+  ],
+  "excluded": "Supplied PNG after views were not used as cleaning-result evidence because changed fittings and unavailable provenance make a cleaning-only comparison uncertain."
+}

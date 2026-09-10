@@ -14,7 +14,7 @@ const CommercialCleaningPage = () => {
 
       <ServiceHero 
         title="Commercial Cleaning Services for Adelaide Businesses"
-        tagline="Elevate your corporate environment. Consistent, discreet, and immaculate cleaning protocols tailored specifically for professional B2B spaces."
+        tagline="Cleaning for Adelaide workplaces, shops and shared areas, with tasks and frequency planned around your premises."
       />
       
       <ServiceNavigation />
@@ -100,7 +100,7 @@ const CommercialCleaningPage = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Restroom deep cleaning and restocking</span>
+                    <span>Washroom cleaning and agreed supply requirements</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
@@ -141,7 +141,7 @@ const CommercialCleaningPage = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Floor buffing and waxing</span>
+                    <span>Floor detailing assessed before quoting</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
@@ -164,7 +164,7 @@ const CommercialCleaningPage = () => {
         {/* Guarantees & SLAs */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-16">Key Benefits & Guarantees</h2>
+            <h2 className="text-3xl font-bold text-center mb-16">Planning Your Commercial Clean</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={ClipboardList}

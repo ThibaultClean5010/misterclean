@@ -11,7 +11,7 @@ import ServiceCTA from '@/components/ServiceCTA.jsx';
 const RestaurantCleaningPage = () => {
   const steps = [
     { title: 'Dining Room Reset', description: 'Comprehensive wiping of all tables, chairs, and booth seating. Detailed sweeping and mopping of dining floors to ensure a spotless presentation for your first daily seating.' },
-    { title: 'Washroom Maintenance', description: 'Complete sanitization of customer and staff restrooms, including toilets, urinals, sinks, and mirrors. Reliable restocking of all essential paper products and soaps.' },
+    { title: 'Washroom Maintenance', description: 'Clean customer and staff washrooms, including toilets, sinks and mirrors. Any restocking requirements are agreed in advance.' },
     { title: 'Bar & Counter Cleaning', description: 'Polishing of bar tops, wiping down of front-of-house service counters, and streak-free cleaning of display glass and brass fixtures.' },
     { title: 'Entrance & Foyer Care', description: 'Cleaning of entry glass doors, maintaining floor mats, and dusting waiting areas to ensure the vital first impression is always welcoming.' },
     { title: 'General Floor Maintenance', description: 'Routine sweeping and mechanical or manual mopping of all general hard floor surfaces, promptly addressing daily spills and foot traffic marks.' },

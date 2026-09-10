@@ -1,12 +1,12 @@
 export const cleaningPhotos = {
   home: { src: '/images/business-foyer-cleaning.jpg', alt: 'Illustrative view of a cleaner mopping the reception floor of a business premises', position: '68% 65%' },
-  about: { src: '/images/commercial-cleaning-equipment.jpg', alt: 'Illustrative view of an organised commercial cleaning trolley, cloths and equipment', position: 'center' },
+  about: { src: '/images/hindmarsh-retail-counter.jpg', alt: 'Original MisterClean project photo of carpet, display fixtures and a counter in Hindmarsh retail premises', position: 'center', width: 1536, height: 1152 },
   commercial: { src: '/images/premises-deep-clean.jpg', alt: 'Illustrative view of a professional using a floor scrubber in a commercial reception area', position: '65% center' },
   office: { src: '/images/commercial-workspace.jpg', alt: 'Illustrative view of a professional wiping an office desk', position: '65% center' },
   windows: { src: '/images/commercial-windows.jpg', alt: 'Illustrative view of a professional cleaning large shopfront windows', position: '65% center' },
-  builders: { src: '/images/after-builders-dust-removal.jpg', alt: 'Illustrative view of construction dust being vacuumed from a newly renovated commercial unit', position: '68% 65%' },
+  builders: { src: '/images/hindmarsh-retail-after-builders.jpg', alt: 'Original post-construction cleaning project photo of a Hindmarsh shop with clear carpeted floors and empty display racks', position: 'center', width: 1536, height: 1152 },
   deep: { src: '/images/commercial-deep-clean-detailing.jpg', alt: 'Illustrative view of a cleaner scrubbing tiled floor edges during a commercial premises deep clean', position: '68% 65%' },
-  retail: { src: '/images/retail-shop-cleaning.jpg', alt: 'Illustrative view of floor cleaning between clothing racks in a retail boutique', position: '68% 65%' },
+  retail: { src: '/images/hindmarsh-shopfront-interior.jpg', alt: 'Original MisterClean project photo looking across a carpeted Hindmarsh retail floor towards the glass shopfront', position: 'center', width: 1536, height: 1152 },
   restaurant: { src: '/images/restaurant-dining-cleaning.jpg', alt: 'Illustrative view of a cleaner wiping dining tables in a restaurant before opening', position: '68% 65%' }
 };
 

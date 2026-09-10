@@ -1,217 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, HardHat, CheckCircle2, Award, ClipboardCheck, Clock, Sparkles, Droplets, Wrench, CheckSquare, Trash2, Wind } from 'lucide-react';
+import { Check } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
 import ServiceNavigation from '@/components/ServiceNavigation.jsx';
-import ProcessStep from '@/components/ProcessStep.jsx';
-import CertificationBadge from '@/components/CertificationBadge.jsx';
-import GuaranteeCard from '@/components/GuaranteeCard.jsx';
 import ServiceCTA from '@/components/ServiceCTA.jsx';
+import ProjectShowcase from '@/components/ProjectShowcase.jsx';
+import QuoteProcess from '@/components/QuoteProcess.jsx';
 
-const AfterBuildersCleaningPage = () => {
-  const steps = [
-    { title: 'Initial Site Audit', description: 'Comprehensive assessment of the construction site to identify hazardous materials, dust accumulation levels, and specific handover requirements.' },
-    { title: 'Debris Cleanup', description: 'Safe removal of remaining construction debris, protective films, and large-scale waste using compliant disposal methods.' },
-    { title: 'Dust Removal', description: 'Remove construction dust from the agreed areas using methods suited to the surfaces and site conditions.' },
-    { title: 'Hard Surface Detailing', description: 'Removal of paint splatters, render drops, and adhesive residue from floors, glass, and fixtures using specialized non-abrasive solvents.' },
-    { title: 'Window & Track Deep Clean', description: 'Meticulous cleaning of all internal and external glazing, frames, and sliding door tracks to ensure pristine clarity.' },
-    { title: 'Floor Treatment & Sealing', description: 'Professional machine scrubbing, polishing, and sealing of hard floor surfaces to remove construction traffic marks.' },
-    { title: 'Sanitization Phase', description: 'Wiping down and sanitizing all touchpoints, cabinetry interiors, and washroom fixtures to ensure readiness for immediate occupation.' },
-    { title: 'Final Inspection', description: 'Review the agreed cleaning areas and discuss any remaining details before handover.' }
+export default function AfterBuildersCleaningPage() {
+  const tasks = [
+    ['Construction dust', 'Remove dust from accessible surfaces, ledges and the areas included in the quote.'],
+    ['Floors and edges', 'Vacuum, sweep or clean the agreed floors using methods suited to their materials and condition.'],
+    ['Glass, frames and tracks', 'Clean agreed glazing and accessible frames and tracks, with access assessed before booking.'],
+    ['Kitchens and amenities', 'Detail agreed cabinetry, sinks, splashbacks, bathroom fixtures and accessible surfaces.'],
+    ['Surface residue', 'Assess paint marks, adhesive and protective films before agreeing suitable removal methods.'],
+    ['Finishing details', 'Check the agreed surfaces and discuss any remaining details with your site contact.']
   ];
-
-  const serviceCategories = [
-    {
-      title: 'Surface Cleaning & Dust Control',
-      icon: Wind,
-      items: [
-        { name: 'Dust removal from all areas', description: 'Dust removal from accessible surfaces included in the quote, with site-specific requirements assessed before work.' },
-        { name: 'Sanitizing all surfaces', description: 'Cleaning and sanitizing touchpoints, workbenches, and handles with products suited to each surface after construction.' },
-        { name: 'Removal of protective coverings', description: 'Careful peeling and disposal of manufacturer films from windows, floors, and newly installed appliances without scratching surfaces.' },
-        { name: 'Paint splatter removal', description: 'Delicate scraping and solvent treatment to safely remove rogue paint drops, render, and overspray from hard surfaces.' }
-      ]
-    },
-    {
-      title: 'Deep Cleaning Solutions',
-      icon: Droplets,
-      items: [
-        { name: 'Bathroom deep cleaning', description: 'Clean bathrooms, toilets, tapware and mirrors, with any tile or grout treatments agreed after assessing the surfaces.' },
-        { name: 'Kitchen deep cleaning', description: 'Degreasing and detailing brand new cabinetry inside and out, polishing sinks, and ensuring food-prep areas are entirely dust-free.' },
-        { name: 'Floor cleaning and polishing', description: 'Industrial machine scrubbing of hard floors and buffing/sealing to completely remove heavy construction traffic marks and scuffs.' },
-        { name: 'Carpet and upholstery cleaning', description: 'Hot water extraction and deep steam cleaning to pull embedded construction dust and allergens from soft fibers.' }
-      ]
-    },
-    {
-      title: 'Specialized Detailing',
-      icon: Sparkles,
-      items: [
-        { name: 'Window and glass cleaning', description: 'Meticulous streak-free cleaning of all internal and external glazing, including detailed vacuuming and wiping of sliding door tracks.' },
-        { name: 'Grout and tile cleaning', description: 'Restoring grout lines that have been dulled by construction dust, using specialized brushes and lifting agents.' },
-        { name: 'Accessible vent detailing', description: 'Clean accessible exterior vent covers and grilles included in the scope; additional equipment work is discussed separately.' },
-        { name: 'Appliance cleaning and sanitization', description: 'Detailing newly installed ovens, rangehoods, fridges, and dishwashers inside and out to remove factory residues.' }
-      ]
-    },
-    {
-      title: 'Site Handover & Waste',
-      icon: CheckSquare,
-      items: [
-        { name: 'Debris and construction waste removal', description: 'Clearing material offcuts, bulk packaging, and sweeping the final site to transition it from a work zone to a habitable space.' },
-        { name: 'Final quality inspection', description: 'Review the completed cleaning against the agreed scope and discuss any areas needing further attention.' }
-      ]
-    }
-  ];
-
-  return (
-    <>
-      <ServiceHero 
-        title="After-Builders Cleaning Services Adelaide"
-        tagline="Flawless post-construction handover cleaning. We manage the hazardous dust, debris, and fine detailing so your project is ready for immediate occupation."
-      />
-      
-      <ServiceNavigation />
-
-      <div>
-        {/* Intro & Certifications */}
-        <section className="service-section">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">After-Builders Cleaning Services Adelaide</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  After construction or renovation, a detailed clean helps prepare your premises for handover. Tell us about the surfaces, remaining dust and access so we can agree the cleaning scope. After handover, explore our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> or <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link> services.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  We plan the clean around the condition of the premises and the handover date. Cleaning methods and any additional treatments are agreed after assessing the surfaces and site conditions.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <CertificationBadge 
-                  icon={ShieldCheck}
-                  title="Agreed Scope"
-                  description="Cleaning tasks confirmed before work starts"
-                  index={0}
-                />
-                <CertificationBadge 
-                  icon={HardHat}
-                  title="Site Access"
-                  description="Access and site requirements discussed"
-                  index={1}
-                />
-                <CertificationBadge 
-                  icon={Award}
-                  title="Surface Assessment"
-                  description="Methods matched to the materials"
-                  index={2}
-                />
-                <CertificationBadge 
-                  icon={ClipboardCheck}
-                  title="Handover Planning"
-                  description="Timing agreed with your site contact"
-                  index={3}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Comprehensive Services Grid */}
-        <section className="py-24 bg-slate-50 border-y">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive After-Builders Services</h2>
-              <p className="text-lg text-muted-foreground">
-                Our post-construction cleaning leaves no stone unturned. We systematically tackle every layer of dust and residue to ensure a flawless, ready-to-move-in property.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {serviceCategories.map((category, catIndex) => (
-                <div key={catIndex} className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div className="p-3.5 bg-primary/10 text-primary rounded-xl shrink-0">
-                      <category.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900">{category.title}</h3>
-                  </div>
-                  <ul className="space-y-6">
-                    {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex flex-col gap-1.5">
-                        <div className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
-                          <h4 className="font-semibold text-slate-800 text-base">{item.name}</h4>
-                        </div>
-                        <p className="text-sm text-slate-600 leading-relaxed pl-8">
-                          {item.description}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="service-section">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Cleaning Phases</h2>
-              <p className="text-lg text-muted-foreground">A methodical, phase-by-phase approach designed to capture fine dust and eliminate construction residue, concluding with a comprehensive final inspection.</p>
-            </div>
-            
-            <div className="pl-4 md:pl-0">
-              {steps.map((step, index) => (
-                <ProcessStep 
-                  key={index}
-                  number={index + 1}
-                  title={step.title}
-                  description={step.description}
-                  isLast={index === steps.length - 1}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Guarantees */}
-        <section className="service-section bg-slate-950 text-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4 text-white">Service Benefits & Guarantees</h2>
-              <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                Plan the final clean around your handover, with the areas and timing agreed before work begins.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col items-start text-left">
-                <div className="p-3 bg-secondary/20 text-secondary rounded-xl mb-6">
-                  <Clock className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Rapid Turnaround Times</h3>
-                <p className="text-slate-400 leading-relaxed">
-                  We understand construction timelines shift rapidly. We offer flexible scheduling and rapid deployment to meet your critical handover deadlines without ever compromising on quality or safety.
-                </p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col items-start text-left">
-                <div className="p-3 bg-secondary/20 text-secondary rounded-xl mb-6">
-                  <Award className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Review of the Agreed Areas</h3>
-                <p className="text-slate-400 leading-relaxed">
-                  We review the completed cleaning against the agreed scope and discuss any areas requiring further attention.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <ServiceCTA serviceName="After-Builders Cleaning" />
-      </div>
-    </>
-  );
-};
-
-export default AfterBuildersCleaningPage;
+  return <>
+    <ServiceHero title="After-Builders Cleaning in Adelaide" tagline="Detailed cleaning after construction or renovation, with dust removal, surface cleaning and finishing details agreed around your handover." />
+    <ServiceNavigation />
+    <section className="py-14 md:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mb-10"><h2 className="mb-5">From building work to a cleaner premises</h2><p className="text-lg text-slate-600 mb-4">Renovation and fit-out work can leave dust across floors, glazing and newly installed surfaces. We assess what needs attention and agree a cleaning scope around the condition of your Adelaide premises.</p><p className="text-slate-600">Tell us which trades are still working, which rooms are ready and when you need access. A staged clean may suit an ongoing fit-out; a final clean is planned around your handover.</p></div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">{tasks.map(([title, description]) => <div key={title} className="p-6 bg-white border border-slate-200 rounded-xl"><Check className="text-primary w-5 h-5 mb-4" /><h3 className="text-xl mb-3">{title}</h3><p className="text-slate-600">{description}</p></div>)}</div>
+    </div></section>
+    <ProjectShowcase />
+    <section className="py-14 md:py-20 bg-teal-50/50"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">What helps us quote your handover clean?</h2>
+      <ul className="grid sm:grid-cols-2 gap-4 text-slate-700">{['Your suburb, premises type and approximate size', 'The rooms and surfaces needing attention', 'Remaining trades, loose materials and access', 'Your preferred cleaning or handover date'].map(item => <li key={item} className="flex gap-3"><Check className="text-primary w-5 h-5 shrink-0" />{item}</li>)}</ul>
+      <p className="mt-6 text-slate-600">Floor treatments, bulky waste and specialist work are assessed separately. Your quote sets out the tasks and access arrangements before work begins.</p>
+    </div></section>
+    <QuoteProcess />
+    <section className="py-14 md:py-20"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">After-builders cleaning questions</h2>
+      {[
+        ['Can you clean while the fit-out is still underway?', 'Discuss which areas are ready and whether other trades will create more dust. We can agree the scope and timing for the stage your project has reached.'],
+        ['Does the clean include windows?', 'Glass, frames and tracks can be included in the agreed scope. Tell us about height, obstructions and remaining protective films so we can assess access and surfaces.'],
+        ['Can we arrange ongoing cleaning afterwards?', 'Once your premises are in use, we can discuss a regular cleaning plan for the workspaces, customer areas and amenities.']
+      ].map(([question, answer]) => <details key={question} className="border-b border-slate-200 py-4"><summary className="font-semibold cursor-pointer py-2">{question}</summary><p className="text-slate-600 pt-2 pb-3">{answer}</p></details>)}
+      <p className="mt-7 text-slate-600">After handover, explore <Link to="/services/commercial-cleaning" className="text-primary underline">commercial cleaning</Link> or <Link to="/services/window-cleaning" className="text-primary underline">window cleaning</Link>. For a broader reset of occupied premises, see <Link to="/services/commercial-deep-cleaning" className="text-primary underline">commercial deep cleaning</Link>.</p>
+    </div></section>
+    <ServiceCTA serviceName="After-Builders Cleaning" />
+  </>;
+}

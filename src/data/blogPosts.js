@@ -28,7 +28,7 @@ export const blogPosts = [
       {
         heading: 'Monthly and seasonal cleaning',
         body: [
-          'Monthly cleaning is where presentation and asset protection become important. Carpet extraction, high-reach dusting, internal window detailing, hard floor scrubbing, and storage area cleaning all help extend the life of the workplace.',
+          'Periodic detailing can include accessible ledges, internal glass, floor edges and storage areas. Agree any additional surface treatments or access requirements with your cleaning provider.',
           'For Adelaide businesses, seasonal changes can also affect cleaning plans. Pollen, dust, dry summer conditions, and winter foot traffic can change how often entryways, mats, windows, and floors need attention.'
         ]
       },
@@ -124,42 +124,43 @@ export const blogPosts = [
     }
   },
   {
-    slug: 'restaurant-cleaning-commercial-kitchens',
-    title: 'Restaurant Cleaning Priorities for Commercial Kitchens',
-    excerpt: 'From dining areas to back-of-house surfaces, restaurant cleaning needs clear routines that support hygiene, safety, and presentation.',
-    category: 'Restaurant Cleaning',
-    date: '2026-08-07',
-    readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba',
-    imageAlt: 'Commercial kitchen surfaces cleaned and ready for service',
-    keywords: ['restaurant cleaning Adelaide', 'commercial kitchen cleaning', 'hospitality cleaning'],
-    intro: 'Restaurants operate under time pressure, tight spaces, and strict hygiene expectations. Cleaning routines need to be practical, repeatable, and matched to service hours.',
-    sections: [
+    "slug": "restaurant-cleaning-commercial-kitchens",
+    "title": "Restaurant Cleaning: Routine Upkeep and Periodic Deep Cleans",
+    "excerpt": "Plan regular cleaning for dining areas and amenities, with a broader premises deep clean when needed.",
+    "category": "Restaurant Cleaning",
+    "date": "2026-08-07",
+    "readTime": "2 min read",
+    "image": "/images/restaurant-dining-cleaning.jpg",
+    "imageAlt": "Illustrative view of a cleaner wiping restaurant dining tables before opening",
+    "keywords": [
+      "restaurant cleaning Adelaide",
+      "restaurant maintenance cleaning",
+      "commercial deep cleaning Adelaide"
+    ],
+    "intro": "A clear cleaning routine helps a restaurant keep its customer areas presentable around service hours. Start with the everyday tasks, then agree periodic detailing for areas that need closer attention.",
+    "sections": [
       {
-        heading: 'Separate front-of-house and back-of-house needs',
-        body: [
-          'Dining areas need presentation cleaning: floors, tables, chairs, counters, glass, restrooms, and visible fixtures. Back-of-house areas need hygiene-focused cleaning around food preparation, grease, bins, equipment surfaces, and staff zones.',
-          'The cleaning plan should prevent cross-contamination between these areas by separating equipment, cloths, and cleaning sequences.'
+        "heading": "Plan the everyday areas",
+        "body": [
+          "Dining floors, tables, chairs, counters, entrance glass and washrooms benefit from a clear cleaning routine. Agree the areas, tasks and frequency around the way your venue operates."
         ]
       },
       {
-        heading: 'Grease and floor safety',
-        body: [
-          'Grease build-up can create slip hazards and make floors difficult to maintain. Commercial kitchen floors need appropriate degreasing, scrubbing, and drying routines.',
-          'Entry paths between kitchen and dining areas should be monitored closely because tracked grease or moisture can affect both safety and customer perception.'
+        "heading": "Give floors and entrances regular attention",
+        "body": [
+          "Plan sweeping, vacuuming and mopping according to the floor material and level of use. Include edges, entry mats and transitions between rooms when agreeing the scope."
         ]
       },
       {
-        heading: 'Scheduled deep cleaning supports compliance',
-        body: [
-          'Daily cleaning keeps the restaurant operational, but periodic deep cleaning is needed for walls, vents, equipment surrounds, floor edges, storage areas, and hard-to-reach surfaces.',
-          'Restaurants should plan deeper cleans around quieter trading periods so hygiene standards improve without disrupting service.'
+        "heading": "Add a complete premises deep clean",
+        "body": [
+          "Periodic deep cleaning can address accumulated dirt across workspaces, kitchens, bathrooms, floors and accessible glass. Agree the rooms, surfaces, access and any equipment cleaning before booking."
         ]
       }
     ],
-    cta: {
-      text: 'Arrange restaurant cleaning',
-      path: '/services/restaurant-cleaning'
+    "cta": {
+      "text": "Arrange restaurant cleaning",
+      "path": "/services/restaurant-cleaning"
     }
   },
   {

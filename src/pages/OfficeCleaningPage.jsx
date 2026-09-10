@@ -11,18 +11,18 @@ import CertificationsSection from '@/components/CertificationsSection.jsx';
 
 const OfficeCleaningPage = () => {
   const steps = [
-    { title: 'Workstation Sanitization', description: 'Detailed cleaning and disinfection of desks, keyboards, phones, and monitors to reduce the spread of germs and illnesses.' },
+    { title: 'Workstation Cleaning', description: 'Clean agreed desk surfaces and touchpoints, with equipment requirements discussed before work.' },
     { title: 'Common Area Cleaning', description: 'Thorough cleaning of break rooms, kitchens, and lounges, including appliance wipe-downs and surface sanitization.' },
     { title: 'Meeting Room Preparation', description: 'Ensuring conference and meeting rooms are pristine, with clean tables, organized chairs, and spotless whiteboards/screens.' },
-    { title: 'Floor & Carpet Care', description: 'Daily vacuuming, sweeping, and mopping of all office floors, with periodic deep carpet cleaning available.' },
+    { title: 'Floor & Carpet Care', description: 'Vacuum, sweep and mop the agreed office floors at the frequency included in your cleaning plan.' },
     { title: 'Waste Management', description: 'Emptying all trash and recycling bins, replacing liners, and ensuring proper disposal of office waste.' },
-    { title: 'Restroom Hygiene', description: 'Deep cleaning, sanitization, and restocking of office restrooms to maintain a comfortable environment for employees.' }
+    { title: 'Restroom Hygiene', description: 'Clean office toilets, sinks, mirrors and agreed amenities. Any restocking requirements are discussed in advance.' }
   ];
 
   return (
     <>
       <ServiceHero 
-        title="Office Cleaning Services"
+        title="Office Cleaning in Adelaide"
         tagline="A clean office is a productive office. We provide comprehensive cleaning solutions tailored to your corporate environment."
       />
       
@@ -52,8 +52,8 @@ const OfficeCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={Monitor}
-                  title="Tech-Safe Cleaning"
-                  description="Careful sanitization of sensitive equipment"
+                  title="Equipment Requirements"
+                  description="Surfaces and handling instructions agreed before cleaning"
                   index={1}
                 />
                 <CertificationBadge 

@@ -69,7 +69,7 @@ test('each presentation photo has full size and mobile assets in the published o
   }
 });
 
-test('each service uses its own relevant image, with separate home and about images', async () => {
+test('each service uses its own relevant image and the about page uses an original project photo', async () => {
   const sources = new Set(Object.values(cleaningPhotos).map(photo => photo.src));
   const imagesOn = async route => matches(await readFile(fileFor(route), 'utf8'), /<img\b[^>]*src="([^"]+)"/g).map(match => match[1]).filter(src => sources.has(src));
   const used = new Set();
@@ -84,7 +84,7 @@ test('each service uses its own relevant image, with separate home and about ima
     assert.ok(!hashes.has(hash), service.value + ': not a renamed duplicate');
     hashes.add(hash);
   }
-  assert.deepEqual(await imagesOn('/'), [cleaningPhotos.home.src, cleaningPhotos.commercial.src]);
+  assert.deepEqual(await imagesOn('/'), [cleaningPhotos.commercial.src]);
   assert.deepEqual(await imagesOn('/about'), [cleaningPhotos.about.src]);
   assert.ok(!used.has(cleaningPhotos.home.src));
   assert.ok(!used.has(cleaningPhotos.about.src));
@@ -131,5 +131,29 @@ test('quote emails preserve Unicode and special characters without adding URL pa
     assert.ok(email.body.includes('Suburb: North Adelaide\n'));
     assert.ok(email.body.includes('Glass & frames? 50%\nCafé access = rear #2'));
     assert.ok(email.body.includes('Phone: Not provided'));
+  }
+});
+
+test('real project photos remain visible before JavaScript and are light without EXIF GPS', async () => {
+  const projects = await readFile(fileFor('/projects'), 'utf8');
+  const home = await readFile(fileFor('/'), 'utf8');
+  for (const label of ['Before', 'After floor cleaning', 'Fit-out still in progress']) assert.ok(projects.includes(label));
+  for (const name of ['cafe-fitout-kitchen-before', 'cafe-fitout-kitchen-after', 'entrance-glass-before-cleaning']) {
+    for (const suffix of ['', '-600']) {
+      const image = await readFile('dist/images/' + name + suffix + '.jpg');
+      assert.ok(image.length < 300000);
+      assert.ok(!image.includes(Buffer.from('Exif\0\0')), 'export does not retain camera/GPS metadata');
+    }
+  }
+  assert.ok(projects.includes('cafe-fitout-kitchen-before.jpg'));
+  assert.ok(projects.includes('cafe-fitout-kitchen-after.jpg'));
+  assert.ok(home.includes('id="quick-quote"'));
+  assert.ok(home.indexOf('id="quick-quote"') < home.indexOf('cafe-fitout-kitchen-before.jpg'), 'quote appears before project photography');
+  for (const route of ['/', '/contact']) {
+    const html = await readFile(fileFor(route), 'utf8');
+    assert.match(html, /Continue by email/);
+    assert.match(html, /<noscript>/);
+    assert.ok(!/<input[^>]*name="business"[^>]*required/.test(html));
+    assert.equal(matches(html, /<form\b/g).length, 1, route + ': one quote form');
   }
 });
