@@ -87,7 +87,7 @@ test('each service uses its own relevant image and the about page uses an origin
   assert.deepEqual(await imagesOn('/'), [cleaningPhotos.commercial.src]);
   assert.deepEqual(await imagesOn('/about'), [cleaningPhotos.about.src]);
   assert.ok(!used.has(cleaningPhotos.home.src));
-  assert.ok(!used.has(cleaningPhotos.about.src));
+  assert.ok(cleaningPhotos.about.src.includes('hindmarsh'), 'about page keeps a real local project photo');
   assert.notEqual(cleaningPhotos.home.src, cleaningPhotos.about.src);
   const catalogue = await imagesOn('/services');
   assert.equal(new Set(catalogue).size, cleaningOffers.length, 'service catalogue has no repeated images');

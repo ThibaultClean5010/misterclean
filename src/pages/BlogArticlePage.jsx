@@ -50,7 +50,7 @@ const BlogArticlePage = () => {
       </Helmet>
 
       <article>
-        <section className="pt-32 pb-16 bg-slate-950 text-white">
+        <section className="pt-32 pb-16 bg-[#203f3a] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Button asChild variant="ghost" className="mb-8 text-white hover:bg-white/10 hover:text-white px-0">
               <Link to="/blog"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog</Link>
@@ -67,7 +67,7 @@ const BlogArticlePage = () => {
 
         <div className="bg-background">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="-mt-10 rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+            <div className="-mt-10 rounded-lg overflow-hidden shadow-xl border border-slate-100 bg-white">
               <img src={post.image} alt={post.imageAlt} className="h-[280px] md:h-[440px] w-full object-cover" />
             </div>
           </div>
@@ -86,17 +86,17 @@ const BlogArticlePage = () => {
               ))}
             </div>
 
-            <div className="mt-14 p-8 rounded-2xl bg-primary/5 border border-primary/10">
-              <h2 className="text-2xl font-bold mb-4">Need professional cleaning support in Adelaide?</h2>
+            <div className="mt-14 p-8 rounded-lg bg-primary/5 border border-primary/10">
+              <h2 className="text-2xl font-bold mb-4">Need a hand with the cleaning?</h2>
               <p className="text-slate-700 mb-6">
-                MisterClean helps Adelaide businesses maintain cleaner, safer, and more presentable commercial spaces with tailored cleaning plans.
+                We clean offices, shops and business premises in Adelaide. Tell us what you need done and we’ll discuss a quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button asChild>
                   <Link to={post.cta.path}>{post.cta.text}</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link to="/contact">Request a Quote</Link>
+                  <Link to="/contact">Get a quote</Link>
                 </Button>
               </div>
             </div>
@@ -118,7 +118,7 @@ const BlogArticlePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedPosts.map((relatedPost) => (
               <Link key={relatedPost.slug} to={`/blog/${relatedPost.slug}`} className="blog-card p-6">
-                <span className="text-xs font-bold uppercase tracking-wide text-primary mb-3">{relatedPost.category}</span>
+                <span className="text-xs font-bold  text-primary mb-3">{relatedPost.category}</span>
                 <h3 className="text-xl font-bold mb-3 hover:text-primary transition-colors">{relatedPost.title}</h3>
                 <p className="text-sm text-muted-foreground">{relatedPost.excerpt}</p>
               </Link>

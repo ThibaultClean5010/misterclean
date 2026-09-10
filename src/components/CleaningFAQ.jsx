@@ -1,12 +1,12 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 const questions = [
-  ['Do you offer one-off and regular cleaning?', 'Yes. Request a one-off clean or discuss a recurring schedule. The frequency depends on your premises, how the space is used and the tasks required.'],
-  ['Which areas do you service?', 'We provide commercial cleaning in Adelaide. Include your suburb when requesting a quote so we can confirm availability for your location.'],
-  ['What information do you need for a quote?', 'Tell us your business type, suburb, service required and approximate size of the premises. Preferred times, cleaning frequency and access details help us understand the job.'],
-  ['Can you clean hard-to-reach windows?', 'We assess the height, access and site conditions before confirming what we can clean and how the work will be carried out.'],
-  ['What is included in a commercial deep clean?', 'The agreed scope can cover workspaces, kitchens, bathrooms, floors, edges, accessible internal glass and frequently touched surfaces. We discuss the condition of the premises before quoting.'],
-  ['Can cleaning take place outside business hours?', 'Tell us your opening hours and preferred cleaning times. We discuss available options when planning your service.']
+  ["Do you offer one-off and regular cleaning?", "Yes. We offer one-off cleans and regular visits. Tell us how often you need cleaning, or we can discuss a suitable schedule."],
+  ["Which areas do you service?", "We clean business premises in Adelaide. Include your suburb in your enquiry so we can check availability."],
+  ["What information do you need for a quote?", "Your suburb, business type, approximate floor area and the work you need done. Let us know your preferred times and any access restrictions too."],
+  ["Can you clean hard-to-reach windows?", "It depends on the height and access. We’ll assess the windows and site before confirming what we can clean."],
+  ["What is included in a commercial deep clean?", "It can include workspaces, kitchens, bathrooms, floors, edges, internal glass and frequently touched surfaces. Your quote will list the areas and tasks included."],
+  ["Can cleaning take place outside business hours?", "Let us know your opening hours and preferred cleaning time. We’ll discuss availability when preparing your quote."]
 ];
 export default function CleaningFAQ() {
   return <section className="py-14 md:py-20">

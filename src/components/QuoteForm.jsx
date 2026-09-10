@@ -98,7 +98,7 @@ export default function QuoteForm({ compact = false }) {
     try { await navigator.clipboard.writeText(prepared.subject + '\n\n' + prepared.body); setCopied(true); setCopyError(false); }
     catch { setCopyError(true); }
   }
-  return <div className={'bg-white rounded-2xl border border-slate-200 shadow-xl shadow-teal-950/5 ' + (compact ? 'p-5 sm:p-7' : 'p-6 sm:p-8')}>
+  return <div className={'bg-white rounded-lg border border-slate-200  ' + (compact ? 'p-5 sm:p-7' : 'p-6 sm:p-8')}>
     {accepted ? <div ref={resultRef} tabIndex={-1} role="status" className="py-8 space-y-4">
       <span className="inline-flex p-3 bg-teal-50 rounded-full text-primary"><Check className="w-7 h-7" /></span>
       <h2 className="text-2xl">Thank you — your enquiry has been submitted</h2>
@@ -106,7 +106,7 @@ export default function QuoteForm({ compact = false }) {
       <a href={PHONE_HREF} className="inline-flex text-primary font-semibold py-3" onClick={() => trackEnquiry('phone_click')}>Prefer to talk? {PHONE}</a>
     </div> : <>
       <h2 className="text-2xl mb-2">Get a cleaning quote</h2>
-      <p className="text-sm text-muted-foreground mb-5">A few details to get started. Scope and price agreed before you book.</p>
+      <p className="text-sm text-muted-foreground mb-5">Tell us what you need cleaned and where. We’ll get back to you to discuss the job.</p>
       <noscript>Call <a href={PHONE_HREF}>{PHONE}</a> or email <a href={'mailto:' + CONTACT_EMAIL}>{CONTACT_EMAIL}</a> to request your quote.</noscript>
       <form onSubmit={submit} onChange={invalidate} onFocus={start} aria-label="Cleaning quote enquiry">
         <fieldset disabled={!ready || busy} className="space-y-4">
@@ -129,7 +129,7 @@ export default function QuoteForm({ compact = false }) {
             <div className="space-y-4 pt-4">
               <div className="space-y-1.5"><Label htmlFor={id + '-plan'}>Cleaning frequency</Label><select id={id + '-plan'} name="plan" value={plan} onChange={event => setPlan(event.target.value)} className={selectStyle}>{cleaningPlans.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}</select></div>
               <div className="space-y-1.5"><Label htmlFor={id + '-business'}>Business name</Label><Input id={id + '-business'} name="business" autoComplete="organization" maxLength={120} /></div>
-              <div className="space-y-1.5"><Label htmlFor={id + '-details'}>What needs attention?</Label><Textarea id={id + '-details'} name="details" maxLength={1200} rows={3} placeholder="Approximate size, preferred times and areas to clean." /></div>
+              <div className="space-y-1.5"><Label htmlFor={id + '-details'}>Anything we should know?</Label><Textarea id={id + '-details'} name="details" maxLength={1200} rows={3} placeholder="Approximate size, preferred times and areas to clean." /></div>
             </div>
           </details>
           <div className="hidden" aria-hidden="true"><label htmlFor={id + '-website'}>Leave this field empty</label><input id={id + '-website'} name="website" tabIndex={-1} autoComplete="off" /></div>

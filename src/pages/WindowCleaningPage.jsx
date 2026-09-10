@@ -27,14 +27,14 @@ const WindowCleaningPage = () => {
     <>
       <ServiceHero
         title="Commercial Window Cleaning in Adelaide"
-        tagline="One-off cleans, regular visits and solutions for hard-to-reach windows. Keep your shopfront and workplace glass looking clean, with a service tailored to your premises."
+        tagline="One-off and regular cleaning for shopfronts, office windows and internal glass. We assess hard-to-reach windows before quoting."
       />
       <ServiceNavigation />
       <CertificationsSection />
       <section className="service-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl font-bold mb-6">Window Cleaning That Fits Your Business</h2>
+            <h2 className="text-3xl font-bold mb-6">Cleaning your shopfront or workplace windows</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               From shopfronts and entrance doors to office windows and internal partitions, we clean the glass that shapes the first impression of your premises. Book a one-off visit, arrange a recurring schedule or combine your windows with our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> service.
             </p>
@@ -61,7 +61,7 @@ const WindowCleaningPage = () => {
         </div>
       </section>
       <section className="py-14 md:py-20 bg-white border-t border-slate-100"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
-        <figure><ProjectPhoto photo="windowsBefore" className="w-full h-auto rounded-2xl" /><figcaption className="text-sm text-slate-500 mt-3">Before window cleaning · Original project photograph.</figcaption></figure>
+        <figure><ProjectPhoto photo="windowsBefore" className="w-full h-auto rounded-lg" /><figcaption className="text-sm text-slate-500 mt-3">Before window cleaning · Original project photograph.</figcaption></figure>
         <div><p className="text-primary text-sm font-semibold mb-3">Start with the condition of your glass</p><h2 className="mb-5">Shopfront residue needs a closer look</h2><p className="text-slate-600 mb-5">This entrance shows visible streaks and residue before cleaning. The type of mark, glass condition and access all help determine the work needed.</p><p className="text-slate-600 mb-5">Tell us whether you need a one-off refresh, regular visits or an assessment of hard-to-reach windows. Frames, sills and tracks can be included in the agreed scope.</p>
         <div className="flex flex-wrap gap-3"><Link to="/contact?service=window-cleaning&plan=one-off" className="choice-chip text-primary font-semibold">One-off clean</Link><Link to="/contact?service=window-cleaning&plan=regular" className="choice-chip text-primary font-semibold">Regular visits</Link><Link to="/contact?service=window-cleaning&access=hard-to-reach" className="choice-chip text-primary font-semibold">Hard-to-reach glass</Link></div></div>
       </div></section>

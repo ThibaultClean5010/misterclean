@@ -1,16 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
-const CertificationBadge = ({ icon: Icon, title, description, index = 0 }) => {
+const CertificationBadge = ({ icon: Icon, title, description }) => {
   return (
-    <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="certification-badge"
+    <div className="certification-badge"
     >
-      <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg text-primary">
+      <div className="flex-shrink-0 pt-1 text-primary">
         <Icon className="h-6 w-6" />
       </div>
       <div>
@@ -19,7 +13,7 @@ const CertificationBadge = ({ icon: Icon, title, description, index = 0 }) => {
           {description}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ const CommercialCleaningPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Commercial Cleaning Services for Adelaide Businesses</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The cleanliness of your commercial facility directly impacts employee productivity, operational health, and the critical first impressions formed by visiting clients. Whether you need reliable office maintenance, <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, or a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep clean</Link>, we have a dedicated solution for you.
+                  We clean offices, shops and shared workspaces in Adelaide. Alongside regular cleaning, we can help with <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, or a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep clean</Link>, depending on what your workplace needs.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We discuss your opening hours, the areas to be cleaned and how often each task is needed. Your quote sets out the agreed work, with a direct contact for questions or changes to your requirements.
@@ -69,7 +69,7 @@ const CommercialCleaningPage = () => {
         <section className="service-section-alternate">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4">Flexible Service Scheduling</h2>
+              <h2 className="text-3xl font-bold mb-4">Cleaning for offices and shops</h2>
               <p className="text-lg text-muted-foreground">
                 Tell us your opening hours so we can discuss suitable cleaning times. Explore the office and retail tasks below.
               </p>
@@ -77,22 +77,22 @@ const CommercialCleaningPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Office Cleaning */}
-              <div className="bg-white p-8 md:p-10 rounded-2xl border shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+              <div className="bg-white p-8 md:p-10 rounded-lg border  flex flex-col h-full">
+                <div className="h-8 flex items-center text-primary mb-4">
                   <Clock className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Office Cleaning</h3>
                 <p className="text-muted-foreground mb-8 flex-1 text-base leading-relaxed">
-                  Ideal for high-traffic corporate offices requiring continuous upkeep, waste management, and touchpoint sanitization on a daily basis.
+                  Cleaning for desks, meeting rooms, shared kitchens, toilets and floors, with visits arranged to suit your office.
                 </p>
                 <ul className="space-y-3 text-sm font-medium text-slate-700">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Desk and workstation sanitization</span>
+                    <span>Desk and workstation cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Conference room deep cleaning</span>
+                    <span>Meeting room cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
@@ -112,19 +112,19 @@ const CommercialCleaningPage = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Trash removal and recycling management</span>
+                    <span>Emptying rubbish and recycling bins</span>
                   </li>
                 </ul>
               </div>
 
               {/* Retail Cleaning */}
-              <div className="bg-white p-8 md:p-10 rounded-2xl border shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-                <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+              <div className="bg-white p-8 md:p-10 rounded-lg border  flex flex-col h-full">
+                <div className="h-8 flex items-center text-primary mb-4">
                   <Building2 className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Retail Cleaning</h3>
                 <p className="text-muted-foreground mb-8 flex-1 text-base leading-relaxed">
-                  Comprehensive cleaning solutions for retail spaces, ensuring floors, displays, and customer areas are pristine to boost sales and presentation.
+                  Cleaning for shop floors, shelves, fitting rooms, counters and customer areas. Tell us your trading hours and what needs doing.
                 </p>
                 <ul className="space-y-3 text-sm font-medium text-slate-700">
                   <li className="flex items-start gap-3">
@@ -133,7 +133,7 @@ const CommercialCleaningPage = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
-                    <span>Fitting room sanitization</span>
+                    <span>Fitting room cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 

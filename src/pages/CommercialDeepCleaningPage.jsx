@@ -22,7 +22,7 @@ const CommercialDeepCleaningPage = () => {
     <>
       <ServiceHero
         title="Commercial Deep Cleaning in Adelaide"
-        tagline="Bring your premises back to a clean, presentable condition with a comprehensive deep clean. A fresh start for offices, shops and other commercial spaces."
+        tagline="Deep cleaning for offices, shops and other business premises. Floors, kitchens, bathrooms and the details that need more than a regular clean."
       />
       <ServiceNavigation />
       <CertificationsSection />
@@ -31,16 +31,16 @@ const CommercialDeepCleaningPage = () => {
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl font-bold mb-6">A Complete Refresh for Your Premises</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              When everyday cleaning is no longer enough, a detailed clean helps bring your premises back to a presentable condition. We focus on accumulated dirt, overlooked areas and the finishing details across your agreed rooms and surfaces.
+              If dirt has built up or parts of your workplace need extra attention, tell us what needs doing. We’ll discuss the rooms, surfaces and condition of the space, then list the work in your quote.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Arrange a fresh start before reopening, prepare for a new occupier or add a periodic deep clean to your <Link to="/services/commercial-cleaning" className="text-primary hover:underline">regular commercial cleaning</Link>. For work following construction or renovation, explore our dedicated <Link to="/services/after-builders-cleaning" className="text-primary hover:underline">after-builders cleaning</Link> service.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <GuaranteeCard icon={Building2} title="One-off Premises Reset" description="Refresh a space after a period of inactivity, before handover or when it needs more attention than routine maintenance." index={0} />
+            <GuaranteeCard icon={Building2} title="One-off deep cleaning" description="For a space that has been closed, is changing hands or needs more than its usual clean." index={0} />
             <GuaranteeCard icon={CalendarDays} title="Periodic Deep Cleans" description="Plan a detailed clean around your business hours and the areas that need extra attention over time." index={1} />
-            <GuaranteeCard icon={ClipboardCheck} title="An Agreed Scope" description="Know which areas and tasks are included before the clean, with any additional requirements discussed in advance." index={2} />
+            <GuaranteeCard icon={ClipboardCheck} title="What’s included" description="Know which areas and tasks are included before the clean, with any additional requirements discussed in advance." index={2} />
           </div>
         </div>
       </section>
@@ -48,7 +48,7 @@ const CommercialDeepCleaningPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">A Detailed Clean from Workspaces to Amenities</h2>
-            <p className="text-lg text-muted-foreground">A comprehensive approach tailored to the condition and use of your premises.</p>
+            <p className="text-lg text-muted-foreground">We’ll look at what needs attention and agree which areas to include.</p>
           </div>
           <div className="pl-4 md:pl-0">
             {steps.map((step, index) => <ProcessStep key={step.title} number={index + 1} {...step} isLast={index === steps.length - 1} />)}

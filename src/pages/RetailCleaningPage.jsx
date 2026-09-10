@@ -23,7 +23,7 @@ const RetailCleaningPage = () => {
     <>
       <ServiceHero 
         title="Retail & Shop Cleaning in Adelaide"
-        tagline="Create an inviting shopping experience. We ensure your retail space is immaculate, reflecting the quality of your brand and products."
+        tagline="Cleaning for shop floors, displays, fitting rooms and customer areas, with timing arranged around your trading hours."
       />
       
       <ServiceNavigation />
@@ -34,12 +34,12 @@ const RetailCleaningPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Professional Retail Cleaning in Adelaide</h2>
+                <h2 className="text-3xl font-bold mb-6">Cleaning for Adelaide shops</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  First impressions matter in retail. A clean, well-maintained store not only attracts customers but also encourages them to stay longer and return. Our specialized retail cleaning services are designed to keep your boutique, showroom, or large retail space looking its absolute best.
+                  Shop floors and counters get a lot of use during the day. We clean the areas your customers and staff use, including entrances, display shelves, fitting rooms and toilets.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We offer flexible scheduling to ensure our cleaning operations do not disrupt your business hours. From sparkling floors to dust-free displays, our team delivers consistent, high-quality results tailored to your specific retail environment.
+                  Tell us your trading hours, shop layout and any stock or surfaces that need particular care. We’ll agree the tasks and cleaning times before booking.
                 </p>
               </div>
 
@@ -52,14 +52,14 @@ const RetailCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={Sparkles}
-                  title="Detail Oriented"
-                  description="Meticulous attention to displays and floors"
+                  title="Displays and floors"
+                  description="Dusting, wiping and floor cleaning included in your quote"
                   index={1}
                 />
                 <CertificationBadge 
                   icon={Clock}
-                  title="Flexible Hours"
-                  description="After-hours and early morning scheduling"
+                  title="Cleaning times"
+                  description="Tell us your trading hours and preferred cleaning time"
                   index={2}
                 />
                 <CertificationBadge 
@@ -77,7 +77,7 @@ const RetailCleaningPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Retail Cleaning Process</h2>
-              <p className="text-lg text-muted-foreground">A systematic approach to maintaining a pristine shopping environment that delights your customers.</p>
+              <p className="text-lg text-muted-foreground">The areas we can include in your shop’s cleaning plan.</p>
             </div>
             
             <div className="pl-4 md:pl-0">
@@ -96,12 +96,12 @@ const RetailCleaningPage = () => {
 
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-bold text-center mb-16">Why Choose Us for Retail Cleaning</h3>
+            <h3 className="text-3xl font-bold text-center mb-16">Arranging your shop clean</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={CheckCircle}
-                title="Consistent Quality Assurance"
-                description="We implement rigorous quality control measures and regular inspections to ensure your retail space consistently meets our high standards and your expectations."
+                title="Work agreed before the visit"
+                description="Your quote lists the areas and tasks included. Let us know if a particular surface or part of the shop needs extra attention."
                 index={0}
               />
               <GuaranteeCard 

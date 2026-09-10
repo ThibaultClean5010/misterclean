@@ -26,7 +26,7 @@ export default function Header() {
       </nav>
       <div className="hidden lg:flex items-center gap-4">
         <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="header-phone-link"><Phone className="h-4 w-4" />{PHONE}</a>
-        <Link to="/contact" className="rounded-lg bg-primary text-white px-4 py-3 text-sm font-semibold">Get a Quote</Link>
+        <Link to="/contact" className="rounded-lg bg-primary text-white px-4 py-3 text-sm font-semibold">Get a quote</Link>
       </div>
       <div className="flex lg:hidden items-center gap-2">
         <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="inline-flex items-center gap-2 p-3 text-primary font-semibold" aria-label={'Call MisterClean on ' + PHONE}><Phone className="h-5 w-5" /><span>Call</span></a>
@@ -41,7 +41,7 @@ export default function Header() {
                 {serviceOptions.map(item => <Link key={item.path} to={item.path} onClick={() => setIsOpen(false)} className="block py-3 text-base hover:text-primary">{item.label}</Link>)}
               </div>
               {pages.slice(1).map(([label, href]) => <Link key={href} to={href} onClick={() => setIsOpen(false)} className="header-nav-link-mobile">{label}</Link>)}
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-5 rounded-lg bg-primary text-white p-3 text-center font-semibold">Get a Quote</Link>
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-5 rounded-lg bg-primary text-white p-3 text-center font-semibold">Get a quote</Link>
             </nav>
           </SheetContent>
         </Sheet>

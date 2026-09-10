@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-6">Quick Links</h3>
+            <h3 className="text-sm font-semibold text-white  mb-6">Quick Links</h3>
             <nav className="flex flex-col gap-3">
               <Link to="/" className="text-sm hover:text-white transition-colors">Home</Link>
               <Link to="/services" className="text-sm hover:text-white transition-colors">Our Services</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-6">Services</h3>
+            <h3 className="text-sm font-semibold text-white  mb-6">Services</h3>
             <nav className="flex flex-col gap-3">
               <Link to="/services/commercial-cleaning" className="text-sm hover:text-white transition-colors">Commercial Cleaning</Link>
               <Link to="/services/window-cleaning" className="text-sm hover:text-white transition-colors">Window Cleaning</Link>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-6">Contact Us</h3>
+            <h3 className="text-sm font-semibold text-white  mb-6">Contact Us</h3>
             <div className="flex flex-col gap-4">
               <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="flex items-center gap-3 text-sm hover:text-white transition-colors">
                 <Phone className="h-4 w-4 text-teal-300 shrink-0" /> <span>{PHONE}</span>

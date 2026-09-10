@@ -13,7 +13,7 @@ const OfficeCleaningPage = () => {
   const steps = [
     { title: 'Workstation Cleaning', description: 'Clean agreed desk surfaces and touchpoints, with equipment requirements discussed before work.' },
     { title: 'Common Area Cleaning', description: 'Thorough cleaning of break rooms, kitchens, and lounges, including appliance wipe-downs and surface sanitization.' },
-    { title: 'Meeting Room Preparation', description: 'Ensuring conference and meeting rooms are pristine, with clean tables, organized chairs, and spotless whiteboards/screens.' },
+    { title: 'Meeting Room Preparation', description: 'Wipe meeting tables and agreed surfaces, tidy chairs and clean the room’s floors. Equipment and screens are handled only as agreed.' },
     { title: 'Floor & Carpet Care', description: 'Vacuum, sweep and mop the agreed office floors at the frequency included in your cleaning plan.' },
     { title: 'Waste Management', description: 'Emptying all trash and recycling bins, replacing liners, and ensuring proper disposal of office waste.' },
     { title: 'Restroom Hygiene', description: 'Clean office toilets, sinks, mirrors and agreed amenities. Any restocking requirements are discussed in advance.' }
@@ -23,7 +23,7 @@ const OfficeCleaningPage = () => {
     <>
       <ServiceHero 
         title="Office Cleaning in Adelaide"
-        tagline="A clean office is a productive office. We provide comprehensive cleaning solutions tailored to your corporate environment."
+        tagline="Regular and one-off cleaning for desks, meeting rooms, kitchens, toilets and office floors."
       />
       
       <ServiceNavigation />
@@ -34,20 +34,20 @@ const OfficeCleaningPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Professional Office Cleaning in Adelaide</h2>
+                <h2 className="text-3xl font-bold mb-6">Cleaning for your Adelaide office</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Maintaining a clean and hygienic office is essential for employee health, morale, and productivity. Our professional office cleaning services in Adelaide are designed to create a welcoming and safe workspace for your team and visiting clients.
+                  We clean office floors, desks, meeting rooms and shared areas across Adelaide. Tell us how your workplace is used and which tasks you need help with.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Whether you need daily maintenance or weekly deep cleaning, we customize our services to fit your schedule and specific requirements. We discuss the surfaces, access and tasks required for your workplace.
+                  You might need daily visits, a weekly clean or a one-off tidy-up. We’ll discuss the rooms, surfaces and access, then put together a quote.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CertificationBadge 
                   icon={Briefcase}
-                  title="Corporate Specialists"
-                  description="Experienced in modern office environments"
+                  title="Office cleaning"
+                  description="Desks, meeting rooms, shared kitchens and toilets"
                   index={0}
                 />
                 <CertificationBadge 
@@ -58,14 +58,14 @@ const OfficeCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={Clock}
-                  title="After-Hours Service"
-                  description="Cleaning without disrupting your workday"
+                  title="Cleaning times"
+                  description="Tell us your preferred time and we’ll discuss availability"
                   index={2}
                 />
                 <CertificationBadge 
                   icon={ShieldCheck}
-                  title="Secure & Confidential"
-                  description="Trusted staff for sensitive corporate spaces"
+                  title="Site access"
+                  description="Entry arrangements and restricted areas discussed before the visit"
                   index={3}
                 />
               </div>
@@ -77,7 +77,7 @@ const OfficeCleaningPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Office Cleaning Process</h2>
-              <p className="text-lg text-muted-foreground">A comprehensive approach to maintaining a healthy and productive workspace.</p>
+              <p className="text-lg text-muted-foreground">The tasks we can include in your office clean.</p>
             </div>
             
             <div className="pl-4 md:pl-0">
@@ -96,12 +96,12 @@ const OfficeCleaningPage = () => {
 
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-bold text-center mb-16">The MisterClean Advantage</h3>
+            <h3 className="text-3xl font-bold text-center mb-16">Arranging your office clean</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={CheckCircle}
-                title="Customized Cleaning Plans"
-                description="We understand that every office is unique. We work with you to develop a tailored cleaning schedule that addresses your specific needs and budget."
+                title="Your cleaning schedule"
+                description="Tell us which areas need cleaning and how often. We’ll use this to prepare your quote."
                 index={0}
               />
               <GuaranteeCard 

@@ -1,14 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
-const GuaranteeCard = ({ icon: Icon, title, description, index = 0 }) => {
+const GuaranteeCard = ({ icon: Icon, title, description }) => {
   return (
-    <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="guarantee-card"
+    <div className="guarantee-card"
     >
       <div className="guarantee-card-icon-wrapper">
         <Icon className="h-6 w-6 text-secondary" />
@@ -17,7 +11,7 @@ const GuaranteeCard = ({ icon: Icon, title, description, index = 0 }) => {
       <p className="text-muted-foreground leading-relaxed">
         {description}
       </p>
-    </motion.div>
+    </div>
   );
 };
 

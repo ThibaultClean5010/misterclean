@@ -10,19 +10,19 @@ import ServiceCTA from '@/components/ServiceCTA.jsx';
 
 const RestaurantCleaningPage = () => {
   const steps = [
-    { title: 'Dining Room Reset', description: 'Comprehensive wiping of all tables, chairs, and booth seating. Detailed sweeping and mopping of dining floors to ensure a spotless presentation for your first daily seating.' },
+    { title: 'Dining Room Reset', description: 'Wipe tables, chairs and booth seating, then sweep and mop the dining floors.' },
     { title: 'Washroom Maintenance', description: 'Clean customer and staff washrooms, including toilets, sinks and mirrors. Any restocking requirements are agreed in advance.' },
     { title: 'Bar & Counter Cleaning', description: 'Polishing of bar tops, wiping down of front-of-house service counters, and streak-free cleaning of display glass and brass fixtures.' },
-    { title: 'Entrance & Foyer Care', description: 'Cleaning of entry glass doors, maintaining floor mats, and dusting waiting areas to ensure the vital first impression is always welcoming.' },
+    { title: 'Entrance & Foyer Care', description: 'Clean entrance glass, floor mats and waiting areas.' },
     { title: 'General Floor Maintenance', description: 'Routine sweeping and mechanical or manual mopping of all general hard floor surfaces, promptly addressing daily spills and foot traffic marks.' },
-    { title: 'Waste Management', description: 'Emptying all front-of-house and restroom waste bins, replacing liners, and ensuring all areas are odor-free and hygienic.' }
+    { title: 'Waste Management', description: 'Empty front-of-house and washroom bins and replace liners.' }
   ];
 
   return (
     <>
       <ServiceHero 
-        title="Restaurant Maintenance Cleaning Services"
-        tagline="Consistent, high-quality upkeep for your dining areas and general spaces. We ensure your venue looks immaculate and inviting for every single guest."
+        title="Restaurant Cleaning in Adelaide"
+        tagline="Cleaning for dining areas, washrooms, entrances and other front-of-house spaces."
       />
       
       <ServiceNavigation />
@@ -35,10 +35,10 @@ const RestaurantCleaningPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Routine Cleaning for Adelaide Restaurants</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The atmosphere and cleanliness of your front-of-house are just as important as the food you serve. A pristine dining room, sparkling restrooms, and well-maintained entryways are critical to your customer's overall experience. For wider facility needs, we also offer general <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link>.
+                  We help with the regular cleaning of dining rooms, entrance areas and customer toilets. For other parts of your business, we also offer <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link>.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our restaurant maintenance teams focus on the daily and weekly upkeep of your public spaces. We operate seamlessly outside of your service hours, handling the time-consuming tasks of floor care, washroom sanitization, and surface detailing so your staff can focus entirely on providing exceptional hospitality.
+                  Tell us which areas need cleaning, how often and when service finishes. We’ll discuss suitable times and access, then list the work in your quote.
                 </p>
               </div>
 
@@ -51,20 +51,20 @@ const RestaurantCleaningPage = () => {
                 />
                 <CertificationBadge 
                   icon={Sparkles}
-                  title="Front-of-House Focus"
-                  description="Ensuring dining areas are visually immaculate"
+                  title="Dining areas"
+                  description="Tables, chairs, seating and floors"
                   index={1}
                 />
                 <CertificationBadge 
                   icon={Droplets}
-                  title="Surface Sanitization"
-                  description="Safe, effective cleaning for tables and bars"
+                  title="Tables and counters"
+                  description="Cleaning for agreed tables, bars and service counters"
                   index={2}
                 />
                 <CertificationBadge 
                   icon={Wind}
-                  title="Odor Control"
-                  description="Keeping restrooms and entryways fresh and inviting"
+                  title="Washrooms and entrances"
+                  description="Cleaning for customer toilets and entry areas"
                   index={3}
                 />
               </div>
@@ -77,7 +77,7 @@ const RestaurantCleaningPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Maintenance Routine</h2>
-              <p className="text-lg text-muted-foreground">A dependable, step-by-step cleaning process focused on the areas your customers interact with most.</p>
+              <p className="text-lg text-muted-foreground">The front-of-house tasks we can include in your clean.</p>
             </div>
             
             <div className="pl-4 md:pl-0">
@@ -101,13 +101,13 @@ const RestaurantCleaningPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard 
                 icon={Utensils}
-                title="Seamless After-Hours Service"
+                title="Cleaning times"
                 description="Tell us your opening hours and preferred cleaning times. We discuss available options and agree access before the visit."
                 index={0}
               />
               <GuaranteeCard 
                 icon={CheckCircle}
-                title="Consistent Quality Standard"
+                title="Agreed cleaning tasks"
                 description="We agree the areas and tasks to be cleaned so your restaurant has a clear plan. Contact us to discuss anything that needs extra attention."
                 index={1}
               />
@@ -115,7 +115,7 @@ const RestaurantCleaningPage = () => {
           </div>
         </section>
 
-        <ServiceCTA serviceName="Restaurant Maintenance" />
+        <ServiceCTA serviceName="Restaurant Cleaning" />
       </div>
     </>
   );

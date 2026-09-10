@@ -6,7 +6,7 @@ export default function ProjectComparison() {
   const id = useId();
   const [view, setView] = useState('both');
   const views = [['both', 'Side by side'], ['before', 'Before'], ['after', 'After floor clean']];
-  return <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
+  return <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
     <div className="p-3 flex flex-wrap items-center gap-2 border-b border-slate-100" role="group" aria-label="Compare kitchen floor photographs">
       {views.map(([value, label]) => <button key={value} type="button" aria-pressed={view === value} aria-controls={id} onClick={() => { setView(value); trackEnquiry('project_comparison_view', 'after-builders'); }} className={'rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ' + (view === value ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200')}>{label}</button>)}
     </div>
