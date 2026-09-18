@@ -33,9 +33,9 @@ function App({ serverPages = {} }) {
             <Route path="/services/commercial-deep-cleaning" element={page('CommercialDeepCleaningPage')} />
             <Route path="/services/hospital-clinic-cleaning" element={<Navigate to="/services/window-cleaning" replace />} />
             <Route path="/services/heavy-duty-cleaning" element={<Navigate to="/services/commercial-deep-cleaning" replace />} />
-            <Route path="/services/retail-cleaning" element={page('RetailCleaningPage')} />
-            <Route path="/services/office-cleaning" element={page('OfficeCleaningPage')} />
-            <Route path="/services/restaurant-cleaning" element={page('RestaurantCleaningPage')} />
+            <Route path="/services/retail-cleaning" element={<Navigate to="/services/commercial-cleaning" replace />} />
+            <Route path="/services/office-cleaning" element={<Navigate to="/services/commercial-cleaning" replace />} />
+            <Route path="/services/restaurant-cleaning" element={<Navigate to="/services/commercial-cleaning" replace />} />
             <Route path="/blog" element={page('BlogPage')} />
             <Route path="/blog/:slug" element={page('BlogArticlePage')} />
             <Route path="/projects" element={page('ProjectsPage')} />

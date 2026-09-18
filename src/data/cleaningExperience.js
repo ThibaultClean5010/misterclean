@@ -14,17 +14,14 @@ export const servicePhotoKeys = {
   commercial: 'commercial',
   'window-cleaning': 'windows',
   'commercial-deep-cleaning': 'deep',
-  'after-builders': 'builders',
-  office: 'office',
-  retail: 'retail',
-  restaurant: 'restaurant'
+  'after-builders': 'builders'
 };
 
 export const cleaningOffers = [
-  { value: 'commercial', title: 'Commercial cleaning', shortTitle: 'Regular cleaning', photo: servicePhotoKeys.commercial, path: '/services/commercial-cleaning', description: 'Cleaning for workspaces, shared kitchens, toilets and floors.', benefits: ['Desks and shared surfaces', 'Kitchens and amenities', 'Floors and everyday touchpoints'] },
-  { value: 'window-cleaning', title: 'Window cleaning', shortTitle: 'Windows & glass', photo: 'windows', path: '/services/window-cleaning', description: 'Cleaning for shopfront windows, workplace windows and internal glass.', benefits: ['Internal and external glass', 'Frames, sills and tracks in scope', 'Access assessed before quoting'] },
-  { value: 'commercial-deep-cleaning', title: 'Commercial deep cleaning', shortTitle: 'Deep cleaning', photo: 'deep', path: '/services/commercial-deep-cleaning', description: 'A more detailed clean for built-up dirt and areas that need extra attention.', benefits: ['Floors, edges and corners', 'Kitchens, bathrooms and shared areas', 'Other areas included in your quote'] },
-  { value: 'after-builders', title: 'After-builders cleaning', shortTitle: 'After building work', photo: servicePhotoKeys['after-builders'], path: '/services/after-builders-cleaning', description: 'Remove building dust and clean the agreed surfaces before opening or handover.', benefits: ['Construction dust and surface detailing', 'Glass, frames and tracks', 'A final clean before handover'] }
+  { value: 'commercial', title: 'Regular Cleaning', shortTitle: 'Regular Cleaning', photo: servicePhotoKeys.commercial, path: '/services/commercial-cleaning', description: 'Routine cleaning for offices, shops, restaurants and shared business spaces, with visits planned around your opening hours.', benefits: ['Desks, counters and customer areas', 'Kitchens and amenities within the agreed scope', 'Floors and everyday touchpoints'] },
+  { value: 'commercial-deep-cleaning', title: 'Deep Cleaning', shortTitle: 'Deep Cleaning', photo: 'deep', path: '/services/commercial-deep-cleaning', description: 'A more detailed clean for built-up dirt and areas that need extra attention.', benefits: ['Floors, edges and corners', 'Kitchens, bathrooms and shared areas', 'Other areas included in your quote'] },
+  { value: 'window-cleaning', title: 'Window Cleaning', shortTitle: 'Window Cleaning', photo: 'windows', path: '/services/window-cleaning', description: 'Cleaning for shopfront windows, workplace windows and internal glass.', benefits: ['Internal and external glass', 'Frames, sills and tracks in scope', 'Access assessed before quoting'] },
+  { value: 'after-builders', title: 'After Builders Cleaning', shortTitle: 'After Builders Cleaning', photo: servicePhotoKeys['after-builders'], path: '/services/after-builders-cleaning', description: 'Remove building dust and clean the agreed surfaces during a fit-out or before handover.', benefits: ['Construction dust and surface detailing', 'Glass, frames and tracks', 'Staged or final cleans to suit the work'] }
 ];
 
 export const cleaningPlans = [

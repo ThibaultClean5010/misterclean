@@ -43,7 +43,7 @@ const existingPosts = [
     ],
     cta: {
       text: 'Plan an office cleaning schedule',
-      path: '/services/office-cleaning'
+      path: '/services/commercial-cleaning'
     }
   },
   {
@@ -121,7 +121,7 @@ const existingPosts = [
     ],
     cta: {
       text: 'Improve your store cleaning',
-      path: '/services/retail-cleaning'
+      path: '/services/commercial-cleaning'
     }
   },
   {
@@ -161,7 +161,7 @@ const existingPosts = [
     ],
     "cta": {
       "text": "Arrange restaurant cleaning",
-      "path": "/services/restaurant-cleaning"
+      "path": "/services/commercial-cleaning"
     }
   },
   {

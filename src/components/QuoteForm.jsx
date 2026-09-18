@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { CONTACT_EMAIL, PHONE, PHONE_HREF, serviceOptions } from '@/data/site.js';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF, serviceOptions, resolveService } from '@/data/site.js';
 import { quoteEmail, trackEnquiry } from '@/lib/quote.js';
 import { validateQuote } from '@/lib/quoteValidation.js';
 import { cleaningPlans, windowAccessOptions } from '@/data/cleaningExperience.js';
@@ -14,7 +14,7 @@ const selectStyle = 'w-full min-h-12 rounded-lg border border-slate-300 bg-white
 export default function QuoteForm({ compact = false }) {
   const id = useId();
   const [params] = useSearchParams();
-  const requested = params.get('service');
+  const requested = resolveService(params.get('service'));
   const requestedPlan = params.get('plan');
   const requestedAccess = params.get('access');
   const [service, setService] = useState('commercial');

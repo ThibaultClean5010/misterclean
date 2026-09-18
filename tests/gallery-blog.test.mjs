@@ -62,6 +62,10 @@ test('project carousels expose navigation and keep all original pairs available 
     const html = await readFile('dist/' + path + '.html', 'utf8');
     assert.equal([...html.matchAll(/aria-roledescription="carousel"/g)].length, 1, path + ': one comparison carousel');
     assert.equal([...html.matchAll(/aria-roledescription="slide"/g)].length, pairs, path + ': complete comparison collection');
+    if (pairs === 4) {
+      assert.ok(html.includes('aria-label="1 of 4: Café kitchen floor"'), path + ': the café comparison opens the carousel');
+      assert.ok(html.indexOf('src="' + projectPhotos.kitchenBefore.src + '"') < html.indexOf('src="' + projectPhotos.washroomBefore.src + '"'), path + ': café photos appear before washroom photos');
+    }
     assert.ok(html.includes('aria-label="Previous comparison"'));
     assert.ok(html.includes('aria-label="Next comparison"'));
     assert.ok(html.includes('aria-label="Choose a comparison"'));

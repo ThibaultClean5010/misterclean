@@ -5,24 +5,22 @@ export const PHONE = '0474 597 325';
 export const PHONE_HREF = 'tel:+61474597325';
 export const LOGO = '/images/misterclean-logo.png';
 export const serviceOptions = [
-  { value: 'commercial', label: 'Commercial Cleaning', path: '/services/commercial-cleaning' },
-  { value: 'after-builders', label: 'After Builders Cleaning', path: '/services/after-builders-cleaning' },
+  { value: 'commercial', label: 'Regular Cleaning', path: '/services/commercial-cleaning' },
+  { value: 'commercial-deep-cleaning', label: 'Deep Cleaning', path: '/services/commercial-deep-cleaning' },
   { value: 'window-cleaning', label: 'Window Cleaning', path: '/services/window-cleaning' },
-  { value: 'commercial-deep-cleaning', label: 'Commercial Deep Cleaning', path: '/services/commercial-deep-cleaning' },
-  { value: 'office', label: 'Office Cleaning', path: '/services/office-cleaning' },
-  { value: 'retail', label: 'Retail Cleaning', path: '/services/retail-cleaning' },
-  { value: 'restaurant', label: 'Restaurant Cleaning', path: '/services/restaurant-cleaning' }
+  { value: 'after-builders', label: 'After Builders Cleaning', path: '/services/after-builders-cleaning' }
 ];
+// Keep saved quote links and older enquiry forms compatible with the four services.
+export function resolveService(value) {
+  return ['office', 'retail', 'restaurant'].includes(value) ? 'commercial' : value;
+}
 export const pageCatalog = {
   '/': { title: 'Commercial Cleaning Adelaide | MisterClean', description: 'Commercial, window, after-builders and deep cleaning for Adelaide businesses. Request a quote for a one-off clean or a regular cleaning plan.', name: 'Home', image: '/images/hindmarsh-retail-after-builders.jpg' },
-  '/services': { title: 'Cleaning Services Adelaide | MisterClean', description: 'Find cleaning for your Adelaide business: offices, shops, windows, after-builders cleans and complete premises deep cleaning. Explore our services.', name: 'Services' },
-  '/services/commercial-cleaning': { title: 'Commercial Cleaning Adelaide | Offices & Shops | MisterClean', description: 'Commercial cleaning for Adelaide offices, shops and business premises. Discuss the tasks, frequency and cleaning times that suit your workplace.', name: 'Commercial Cleaning' },
+  '/services': { title: 'Cleaning Services Adelaide | MisterClean', description: 'Four cleaning services for Adelaide businesses: regular cleaning, deep cleaning, window cleaning and after-builders cleaning. Find the right clean for your premises.', name: 'Services' },
+  '/services/commercial-cleaning': { title: 'Regular Commercial Cleaning Adelaide | MisterClean', description: 'Regular cleaning for Adelaide offices, shops and restaurants. Plan workplace surfaces, floors and amenities around your opening hours and agreed schedule.', name: 'Regular Cleaning' },
   '/services/after-builders-cleaning': { title: 'After Builders Cleaning Adelaide | MisterClean', description: 'Post-construction and after-builders cleaning in Adelaide. Arrange dust removal, surface detailing and a final clean for your property handover.', name: 'After Builders Cleaning' },
   '/services/window-cleaning': { title: 'Commercial Window Cleaning Adelaide | MisterClean', description: 'One-off and recurring window cleaning in Adelaide. Internal and external glass, shopfronts and hard-to-reach windows assessed before quoting.', name: 'Window Cleaning', image: '/images/commercial-windows.jpg' },
-  '/services/commercial-deep-cleaning': { title: 'Commercial Deep Cleaning Adelaide | MisterClean', description: 'Give your Adelaide premises a complete refresh. Deep cleaning for workspaces, kitchens, bathrooms, floors and shared areas, with an agreed scope.', name: 'Commercial Deep Cleaning' },
-  '/services/office-cleaning': { title: 'Office Cleaning Adelaide | Regular & One-off | MisterClean', description: 'Office cleaning in Adelaide for workstations, meeting rooms, kitchens and amenities. Request a regular schedule or a one-off workplace clean.', name: 'Office Cleaning' },
-  '/services/retail-cleaning': { title: 'Retail & Shop Cleaning Adelaide | MisterClean', description: 'Retail cleaning for Adelaide shops and showrooms. Keep entrances, floors, fitting rooms and customer areas presentable with an agreed cleaning plan.', name: 'Retail Cleaning' },
-  '/services/restaurant-cleaning': { title: 'Restaurant Cleaning Adelaide | MisterClean', description: 'Cleaning for Adelaide restaurant dining areas, amenities and shared surfaces. Discuss your premises, opening hours and required cleaning tasks.', name: 'Restaurant Cleaning' },
+  '/services/commercial-deep-cleaning': { title: 'Commercial Deep Cleaning Adelaide | MisterClean', description: 'Give your Adelaide premises a complete refresh. Deep cleaning for workspaces, kitchens, bathrooms, floors and shared areas, with an agreed scope.', name: 'Deep Cleaning' },
   '/projects': { title: 'Cleaning Projects Adelaide | Before & After | MisterClean', description: 'See real MisterClean projects: washroom and café floor before-and-afters, timber floors and a Hindmarsh retail fit-out. Browse our original cleaning photos.', name: 'Our Cleaning Projects', image: '/images/washroom-floor-after-cleaning.jpg' },
   '/about': { title: 'About MisterClean | Adelaide Commercial Cleaning', description: 'Learn about MisterClean’s commercial cleaning services in Adelaide: an agreed scope, practical scheduling and direct contact for your business.', name: 'About MisterClean' },
   '/contact': { title: 'Request a Cleaning Quote Adelaide | MisterClean', description: 'Request a quote for commercial, window, after-builders or deep cleaning in Adelaide. Tell us about your business, suburb and cleaning requirements.', name: 'Request a Quote' },

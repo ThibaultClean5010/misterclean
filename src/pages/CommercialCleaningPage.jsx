@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, ShieldCheck, ClipboardList, Users, Clock, CheckCircle } from 'lucide-react';
+import { Building2, ShieldCheck, ClipboardList, Users, Utensils, CheckCircle, Store } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
 import ServiceNavigation from '@/components/ServiceNavigation.jsx';
 import CertificationBadge from '@/components/CertificationBadge.jsx';
@@ -8,30 +8,73 @@ import GuaranteeCard from '@/components/GuaranteeCard.jsx';
 import ServiceCTA from '@/components/ServiceCTA.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
 
+const premises = [
+  {
+    id: 'offices',
+    icon: Building2,
+    title: 'Offices and shared workplaces',
+    description: 'Regular cleaning for the rooms your team uses each day, with desk surfaces and equipment handling agreed before work begins.',
+    tasks: [
+      'Desks, meeting tables and shared touchpoints',
+      'Break rooms and shared kitchen surfaces',
+      'Toilets, sinks and mirrors',
+      'Vacuuming, sweeping and mopping',
+      'Rubbish and recycling bins',
+    ],
+  },
+  {
+    id: 'retail',
+    icon: Store,
+    title: 'Shops and showrooms',
+    description: 'Cleaning for customer and staff areas, planned around your trading hours. Let us know about stock displays and surfaces that need particular care.',
+    tasks: [
+      'Shop floors, entrances and floor mats',
+      'Display shelves and accessible surfaces',
+      'Fitting rooms, mirrors and seating',
+      'Counters and agreed payment terminal surfaces',
+      'Staff areas, washrooms and bins',
+    ],
+  },
+  {
+    id: 'hospitality',
+    icon: Utensils,
+    title: 'Cafés and restaurant customer areas',
+    description: 'Routine cleaning of dining rooms and other front-of-house spaces. Tell us when service finishes so we can discuss suitable times and access.',
+    tasks: [
+      'Tables, chairs and booth seating',
+      'Bar tops and service counters',
+      'Dining floors and waiting areas',
+      'Customer and staff washrooms',
+      'Front-of-house bins and liners',
+    ],
+  },
+];
+
 const CommercialCleaningPage = () => {
   return (
     <>
-
       <ServiceHero
-        title="Commercial Cleaning Services for Adelaide Businesses"
-        tagline="Cleaning for Adelaide workplaces, shops and shared areas, with tasks and frequency planned around your premises."
+        title="Regular Cleaning for Adelaide Businesses"
+        tagline="Ongoing cleaning for offices, shops, cafés and restaurant customer areas, with tasks and visits agreed around your business."
       />
 
       <ServiceNavigation />
       <CertificationsSection />
 
       <div>
-        {/* Intro & Certifications */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Commercial Cleaning Services for Adelaide Businesses</h2>
+                <h2 className="text-3xl font-bold mb-6">One regular cleaning plan for your premises</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We clean offices, shops and shared workspaces in Adelaide. Alongside regular cleaning, we can help with <Link to="/services/window-cleaning" className="text-primary hover:underline">window cleaning</Link>, or a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">complete deep clean</Link>, depending on what your workplace needs.
+                  We help Adelaide businesses keep on top of everyday dust, spills and foot traffic. Office cleaning, shop cleaning and restaurant customer-area cleaning all sit within our Regular Cleaning service. Your plan lists the areas and tasks your business needs.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Tell us your opening hours, how the space is used and how often you would like a visit. We discuss suitable cleaning times, access and any restricted areas, then confirm the scope and frequency in your quote. You can contact us directly when your requirements change.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We discuss your opening hours, the areas to be cleaned and how often each task is needed. Your quote sets out the agreed work, with a direct contact for questions or changes to your requirements.
+                  If your premises need a more thorough reset first, ask about a <Link to="/services/commercial-deep-cleaning" className="text-primary hover:underline">deep clean</Link>. <Link to="/services/window-cleaning" className="text-primary hover:underline">Window cleaning</Link> can also be arranged alongside your regular plan.
                 </p>
               </div>
 
@@ -56,8 +99,8 @@ const CommercialCleaningPage = () => {
                 />
                 <CertificationBadge
                   icon={CheckCircle}
-                  title="Workplace Hygiene"
-                  description="Cleaning of shared surfaces and touchpoints"
+                  title="Shared Areas"
+                  description="Cleaning of agreed surfaces and touchpoints"
                   index={3}
                 />
               </div>
@@ -65,111 +108,45 @@ const CommercialCleaningPage = () => {
           </div>
         </section>
 
-        {/* Customization & Frequency Options */}
         <section className="service-section-alternate">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4">Cleaning for offices and shops</h2>
+              <h2 className="text-3xl font-bold mb-4">What can your regular clean include?</h2>
               <p className="text-lg text-muted-foreground">
-                Tell us your opening hours so we can discuss suitable cleaning times. Explore the office and retail tasks below.
+                These are some of the tasks we can include for different premises. We agree which apply to your site and how often they need doing.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Office Cleaning */}
-              <div className="bg-white p-8 md:p-10 rounded-lg border  flex flex-col h-full">
-                <div className="h-8 flex items-center text-primary mb-4">
-                  <Clock className="h-6 w-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {premises.map(({ id, icon: Icon, title, description, tasks }) => (
+                <div key={id} id={id} className="scroll-mt-28 bg-white p-8 rounded-lg border flex flex-col h-full">
+                  <div className="h-8 flex items-center text-primary mb-4">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{title}</h3>
+                  <p className="text-muted-foreground mb-8 flex-1 text-base leading-relaxed">{description}</p>
+                  <ul className="space-y-3 text-sm font-medium text-slate-700">
+                    {tasks.map((task) => (
+                      <li key={task} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Office Cleaning</h3>
-                <p className="text-muted-foreground mb-8 flex-1 text-base leading-relaxed">
-                  Cleaning for desks, meeting rooms, shared kitchens, toilets and floors, with visits arranged to suit your office.
-                </p>
-                <ul className="space-y-3 text-sm font-medium text-slate-700">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Desk and workstation cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Meeting room cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Break room and kitchen cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Washroom cleaning and agreed supply requirements</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Carpet and floor maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Window and glass cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Emptying rubbish and recycling bins</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Retail Cleaning */}
-              <div className="bg-white p-8 md:p-10 rounded-lg border  flex flex-col h-full">
-                <div className="h-8 flex items-center text-primary mb-4">
-                  <Building2 className="h-6 w-6" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Retail Cleaning</h3>
-                <p className="text-muted-foreground mb-8 flex-1 text-base leading-relaxed">
-                  Cleaning for shop floors, shelves, fitting rooms, counters and customer areas. Tell us your trading hours and what needs doing.
-                </p>
-                <ul className="space-y-3 text-sm font-medium text-slate-700">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Display case and shelf cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Fitting room cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Checkout counter and POS system cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Floor detailing assessed before quoting</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Window and storefront cleaning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Merchandise area dusting</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
-                    <span>Customer area disinfection</span>
-                  </li>
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Guarantees & SLAs */}
         <section className="service-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-16">Planning Your Commercial Clean</h2>
+            <h2 className="text-3xl font-bold text-center mb-16">Planning your regular clean</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <GuaranteeCard
                 icon={ClipboardList}
                 title="A Clear Cleaning Scope"
-                description="We agree the cleaning tasks and frequency before work begins. Discuss any particular presentation standards or areas that need extra attention when requesting your quote."
+                description="We agree the cleaning tasks, visit frequency and access before work begins. Tell us about equipment, delicate surfaces or areas that need extra attention so these can be covered in your quote."
                 index={0}
               />
               <GuaranteeCard
@@ -181,7 +158,7 @@ const CommercialCleaningPage = () => {
             </div>
           </div>
         </section>
-        <ServiceCTA serviceName="Commercial Cleaning" />
+        <ServiceCTA serviceName="Regular Cleaning" />
       </div>
     </>
   );

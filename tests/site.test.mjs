@@ -10,6 +10,28 @@ import { cleaningOffers, cleaningPlans, cleaningQuotePath, cleaningPhotos, servi
 const fileFor = route => 'dist/' + (route === '/' ? 'index' : route.slice(1)) + '.html';
 const matches = (html, pattern) => [...html.matchAll(pattern)];
 
+test('the site offers four services consistently and redirects former industry pages', async () => {
+  const labels = ['Regular Cleaning', 'Deep Cleaning', 'Window Cleaning', 'After Builders Cleaning'];
+  assert.deepEqual(serviceOptions.map(service => service.label), labels);
+  assert.deepEqual(cleaningOffers.map(offer => offer.value), serviceOptions.map(service => service.value));
+  assert.equal(publicPaths.filter(path => path.startsWith('/services/')).length, 4);
+  const redirects = JSON.parse(await readFile('vercel.json', 'utf8')).redirects;
+  for (const type of ['office', 'retail', 'restaurant']) {
+    const path = '/services/' + type + '-cleaning';
+    assert.ok(!publicPaths.includes(path), 'former industry page excluded from the sitemap');
+    assert.deepEqual(redirects.find(rule => rule.source === path), { source: path, destination: '/services/commercial-cleaning', permanent: true });
+  }
+  for (const route of ['/', '/contact']) {
+    const html = await readFile(fileFor(route), 'utf8');
+    const select = html.match(/<select\b[^>]*name="service"[^>]*>([\s\S]*?)<\/select>/)[1];
+    assert.deepEqual(matches(select, /<option\b[^>]*>([^<]+)<\/option>/g).map(match => match[1]), labels, route + ': four quote choices in the same order');
+  }
+  const regular = await readFile(fileFor('/services/commercial-cleaning'), 'utf8');
+  assert.match(regular, /offices/i);
+  assert.match(regular, /shops/i);
+  assert.match(regular, /restaurants/i);
+});
+
 test('every public page has visible content, unique SEO metadata and valid links', async () => {
   const titles = new Set();
   const descriptions = new Set();

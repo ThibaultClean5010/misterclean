@@ -23,7 +23,7 @@ const CommercialDeepCleaningPage = () => {
   return (
     <>
       <ServiceHero
-        title="Commercial Deep Cleaning in Adelaide"
+        title="Deep Cleaning in Adelaide"
         tagline="Deep cleaning for offices, shops and other business premises. Floors, kitchens, bathrooms and the details that need more than a regular clean."
       />
       <ServiceNavigation />
@@ -64,7 +64,7 @@ const CommercialDeepCleaningPage = () => {
           <Link to="/projects#washroom-cleaning" className="inline-block text-primary font-semibold underline py-3 mt-5">See more washroom before-and-afters</Link>
         </div>
       </section>
-      <ServiceCTA serviceName="Commercial Deep Cleaning" />
+      <ServiceCTA serviceName="Deep Cleaning" />
     </>
   );
 };

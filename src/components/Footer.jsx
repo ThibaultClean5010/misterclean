@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { CONTACT_EMAIL, PHONE, PHONE_HREF } from '@/data/site.js';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF, serviceOptions } from '@/data/site.js';
 import { trackEnquiry } from '@/lib/quote.js';
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-6">
             <p className="text-sm leading-relaxed">
-              Commercial, window, after-builders and deep cleaning for Adelaide businesses. One-off visits and regular cleaning plans.
+              Regular cleaning, deep cleaning, window cleaning and after builders cleaning for Adelaide businesses. Offices, shops, restaurants and shared premises.
             </p>
           </div>
 
@@ -32,10 +32,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white  mb-6">Services</h3>
             <nav className="flex flex-col gap-3">
-              <Link to="/services/commercial-cleaning" className="text-sm hover:text-brand-lime transition-colors">Commercial Cleaning</Link>
-              <Link to="/services/window-cleaning" className="text-sm hover:text-brand-lime transition-colors">Window Cleaning</Link>
-              <Link to="/services/after-builders-cleaning" className="text-sm hover:text-brand-lime transition-colors">After Builders Cleaning</Link>
-              <Link to="/services/commercial-deep-cleaning" className="text-sm hover:text-brand-lime transition-colors">Commercial Deep Cleaning</Link>
+              {serviceOptions.map(service => <Link key={service.value} to={service.path} className="text-sm hover:text-brand-lime transition-colors">{service.label}</Link>)}
             </nav>
           </div>
 

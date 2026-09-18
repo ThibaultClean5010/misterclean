@@ -26,7 +26,7 @@ export default function ProjectsPage() {
     </nav>
     <section id="washroom-cleaning" className="py-14 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From our cleaning jobs</p><h2 className="mb-4">Before and after, side by side</h2><p className="text-slate-600">Browse four comparisons from our washroom and café floor cleans. Each pair shows the same space, with the original photos and a note about what changed.</p></div>
+        <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From our cleaning jobs</p><h2 className="mb-4">Before and after, side by side</h2><p className="text-slate-600">Browse four comparisons from our café floor and washroom cleans. Each pair shows the same space, with the original photos and a note about what changed.</p></div>
         <ProjectCarousel onOpen={openPhoto} />
         <Link to="/services/commercial-deep-cleaning" className="inline-flex items-center gap-2 text-primary font-semibold py-3 mt-5">Deep cleaning for your premises <ArrowRight className="w-4 h-4" /></Link>
       </div>
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 items-center gap-10">
         <figure><ProjectPhoto photo="retailFront" onOpen={openPhoto} sizes="(min-width: 1024px) 50vw, 100vw" className="w-full h-auto rounded-lg" /><figcaption className="text-sm text-slate-500 mt-3">Hindmarsh retail premises · Original post-construction project photograph.</figcaption></figure>
         <div><p className="text-sm text-primary font-semibold mb-3">Hindmarsh · Retail premises</p><h2 className="mb-5">A retail job in Hindmarsh</h2><p className="text-slate-600 mb-5">An empty retail space with carpeted walkways, display fixtures and a glazed entrance. The post-construction project photo shows the shop before it is stocked for trading.</p><p className="text-slate-600 mb-5">For a similar premises, we discuss accessible flooring, shelving, counters and glass, then agree the final clean around your access and handover date. Once trading begins, a regular plan can maintain customer areas.</p>
-          <div className="flex flex-wrap gap-4"><Link to="/services/retail-cleaning" className="text-primary font-semibold underline py-3">Retail cleaning</Link><Link to="/contact?service=after-builders" className="text-primary font-semibold underline py-3">Discuss a handover clean</Link></div>
+          <div className="flex flex-wrap gap-4"><Link to="/services/commercial-cleaning" className="text-primary font-semibold underline py-3">Regular cleaning for your shop</Link><Link to="/contact?service=after-builders" className="text-primary font-semibold underline py-3">Discuss a handover clean</Link></div>
         </div>
       </div>
     </section>

@@ -8,19 +8,20 @@ import ServiceExplorer from '@/components/ServiceExplorer.jsx';
 import Reveal from '@/components/Reveal.jsx';
 import QuoteProcess from '@/components/QuoteProcess.jsx';
 import CleaningFAQ from '@/components/CleaningFAQ.jsx';
-import { PHONE, PHONE_HREF } from '@/data/site.js';
+import { PHONE, PHONE_HREF, serviceOptions, resolveService } from '@/data/site.js';
 import { blogPosts } from '@/data/blogPosts.js';
 import { trackEnquiry } from '@/lib/quote.js';
 
-const priorities = [
-  { value: 'commercial', title: 'Regular cleaning', detail: 'Workplaces, shops & shared areas', icon: Building2 },
-  { value: 'window-cleaning', title: 'Windows & glass', detail: 'One-off, recurring & hard-to-reach', icon: PanelsTopLeft },
-  { value: 'commercial-deep-cleaning', title: 'Deep cleaning', detail: 'Floors, kitchens, bathrooms & details', icon: Sparkles },
-  { value: 'after-builders', title: 'After building work', detail: 'Dust, detailing & handover', icon: HardHat }
-];
+const priorityDetails = {
+  commercial: { detail: 'Offices, shops, restaurants & shared areas', icon: Building2 },
+  'commercial-deep-cleaning': { detail: 'Floors, kitchens, bathrooms & details', icon: Sparkles },
+  'window-cleaning': { detail: 'One-off, recurring & hard-to-reach', icon: PanelsTopLeft },
+  'after-builders': { detail: 'Dust, detailing & handover', icon: HardHat }
+};
+const priorities = serviceOptions.map(service => ({ ...service, ...priorityDetails[service.value] }));
 export default function HomePage() {
   const [params] = useSearchParams();
-  const selected = params.get('service');
+  const selected = resolveService(params.get('service'));
   return <>
     <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-brand-mist border-b border-brand-cyan/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-8 lg:gap-14 items-start">
@@ -30,7 +31,7 @@ export default function HomePage() {
           <p className="text-xl sm:text-2xl font-semibold text-slate-800 mb-4">Regular and one-off cleaning for your workplace.</p>
           <p className="text-base sm:text-lg text-slate-600 mb-7">We clean offices, shops, windows and business premises in Adelaide. Need a regular clean, a deep clean or help after building work? Tell us about the job.</p>
           <div className="grid grid-cols-2 gap-3">{priorities.map(item => <Link key={item.value} to={'/?service=' + item.value + '#quick-quote'} onClick={() => trackEnquiry('service_selected', item.value)} className={'group rounded-md border bg-white p-3 sm:p-4 flex gap-3 transition-colors hover:border-primary focus-visible:border-primary ' + (selected === item.value ? 'border-primary ring-1 ring-primary' : 'border-slate-200')}>
-            <item.icon className="hidden sm:block w-5 h-5 mt-0.5 shrink-0 text-primary" /><div className="min-w-0"><span className="block font-semibold text-sm mb-1">{item.title}</span><span className="block text-xs text-slate-600">{item.detail}</span></div><ArrowRight className="hidden sm:block w-4 h-4 ml-auto shrink-0 mt-1 text-slate-400 group-hover:text-primary" />
+            <item.icon className="hidden sm:block w-5 h-5 mt-0.5 shrink-0 text-primary" /><div className="min-w-0"><span className="block font-semibold text-sm mb-1">{item.label}</span><span className="block text-xs text-slate-600">{item.detail}</span></div><ArrowRight className="hidden sm:block w-4 h-4 ml-auto shrink-0 mt-1 text-slate-400 group-hover:text-primary" />
           </Link>)}</div>
           <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="inline-flex items-center gap-2 font-semibold text-primary py-3 mt-4"><Phone className="w-4 h-4" />Prefer to talk? {PHONE}</a>
           <Link to="/projects" className="block underline text-sm text-slate-600 py-2">See our project photos</Link>

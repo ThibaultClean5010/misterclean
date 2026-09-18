@@ -10,7 +10,7 @@ import { cleaningOffers, cleaningPhotos, cleaningPlans, windowAccessOptions, cle
 export default function ServiceExplorer() {
   const id = useId();
   const [service, setService] = useState('commercial');
-  const [plan, setPlan] = useState('one-off');
+  const [plan, setPlan] = useState('regular');
   const [access, setAccess] = useState('standard');
   return <section id="find-your-clean" className="py-14 md:py-20 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ export default function ServiceExplorer() {
         <div><p className="text-sm  text-primary font-bold mb-3">Our cleaning services</p><h2 className="mb-3">What needs a clean?</h2><p className="text-lg text-muted-foreground">Choose a service and let us know how often you need it.</p></div>
         <Link to="/services" className="inline-flex items-center gap-2 font-semibold text-primary py-3">All services <ArrowRight className="h-4 w-4" /></Link>
       </div>
-      <Tabs value={service} onValueChange={setService}>
+      <Tabs value={service} onValueChange={value => { setService(value); setPlan(value === 'commercial' ? 'regular' : 'one-off'); }}>
         <TabsList aria-label="Choose a cleaning service" className="grid grid-cols-2 md:grid-cols-4 h-auto gap-2 p-0 bg-transparent mb-5">
           {cleaningOffers.map(offer => <TabsTrigger key={offer.value} value={offer.value} className="min-h-14 whitespace-normal text-left justify-start px-4 py-3 text-base border border-slate-200 rounded-md bg-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:border-primary ">{offer.shortTitle}</TabsTrigger>)}
         </TabsList>
@@ -44,7 +44,7 @@ export default function ServiceExplorer() {
           </div>
         </TabsContent>)}
       </Tabs>
-      <p className="mt-6 text-muted-foreground">Cleaning for <Link className="text-primary underline" to="/services/office-cleaning">offices</Link>, <Link className="text-primary underline" to="/services/retail-cleaning">shops and showrooms</Link> or <Link className="text-primary underline" to="/services/restaurant-cleaning">restaurants</Link>.</p>
+      <p className="mt-6 text-muted-foreground">Offices, shops, showrooms and restaurants are all covered by our <Link className="text-primary underline" to="/services/commercial-cleaning">Regular Cleaning service</Link>.</p>
     </div>
   </section>;
 }

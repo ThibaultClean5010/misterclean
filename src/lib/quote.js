@@ -1,8 +1,8 @@
-import { CONTACT_EMAIL, serviceOptions } from '../data/site.js';
+import { CONTACT_EMAIL, serviceOptions, resolveService } from '../data/site.js';
 import { cleaningPlans, windowAccessOptions } from '../data/cleaningExperience.js';
 export function quoteEmail(input) {
   const values = Object.fromEntries(Object.entries(input).map(([key, value]) => [key, String(value ?? '').trim()]));
-  const service = serviceOptions.find(item => item.value === values.service)?.label || 'Cleaning enquiry';
+  const service = serviceOptions.find(item => item.value === resolveService(values.service))?.label || 'Cleaning enquiry';
   const subject = service + ' quote - ' + (values.business || values.suburb || 'Adelaide').replace(/[\r\n]+/g, ' ');
   const plan = cleaningPlans.find(item => item.value === values.plan)?.label;
   const access = values.service === 'window-cleaning' && windowAccessOptions.find(item => item.value === values.access)?.label;

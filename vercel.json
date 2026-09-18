@@ -2,7 +2,30 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/services/hospital-clinic-cleaning", "destination": "/services/window-cleaning", "permanent": true },
-    { "source": "/services/heavy-duty-cleaning", "destination": "/services/commercial-deep-cleaning", "permanent": true }
+    {
+      "source": "/services/hospital-clinic-cleaning",
+      "destination": "/services/window-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/heavy-duty-cleaning",
+      "destination": "/services/commercial-deep-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/office-cleaning",
+      "destination": "/services/commercial-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/retail-cleaning",
+      "destination": "/services/commercial-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/restaurant-cleaning",
+      "destination": "/services/commercial-cleaning",
+      "permanent": true
+    }
   ]
 }

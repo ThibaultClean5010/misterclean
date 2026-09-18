@@ -27,6 +27,19 @@ test('the actual API entry exports a callable configuration endpoint', async () 
   assert.equal(typeof (await response.json()).directSend, 'boolean');
 });
 
+test('older industry quote forms still reach the grouped regular cleaning service', async () => {
+  for (const service of ['office', 'retail', 'restaurant']) {
+    const input = { ...valid, service };
+    assert.equal(validateQuote(input).values.service, 'commercial');
+    let outbound;
+    const response = await run(request(input), { fetchImpl: async (_url, options) => { outbound = JSON.parse(options.body); return stub(); } });
+    assert.equal(response.status, 202);
+    assert.match(outbound.subject, /^Regular Cleaning quote/);
+    assert.match(outbound.text, /Frequency: Recurring visits/);
+    assert.ok(!outbound.text.includes('Window access:'));
+  }
+});
+
 test('capability checks reveal only activation state and never credentials', async () => {
   for (const configuration of [{}, { ...env, QUOTE_FORM_ENABLED: 'false' }, { ...env, RESEND_API_KEY: '' }, { ...env, QUOTE_FROM_EMAIL: '' }, env]) {
     const response = await run(new Request(SITE_URL + '/api/quote'), { env: configuration });

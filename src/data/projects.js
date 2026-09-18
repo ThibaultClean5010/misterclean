@@ -22,6 +22,8 @@ export const projectPhotos = {
 };
 
 export const projectGallery = [
+  { key: 'kitchenBefore', title: 'Kitchen floor before cleaning', stage: 'Before floor cleaning', caption: 'Café fit-out · Construction dust and loose materials on the floor.', featured: true },
+  { key: 'kitchenAfter', title: 'Kitchen floor after cleaning', stage: 'After floor cleaning', caption: 'Café fit-out · The floor has been cleaned; equipment remains wrapped and fitting work continues.', featured: true },
   {"key":"washroomBefore","title":"Washroom floor before cleaning","stage":"Before cleaning","caption":"Footprints and pale residue across the tiles, around the basin and along the cubicles.","featured":true},
   {"key":"washroomAfter","title":"Washroom floor after cleaning","stage":"After cleaning","caption":"The same washroom, with the floor tiles visible again after cleaning.","featured":true},
   {"key":"cubicleBefore","title":"Toilet cubicle before cleaning","stage":"Before cleaning","caption":"Paper debris and tracked residue on the tiled floor.","featured":true},
@@ -35,8 +37,6 @@ export const projectGallery = [
   { key: 'retailFloor', title: 'Retail floor and displays', stage: 'After construction cleaning', caption: 'Hindmarsh · Empty display fixtures and carpeted walkways after the clean.' },
   { key: 'retailCounter', title: 'Counter and glass partition', stage: 'After construction cleaning', caption: 'Hindmarsh · A second view of the shop, including the counter and partition.' },
   { key: 'retailFront', title: 'Looking towards the shopfront', stage: 'After construction cleaning', caption: 'Hindmarsh · The shop floor before the premises is stocked for trading.', featured: true },
-  { key: 'kitchenBefore', title: 'Kitchen floor before cleaning', stage: 'Before floor cleaning', caption: 'Café fit-out · Construction dust and loose materials on the floor.', featured: true },
-  { key: 'kitchenAfter', title: 'Kitchen floor after cleaning', stage: 'After floor cleaning', caption: 'Café fit-out · The floor has been cleaned; equipment remains wrapped and fitting work continues.', featured: true },
   { key: 'windowsBefore', title: 'Entrance glass before cleaning', stage: 'Before window cleaning', caption: 'Visible streaks and residue on the entrance doors before cleaning.' },
   { key: 'cafeFloor', title: 'Main café floor during fit-out', stage: 'Before cleaning', caption: 'Building materials and dust around the bench and framework while fitting work is underway.' },
   { key: 'cafeCounter', title: 'Service counter and aisle', stage: 'Before cleaning', caption: 'Protected counters, dust and installation materials before the clean.' },
@@ -95,5 +95,5 @@ export const projectComparisons = {
   }
 };
 
-export const comparisonOrder = ['washroom', 'cubicle', 'amenities', 'kitchen'];
+export const comparisonOrder = ['kitchen', 'washroom', 'cubicle', 'amenities'];
 export const washroomComparisonOrder = ['washroom', 'cubicle', 'amenities'];

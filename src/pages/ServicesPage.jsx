@@ -12,7 +12,7 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-sm text-brand-lime font-semibold  mb-4">Cleaning for Adelaide businesses</p>
         <h1 className="mb-5">Cleaning services in Adelaide</h1>
-        <p className="text-lg text-slate-300 max-w-2xl">Regular cleaning, windows, deep cleans and cleaning after building work. Here’s what we can help with.</p>
+        <p className="text-lg text-slate-300 max-w-2xl">Four services for your business: regular cleaning, deep cleaning, window cleaning and after builders cleaning.</p>
         <nav aria-label="Jump to a cleaning service" className="flex flex-wrap gap-3 mt-7">{cleaningOffers.map(offer => <a key={offer.value} href={'#' + offer.value} className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-3 text-sm font-semibold hover:bg-white/10 transition-colors">{offer.shortTitle}<ArrowDown className="h-4 w-4" /></a>)}</nav>
       </div>
     </section>
@@ -25,6 +25,7 @@ export default function ServicesPage() {
             <h2 className="mb-5"><Link to={offer.path} className="hover:text-primary transition-colors">{offer.title}</Link></h2>
             <p className="text-lg text-muted-foreground mb-6">{offer.description}</p>
             <ul className="space-y-3 mb-7">{offer.benefits.map(benefit => <li key={benefit} className="flex gap-3"><Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />{benefit}</li>)}</ul>
+            {offer.value === 'commercial' && <p className="text-muted-foreground mb-6">For offices, shops, restaurants and shared premises. We agree the tasks and visiting schedule around your business.</p>}
             {offer.value === 'window-cleaning' && <p className="text-muted-foreground mb-6">Choose a one-off clean or a recurring schedule. For hard-to-reach windows, we assess height and access before confirming the work.</p>}
             {offer.value === 'commercial-deep-cleaning' && <p className="text-muted-foreground mb-6">Tell us which rooms need a deeper clean. We’ll list the floors, kitchen areas, bathrooms and other surfaces included in your quote.</p>}
             <div className="flex flex-wrap gap-3"><Button asChild size="lg"><Link to={'/contact?service=' + offer.value}>Get a quote<ArrowRight className="ml-2 h-4 w-4" /></Link></Button><Button asChild size="lg" variant="outline"><Link to={offer.path}>Service details</Link></Button></div>
