@@ -4,9 +4,10 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { projectPhotos, projectGallery } from '../src/data/projects.js';
 import { blogPosts } from '../src/data/blogPosts.js';
-import { newBlogPosts } from '../src/data/newBlogPosts.js';
 import { relatedArticles } from '../src/lib/blog.js';
 import { SITE_URL } from '../src/data/site.js';
+
+const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' })[character]);
 
 test('the projects page offers ten distinct, labelled photographs with optimised mobile copies', async () => {
   const html = await readFile('dist/projects.html', 'utf8');
@@ -34,8 +35,11 @@ test('the projects page offers ten distinct, labelled photographs with optimised
 test('blog articles expose matching content, author, dates and canonical structured data', async () => {
   const blog = await readFile('dist/blog.html', 'utf8');
   const home = await readFile('dist/index.html', 'utf8');
-  assert.equal(blogPosts.length, 8);
+  assert.ok(blogPosts.length >= 8, 'retain the existing articles while allowing new publications');
   assert.equal(new Set(blogPosts.map(post => post.slug)).size, blogPosts.length);
+  for (const post of blogPosts.slice(0, 3)) {
+    assert.ok(home.includes('href="/blog/' + post.slug + '"'), 'the latest articles are discoverable from home');
+  }
   for (const post of blogPosts) {
     const path = '/blog/' + post.slug;
     assert.ok(blog.includes('href="' + path + '"'), 'blog links to ' + path);
@@ -56,14 +60,11 @@ test('blog articles expose matching content, author, dates and canonical structu
     const related = relatedArticles(post);
     assert.equal(new Set(related.map(item => item.slug)).size, 3);
     assert.ok(related.every(item => item.slug !== post.slug), 'related links do not point back to the current article');
-    if (newBlogPosts.includes(post)) {
-      assert.ok(home.includes('href="' + path + '"'), 'new article discoverable from home');
-      assert.ok(html.includes(post.imageCaption), 'original image context is visible');
-      for (const [index, section] of post.sections.entries()) {
-        assert.ok(html.includes('id="section-' + (index + 1) + '"'), 'table of contents has a destination');
-        for (const bullet of section.bullets || []) assert.ok(html.includes(bullet));
-        for (const link of section.links || []) assert.ok(html.includes('href="' + link.path + '"'));
-      }
+    if (post.imageCaption) assert.ok(html.includes(escapeHtml(post.imageCaption)), 'original image context is visible');
+    for (const [index, section] of post.sections.entries()) {
+      assert.ok(html.includes('id="section-' + (index + 1) + '"'), 'table of contents has a destination');
+      for (const bullet of section.bullets || []) assert.ok(html.includes(escapeHtml(bullet)));
+      for (const link of section.links || []) assert.ok(html.includes('href="' + escapeHtml(link.path) + '"'));
     }
   }
 });
