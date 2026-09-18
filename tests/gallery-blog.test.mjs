@@ -49,10 +49,24 @@ test('before-and-after comparisons retain the matched originals and explain diff
     assert.ok(end > start, key + ': context is visible without JavaScript');
     const content = html.slice(start, end);
     for (const photo of [before, after]) assert.ok(content.includes('src="' + projectPhotos[photo].src + '"'), key + ': the correct photograph is rendered inside this comparison');
-    assert.match(content, /aria-pressed="true"[^>]*>Side by side<\/button>/, key + ': both originals are shown initially');
+    assert.match(content, /class="grid grid-cols-2 /, key + ': before and after remain side by side at every screen size');
+    assert.match(content, />Before<\/div>/);
+    assert.match(content, />After<\/div>/);
   }
   assert.match(projectComparisons.amenities.note, /closer view from a different angle/i);
   assert.match(projectComparisons.amenities.note, /toilet is outside the after photo/i, 'the cropped after photo does not imply a result outside its frame');
+});
+
+test('project carousels expose navigation and keep all original pairs available without JavaScript', async () => {
+  for (const [path, pairs] of [['index', 4], ['projects', 4], ['services/commercial-deep-cleaning', 3]]) {
+    const html = await readFile('dist/' + path + '.html', 'utf8');
+    assert.equal([...html.matchAll(/aria-roledescription="carousel"/g)].length, 1, path + ': one comparison carousel');
+    assert.equal([...html.matchAll(/aria-roledescription="slide"/g)].length, pairs, path + ': complete comparison collection');
+    assert.ok(html.includes('aria-label="Previous comparison"'));
+    assert.ok(html.includes('aria-label="Next comparison"'));
+    assert.ok(html.includes('aria-label="Choose a comparison"'));
+    assert.match(html, /<noscript><style>[^<]*project-carousel-track\{display:block\}/, path + ': no-script fallback exposes every pair');
+  }
 });
 
 test('blog articles expose matching content, author, dates and canonical structured data', async () => {

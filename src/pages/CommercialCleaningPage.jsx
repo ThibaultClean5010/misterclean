@@ -12,11 +12,11 @@ const CommercialCleaningPage = () => {
   return (
     <>
 
-      <ServiceHero 
+      <ServiceHero
         title="Commercial Cleaning Services for Adelaide Businesses"
         tagline="Cleaning for Adelaide workplaces, shops and shared areas, with tasks and frequency planned around your premises."
       />
-      
+
       <ServiceNavigation />
       <CertificationsSection />
 
@@ -36,25 +36,25 @@ const CommercialCleaningPage = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <CertificationBadge 
+                <CertificationBadge
                   icon={ShieldCheck}
                   title="Agreed Scope"
                   description="Tasks and areas confirmed before booking"
                   index={0}
                 />
-                <CertificationBadge 
+                <CertificationBadge
                   icon={ClipboardList}
                   title="Cleaning Plan"
                   description="Frequency suited to your premises"
                   index={1}
                 />
-                <CertificationBadge 
+                <CertificationBadge
                   icon={Users}
                   title="Access Planning"
                   description="Entry and security requirements discussed"
                   index={2}
                 />
-                <CertificationBadge 
+                <CertificationBadge
                   icon={CheckCircle}
                   title="Workplace Hygiene"
                   description="Cleaning of shared surfaces and touchpoints"
@@ -87,31 +87,31 @@ const CommercialCleaningPage = () => {
                 </p>
                 <ul className="space-y-3 text-sm font-medium text-slate-700">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Desk and workstation cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Meeting room cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Break room and kitchen cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Washroom cleaning and agreed supply requirements</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Carpet and floor maintenance</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Window and glass cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Emptying rubbish and recycling bins</span>
                   </li>
                 </ul>
@@ -128,31 +128,31 @@ const CommercialCleaningPage = () => {
                 </p>
                 <ul className="space-y-3 text-sm font-medium text-slate-700">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Display case and shelf cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Fitting room cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Checkout counter and POS system cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Floor detailing assessed before quoting</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Window and storefront cleaning</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Merchandise area dusting</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5"/> 
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5"/>
                     <span>Customer area disinfection</span>
                   </li>
                 </ul>
@@ -166,13 +166,13 @@ const CommercialCleaningPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-16">Planning Your Commercial Clean</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <GuaranteeCard 
+              <GuaranteeCard
                 icon={ClipboardList}
                 title="A Clear Cleaning Scope"
                 description="We agree the cleaning tasks and frequency before work begins. Discuss any particular presentation standards or areas that need extra attention when requesting your quote."
                 index={0}
               />
-              <GuaranteeCard 
+              <GuaranteeCard
                 icon={ShieldCheck}
                 title="Consumables by Arrangement"
                 description="If you need help restocking washroom or kitchen supplies, include this in your enquiry so the products, quantities and costs can be discussed."

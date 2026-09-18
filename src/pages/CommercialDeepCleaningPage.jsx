@@ -7,7 +7,8 @@ import ProcessStep from '@/components/ProcessStep.jsx';
 import GuaranteeCard from '@/components/GuaranteeCard.jsx';
 import ServiceCTA from '@/components/ServiceCTA.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
-import ProjectComparison from '@/components/ProjectComparison.jsx';
+import ProjectCarousel from '@/components/ProjectCarousel.jsx';
+import { washroomComparisonOrder } from '@/data/projects.js';
 
 const CommercialDeepCleaningPage = () => {
   const steps = [
@@ -58,8 +59,8 @@ const CommercialDeepCleaningPage = () => {
       </section>
       <section className="service-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From one of our jobs</p><h2 className="mb-4">A closer look at a washroom clean</h2><p className="text-slate-600">The same tiled floor before and after cleaning. The photos show the change around the basin, central drain and cubicles.</p></div>
-          <ProjectComparison comparison="washroom" />
+          <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From our cleaning jobs</p><h2 className="mb-4">A closer look at our washroom cleans</h2><p className="text-slate-600">Compare three areas before and after cleaning: the washroom floor, a toilet cubicle and the tiles around a drain.</p></div>
+          <ProjectCarousel comparisons={washroomComparisonOrder} label="Washroom before-and-after projects" />
           <Link to="/projects#washroom-cleaning" className="inline-block text-primary font-semibold underline py-3 mt-5">See more washroom before-and-afters</Link>
         </div>
       </section>

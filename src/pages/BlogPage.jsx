@@ -13,8 +13,8 @@ export default function BlogPage() {
   const schema = { '@context': 'https://schema.org', '@type': 'Blog', '@id': SITE_URL + '/blog#blog', name: 'MisterClean Cleaning Blog', description: 'Cleaning advice for Adelaide business premises.', url: SITE_URL + '/blog', publisher: { '@id': SITE_URL + '/#business' }, blogPost: blogPosts.map(post => { const { '@context': _context, ...article } = articleSchema(post); return article; }) };
   return <>
     <Helmet><script type="application/ld+json">{JSON.stringify(schema)}</script></Helmet>
-    <section className="pt-28 md:pt-36 pb-12 bg-[#203f3a] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-sm text-teal-100 font-semibold mb-4">Cleaning advice from MisterClean</p><h1 className="mb-5">Cleaning blog for Adelaide businesses</h1><p className="text-lg text-slate-200">Practical answers about windows, workplace cleaning, deep cleans and getting a quote. Start with the job you’re planning.</p></div>
+    <section className="pt-28 md:pt-36 pb-12 bg-brand-ink border-b-2 border-brand-lime text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-sm text-brand-lime font-semibold mb-4">Cleaning advice from MisterClean</p><h1 className="mb-5">Cleaning blog for Adelaide businesses</h1><p className="text-lg text-slate-200">Practical answers about windows, workplace cleaning, deep cleans and getting a quote. Start with the job you’re planning.</p></div>
     </section>
     <section className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

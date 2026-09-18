@@ -84,7 +84,9 @@ test('each service uses its own relevant image and the about page uses an origin
     assert.ok(!hashes.has(hash), service.value + ': not a renamed duplicate');
     hashes.add(hash);
   }
-  assert.deepEqual(await imagesOn('/'), [cleaningPhotos.commercial.src]);
+  const homeImages = await imagesOn('/');
+  assert.ok(homeImages.includes(cleaningPhotos.commercial.src), 'home retains its service selection photograph');
+  assert.equal(new Set(homeImages).size, homeImages.length, 'home does not repeat a service photograph in the carousel and service selection');
   assert.deepEqual(await imagesOn('/about'), [cleaningPhotos.about.src]);
   assert.ok(!used.has(cleaningPhotos.home.src));
   assert.ok(cleaningPhotos.about.src.includes('hindmarsh'), 'about page keeps a real local project photo');

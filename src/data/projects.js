@@ -46,6 +46,7 @@ export const projectGallery = [
 
 export const projectComparisons = {
   "kitchen": {
+    "title": "Café kitchen floor",
     "before": "kitchenBefore",
     "after": "kitchenAfter",
     "label": "Compare kitchen floor photographs",
@@ -57,6 +58,7 @@ export const projectComparisons = {
     "format": "landscape"
   },
   "washroom": {
+    "title": "Washroom floor",
     "before": "washroomBefore",
     "after": "washroomAfter",
     "label": "Compare washroom floor photographs",
@@ -68,6 +70,7 @@ export const projectComparisons = {
     "format": "landscape"
   },
   "cubicle": {
+    "title": "Inside the toilet cubicle",
     "before": "cubicleBefore",
     "after": "cubicleAfter",
     "label": "Compare toilet cubicle photographs",
@@ -79,6 +82,7 @@ export const projectComparisons = {
     "format": "portrait"
   },
   "amenities": {
+    "title": "Amenities tiles and edges",
     "before": "amenitiesBefore",
     "after": "amenitiesAfter",
     "label": "Compare amenities floor photographs",
@@ -90,3 +94,6 @@ export const projectComparisons = {
     "format": "landscape"
   }
 };
+
+export const comparisonOrder = ['washroom', 'cubicle', 'amenities', 'kitchen'];
+export const washroomComparisonOrder = ['washroom', 'cubicle', 'amenities'];

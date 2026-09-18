@@ -8,15 +8,15 @@ import { cleaningOffers } from '@/data/cleaningExperience.js';
 
 export default function ServicesPage() {
   return <>
-    <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-[#203f3a] text-white">
+    <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-brand-ink border-b-2 border-brand-lime text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm text-teal-200 font-semibold  mb-4">Cleaning for Adelaide businesses</p>
+        <p className="text-sm text-brand-lime font-semibold  mb-4">Cleaning for Adelaide businesses</p>
         <h1 className="mb-5">Cleaning services in Adelaide</h1>
         <p className="text-lg text-slate-300 max-w-2xl">Regular cleaning, windows, deep cleans and cleaning after building work. Here’s what we can help with.</p>
         <nav aria-label="Jump to a cleaning service" className="flex flex-wrap gap-3 mt-7">{cleaningOffers.map(offer => <a key={offer.value} href={'#' + offer.value} className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-3 text-sm font-semibold hover:bg-white/10 transition-colors">{offer.shortTitle}<ArrowDown className="h-4 w-4" /></a>)}</nav>
       </div>
     </section>
-    {cleaningOffers.map((offer, index) => <section key={offer.value} id={offer.value} className={'py-14 md:py-20 scroll-mt-24 ' + (index % 2 ? 'bg-slate-50' : 'bg-white')}>
+    {cleaningOffers.map((offer, index) => <section key={offer.value} id={offer.value} className={'py-14 md:py-20 scroll-mt-24 ' + (index % 2 ? 'bg-brand-mist' : 'bg-white')}>
       <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className={'overflow-hidden rounded-lg group ' + (index % 2 ? 'lg:order-2' : '')}><CleaningPhoto photo={offer.photo} sizes="(min-width: 1024px) 50vw, 100vw" className="w-full aspect-[4/3] object-cover" /></div>

@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 import ServiceHero from '@/components/ServiceHero.jsx';
 import ServiceNavigation from '@/components/ServiceNavigation.jsx';
 import ServiceCTA from '@/components/ServiceCTA.jsx';
-import ProjectShowcase from '@/components/ProjectShowcase.jsx';
+import ProjectPhoto from '@/components/ProjectPhoto.jsx';
 import QuoteProcess from '@/components/QuoteProcess.jsx';
 
 export default function AfterBuildersCleaningPage() {
@@ -23,8 +23,13 @@ export default function AfterBuildersCleaningPage() {
       <div className="max-w-3xl mb-10"><h2 className="mb-5">From building work to a cleaner premises</h2><p className="text-lg text-slate-600 mb-4">Renovation and fit-out work can leave dust across floors, glazing and newly installed surfaces. We assess what needs attention and agree a cleaning scope around the condition of your Adelaide premises.</p><p className="text-slate-600">Tell us which trades are still working, which rooms are ready and when you need access. A staged clean may suit an ongoing fit-out; a final clean is planned around your handover.</p></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">{tasks.map(([title, description]) => <div key={title} className="p-6 bg-white border border-slate-200 rounded-xl"><Check className="text-primary w-5 h-5 mb-4" /><h3 className="text-xl mb-3">{title}</h3><p className="text-slate-600">{description}</p></div>)}</div>
     </div></section>
-    <ProjectShowcase />
-    <section className="py-14 md:py-20 bg-teal-50/50"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">What helps us quote your handover clean?</h2>
+    <section className="py-14 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div><p className="text-primary text-sm font-semibold mb-3">From one of our café jobs</p><h2 className="mb-5">A floor clean during the fit-out</h2><p className="text-slate-600 mb-5">This is the kitchen before the floor clean. Dust, loose materials and wrapped equipment show the stage the fit-out had reached. The photo at the top of this page shows the floor afterwards, with building work still in progress.</p><p className="text-slate-600 mb-5">If your project needs a staged clean, let us know which areas are ready and when we can get access.</p><Link to="/projects#washroom-cleaning" className="inline-block py-3 text-primary font-semibold underline">Browse our before-and-after photos</Link><Link to="/contact?service=after-builders" className="block py-3 text-primary font-semibold underline">Request an after-builders quote</Link></div>
+        <figure><ProjectPhoto photo="kitchenBefore" className="w-full h-auto rounded-md" /><figcaption className="text-sm text-slate-600 mt-3">Before the floor clean · Original photo from an ongoing café fit-out.</figcaption></figure>
+      </div>
+    </section>
+    <section className="py-14 md:py-20 bg-brand-mist"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">What helps us quote your handover clean?</h2>
       <ul className="grid sm:grid-cols-2 gap-4 text-slate-700">{['Your suburb, premises type and approximate size', 'The rooms and surfaces needing attention', 'Remaining trades, loose materials and access', 'Your preferred cleaning or handover date'].map(item => <li key={item} className="flex gap-3"><Check className="text-primary w-5 h-5 shrink-0" />{item}</li>)}</ul>
       <p className="mt-6 text-slate-600">Floor treatments, bulky waste and specialist work are assessed separately. Your quote sets out the tasks and access arrangements before work begins.</p>
     </div></section>

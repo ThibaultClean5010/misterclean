@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ProjectComparison from '@/components/ProjectComparison.jsx';
+import ProjectCarousel from '@/components/ProjectCarousel.jsx';
 import ProjectPhoto from '@/components/ProjectPhoto.jsx';
 import ProjectGallery from '@/components/ProjectGallery.jsx';
 import ProjectLightbox from '@/components/ProjectLightbox.jsx';
@@ -13,12 +13,12 @@ export default function ProjectsPage() {
   const photoTrigger = useRef(null);
   function openPhoto(key, trigger) { photoTrigger.current = trigger; setSelected(key); }
   return <>
-    <section className="pt-28 md:pt-36 pb-12 bg-teal-50/60 border-b border-teal-100">
+    <section className="pt-28 md:pt-36 pb-12 bg-brand-mist border-b border-primary/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-primary text-sm  font-bold mb-4">MisterClean · Adelaide</p><h1 className="mb-5">Our cleaning projects</h1><p className="text-lg text-slate-600 max-w-2xl">{projectGallery.length} original photos from our cleaning jobs: washroom before-and-afters, timber floors, a café fit-out and a retail space in Hindmarsh. Select a photo to enlarge it.</p></div>
     </section>
     <nav aria-label="Project sections" className="border-b border-slate-200 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-x-6 gap-y-1 py-3 text-sm font-semibold text-primary">
-        <a href="#washroom-cleaning" className="py-2 hover:underline">Washroom before &amp; after</a>
+        <a href="#washroom-cleaning" className="py-2 hover:underline">Before &amp; after carousel</a>
         <a href="#cafe-fitout" className="py-2 hover:underline">Café floor clean</a>
         <a href="#hindmarsh-retail" className="py-2 hover:underline">Hindmarsh retail</a>
         <a href="#photo-gallery" className="py-2 hover:underline">More project photos</a>
@@ -26,20 +26,15 @@ export default function ProjectsPage() {
     </nav>
     <section id="washroom-cleaning" className="py-14 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">Bathrooms and amenities</p><h2 className="mb-4">Washroom cleaning, before and after</h2><p className="text-slate-600">Footprints, floor residue and the corners around fixtures all need attention. These photos show the spaces as we found them and after cleaning. Use the buttons to compare each view.</p></div>
-        <ProjectComparison comparison="washroom" onOpen={openPhoto} />
-        <div className="grid lg:grid-cols-2 gap-8 mt-10 items-start">
-          <div><h3 className="text-xl mb-4">Inside the cubicle</h3><ProjectComparison comparison="cubicle" onOpen={openPhoto} /></div>
-          <div><h3 className="text-xl mb-4">Tiles around the drain and pipework</h3><ProjectComparison comparison="amenities" onOpen={openPhoto} /></div>
-        </div>
+        <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From our cleaning jobs</p><h2 className="mb-4">Before and after, side by side</h2><p className="text-slate-600">Browse four comparisons from our washroom and café floor cleans. Each pair shows the same space, with the original photos and a note about what changed.</p></div>
+        <ProjectCarousel onOpen={openPhoto} />
         <Link to="/services/commercial-deep-cleaning" className="inline-flex items-center gap-2 text-primary font-semibold py-3 mt-5">Deep cleaning for your premises <ArrowRight className="w-4 h-4" /></Link>
       </div>
     </section>
     <section id="cafe-fitout" className="py-14 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">Hospitality fit-out · Floor cleaning</p><h2 className="mb-4">A kitchen floor during a café fit-out</h2>
-          <p className="text-slate-600">Construction dust and loose materials can accumulate as trades move through a new space. These photographs show the same kitchen before and after a floor clean, with fitting work continuing around it.</p></div>
-        <ProjectComparison onOpen={openPhoto} />
+          <p className="text-slate-600">Construction dust and loose materials can accumulate as trades move through a new space. The café comparison in the carousel above shows the same kitchen before and after a floor clean, with fitting work continuing around it.</p></div>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <div><h3 className="text-lg mb-2">The starting point</h3><p className="text-slate-600">Dust, footprints and loose materials are visible along the kitchen floor and around the protected equipment.</p></div>
           <div><h3 className="text-lg mb-2">The visible result</h3><p className="text-slate-600">The later photograph shows a cleared floor and cleaner edges. Wrapped appliances and work materials remain because the fit-out is ongoing.</p></div>

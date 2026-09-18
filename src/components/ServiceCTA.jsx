@@ -8,7 +8,7 @@ const ServiceCTA = ({ serviceName }) => {
   const { pathname } = useLocation();
   const service = serviceOptions.find(item => item.path === pathname);
   return (
-    <section className="py-24 bg-[#203f3a] text-white text-center">
+    <section className="py-24 bg-brand-ink border-t-2 border-brand-lime text-white text-center">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Need a quote for {serviceName.toLowerCase()}?

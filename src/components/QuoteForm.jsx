@@ -98,9 +98,9 @@ export default function QuoteForm({ compact = false }) {
     try { await navigator.clipboard.writeText(prepared.subject + '\n\n' + prepared.body); setCopied(true); setCopyError(false); }
     catch { setCopyError(true); }
   }
-  return <div className={'bg-white rounded-lg border border-slate-200  ' + (compact ? 'p-5 sm:p-7' : 'p-6 sm:p-8')}>
+  return <div className={'bg-white rounded-lg border border-slate-200 border-t-4 border-t-brand-lime ' + (compact ? 'p-5 sm:p-7' : 'p-6 sm:p-8')}>
     {accepted ? <div ref={resultRef} tabIndex={-1} role="status" className="py-8 space-y-4">
-      <span className="inline-flex p-3 bg-teal-50 rounded-full text-primary"><Check className="w-7 h-7" /></span>
+      <span className="inline-flex p-3 bg-brand-mist rounded-full text-primary"><Check className="w-7 h-7" /></span>
       <h2 className="text-2xl">Thank you — your enquiry has been submitted</h2>
       <p>We will review the details and contact you to discuss the scope and quote. Your clean is booked only after we agree the arrangements with you.</p>
       <a href={PHONE_HREF} className="inline-flex text-primary font-semibold py-3" onClick={() => trackEnquiry('phone_click')}>Prefer to talk? {PHONE}</a>
@@ -118,7 +118,7 @@ export default function QuoteForm({ compact = false }) {
             <div className="space-y-1.5 sm:col-span-2"><Label htmlFor={id + '-name'}>Your name *</Label><Input id={id + '-name'} name="name" autoComplete="name" required maxLength={100} className="h-12" /></div>
           </div>
           <fieldset><legend className="text-sm font-medium mb-2">How should we contact you?</legend><div className="flex gap-4 mb-3">
-            {['email', 'phone'].map(method => <label key={method} className="inline-flex gap-2 items-center text-sm min-h-8 cursor-pointer"><input type="radio" name="contactMethod" value={method} checked={contactMethod === method} onChange={() => setContactMethod(method)} className="accent-teal-700 w-4 h-4" />{method === 'email' ? 'Email' : 'Phone'}</label>)}
+            {['email', 'phone'].map(method => <label key={method} className="inline-flex gap-2 items-center text-sm min-h-8 cursor-pointer"><input type="radio" name="contactMethod" value={method} checked={contactMethod === method} onChange={() => setContactMethod(method)} className="accent-primary w-4 h-4" />{method === 'email' ? 'Email' : 'Phone'}</label>)}
           </div>
             <Label htmlFor={id + '-contact'} className="sr-only">{contactMethod === 'email' ? 'Email address' : 'Phone number'} *</Label>
             <Input value={contacts[contactMethod]} onChange={event => setContacts(previous => ({ ...previous, [contactMethod]: event.target.value }))} id={id + '-contact'} name={contactMethod} type={contactMethod === 'email' ? 'email' : 'tel'} autoComplete={contactMethod === 'email' ? 'email' : 'tel'} placeholder={contactMethod === 'email' ? 'you@business.com.au' : 'Your best contact number'} required maxLength={contactMethod === 'email' ? 160 : 40} className="h-12" />
@@ -139,7 +139,7 @@ export default function QuoteForm({ compact = false }) {
         </fieldset>
       </form>
     </>}
-    {prepared && <div className="mt-5 rounded-xl border border-primary/20 bg-teal-50 p-4" aria-live="polite">
+    {prepared && <div className="mt-5 rounded-xl border border-primary/20 bg-brand-mist p-4" aria-live="polite">
       <h3 className="text-lg mb-2">{directSend ? 'You can also send your details by email' : 'Send the email to finish your enquiry'}</h3>
       <p className="text-sm mb-3">{directSend ? 'If the request already reached us, mention that this is a follow-up.' : 'Nothing has been sent by this page. If your mail app did not open, use the link or copy your details below.'}</p>
       <Textarea readOnly aria-label="Prepared quote email" value={prepared.subject + '\n\n' + prepared.body} rows={5} className="bg-white mb-3" />

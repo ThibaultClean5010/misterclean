@@ -5,9 +5,9 @@ import CleaningPhoto from '@/components/CleaningPhoto.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
 export default function AboutPage() {
   return <>
-    <section className="pt-28 pb-12 md:pt-36 md:pb-20 bg-[#203f3a] text-white">
+    <section className="pt-28 pb-12 md:pt-36 md:pb-20 bg-brand-ink border-b-2 border-brand-lime text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-teal-200 font-semibold mb-4">Cleaning for Adelaide businesses</p>
+        <p className="text-brand-lime font-semibold mb-4">Cleaning for Adelaide businesses</p>
         <h1 className="mb-5">About MisterClean</h1>
         <p className="text-xl text-slate-300">We provide regular and one-off cleaning for business premises in Adelaide.</p>
       </div>

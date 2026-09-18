@@ -16,10 +16,10 @@ export default function BlogArticlePage() {
   return <>
     <Helmet><script type="application/ld+json">{JSON.stringify(articleSchema(post))}</script></Helmet>
     <article>
-      <section className="pt-28 md:pt-36 pb-14 bg-[#203f3a] text-white">
+      <section className="pt-28 md:pt-36 pb-14 bg-brand-ink border-b-2 border-brand-lime text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-teal-100 py-3 mb-5"><ArrowLeft className="w-4 h-4" />Back to the blog</Link>
-          <p className="text-sm text-teal-100 font-semibold mb-4">{post.category}</p>
+          <Link to="/blog" className="inline-flex items-center gap-2 text-brand-lime py-3 mb-5"><ArrowLeft className="w-4 h-4" />Back to the blog</Link>
+          <p className="text-sm text-brand-lime font-semibold mb-4">{post.category}</p>
           <h1 className="mb-5">{post.title}</h1>
           <p className="text-base text-slate-200 mb-6">By <Link to="/about" className="underline">MisterClean</Link> · <time dateTime={post.date}>{formatBlogDate(post.date)}</time> · {readingTime(post)}</p>
           {post.modified && <p className="text-sm text-slate-200 mb-5">Updated <time dateTime={post.modified}>{formatBlogDate(post.modified)}</time></p>}

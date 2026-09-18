@@ -28,7 +28,7 @@ const ServiceCard = ({ title, description, image, benefits, link = '/services' }
           <ul className="space-y-2 mb-6">
             {benefits.slice(0, 3).map((benefit, idx) => (
               <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
-                <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                 <span>{benefit}</span>
               </li>
             ))}

@@ -42,7 +42,7 @@ const TrustSignalsSection = () => {
                 className="flex flex-col items-center text-center space-y-3"
               >
                 <div className="p-3 bg-white/10 rounded-xl">
-                  <Icon className="h-8 w-8 text-secondary" />
+                  <Icon className="h-8 w-8 text-primary" />
                 </div>
                 <div 
                   className="text-3xl md:text-4xl font-extrabold tracking-tight"

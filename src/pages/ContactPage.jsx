@@ -14,10 +14,10 @@ export default function ContactPage() {
       <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-8 items-start">
         <QuoteForm />
         <aside className="space-y-5">
-          <div className="rounded-lg bg-[#203f3a] text-white p-6 sm:p-8">
+          <div className="rounded-lg bg-brand-ink text-white p-6 sm:p-8">
             <h2 className="text-2xl mb-5">Prefer to speak with us?</h2>
-            <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="flex gap-3 items-center text-xl font-bold text-teal-200 py-3"><Phone className="h-5 w-5 shrink-0" />{PHONE}</a>
-            <a href={'mailto:' + CONTACT_EMAIL} onClick={() => trackEnquiry('email_click')} className="flex gap-3 items-start text-base text-teal-200 py-3"><Mail className="h-5 w-5 shrink-0 mt-1" /><span className="break-all">{CONTACT_EMAIL}</span></a>
+            <a href={PHONE_HREF} onClick={() => trackEnquiry('phone_click')} className="flex gap-3 items-center text-xl font-bold text-brand-lime py-3"><Phone className="h-5 w-5 shrink-0" />{PHONE}</a>
+            <a href={'mailto:' + CONTACT_EMAIL} onClick={() => trackEnquiry('email_click')} className="flex gap-3 items-start text-base text-brand-lime py-3"><Mail className="h-5 w-5 shrink-0 mt-1" /><span className="break-all">{CONTACT_EMAIL}</span></a>
             <p className="text-slate-300 text-sm mt-4">We’ll talk through the work, price and timing with you before booking.</p>
           </div>
           <div className="rounded-lg border border-slate-200 p-6">
