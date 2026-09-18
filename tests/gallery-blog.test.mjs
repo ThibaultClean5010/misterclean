@@ -2,20 +2,20 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { projectPhotos, projectGallery } from '../src/data/projects.js';
+import { projectPhotos, projectGallery, projectComparisons } from '../src/data/projects.js';
 import { blogPosts } from '../src/data/blogPosts.js';
 import { relatedArticles } from '../src/lib/blog.js';
 import { SITE_URL } from '../src/data/site.js';
 
 const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' })[character]);
 
-test('the projects page offers ten distinct, labelled photographs with optimised mobile copies', async () => {
+test('the projects page offers at least twenty distinct, labelled photographs with optimised mobile copies', async () => {
   const html = await readFile('dist/projects.html', 'utf8');
   const images = [...html.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(match => match[1]);
   const hashes = new Set();
-  assert.equal(projectGallery.length, 10);
-  assert.equal(new Set(projectGallery.map(photo => photo.key)).size, 10);
-  assert.equal([...html.matchAll(/aria-label="Enlarge photo:/g)].length, 10, 'every project image has an enlargement control');
+  assert.ok(projectGallery.length >= 20, 'retain the supplied project photographs while allowing new additions');
+  assert.equal(new Set(projectGallery.map(photo => photo.key)).size, projectGallery.length);
+  assert.equal([...html.matchAll(/aria-label="Enlarge photo:/g)].length, projectGallery.length, 'every project image has an enlargement control');
   for (const item of projectGallery) {
     const photo = projectPhotos[item.key];
     assert.equal(images.filter(src => src === photo.src).length, 1, photo.src + ': shown once, including case studies');
@@ -30,6 +30,29 @@ test('the projects page offers ten distinct, labelled photographs with optimised
     assert.ok(!hashes.has(hash), photo.src + ': not a renamed duplicate');
     hashes.add(hash);
   }
+});
+
+test('before-and-after comparisons retain the matched originals and explain differences in framing', async () => {
+  const html = await readFile('dist/projects.html', 'utf8');
+  const pairs = {
+    kitchen: ['kitchenBefore', 'kitchenAfter'],
+    washroom: ['washroomBefore', 'washroomAfter'],
+    cubicle: ['cubicleBefore', 'cubicleAfter'],
+    amenities: ['amenitiesBefore', 'amenitiesAfter']
+  };
+  for (const [key, [before, after]] of Object.entries(pairs)) {
+    const comparison = projectComparisons[key];
+    assert.deepEqual([comparison.before, comparison.after], [before, after], key + ': same area in both photographs');
+    const start = html.indexOf('aria-label="' + escapeHtml(comparison.label) + '"');
+    assert.ok(start >= 0, key + ': labelled comparison controls');
+    const end = html.indexOf(escapeHtml(comparison.note), start);
+    assert.ok(end > start, key + ': context is visible without JavaScript');
+    const content = html.slice(start, end);
+    for (const photo of [before, after]) assert.ok(content.includes('src="' + projectPhotos[photo].src + '"'), key + ': the correct photograph is rendered inside this comparison');
+    assert.match(content, /aria-pressed="true"[^>]*>Side by side<\/button>/, key + ': both originals are shown initially');
+  }
+  assert.match(projectComparisons.amenities.note, /closer view from a different angle/i);
+  assert.match(projectComparisons.amenities.note, /toilet is outside the after photo/i, 'the cropped after photo does not imply a result outside its frame');
 });
 
 test('blog articles expose matching content, author, dates and canonical structured data', async () => {

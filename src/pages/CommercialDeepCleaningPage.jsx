@@ -7,6 +7,7 @@ import ProcessStep from '@/components/ProcessStep.jsx';
 import GuaranteeCard from '@/components/GuaranteeCard.jsx';
 import ServiceCTA from '@/components/ServiceCTA.jsx';
 import CertificationsSection from '@/components/CertificationsSection.jsx';
+import ProjectComparison from '@/components/ProjectComparison.jsx';
 
 const CommercialDeepCleaningPage = () => {
   const steps = [
@@ -53,6 +54,13 @@ const CommercialDeepCleaningPage = () => {
           <div className="pl-4 md:pl-0">
             {steps.map((step, index) => <ProcessStep key={step.title} number={index + 1} {...step} isLast={index === steps.length - 1} />)}
           </div>
+        </div>
+      </section>
+      <section className="service-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8"><p className="text-primary font-semibold text-sm mb-3">From one of our jobs</p><h2 className="mb-4">A closer look at a washroom clean</h2><p className="text-slate-600">The same tiled floor before and after cleaning. The photos show the change around the basin, central drain and cubicles.</p></div>
+          <ProjectComparison comparison="washroom" />
+          <Link to="/projects#washroom-cleaning" className="inline-block text-primary font-semibold underline py-3 mt-5">See more washroom before-and-afters</Link>
         </div>
       </section>
       <ServiceCTA serviceName="Commercial Deep Cleaning" />

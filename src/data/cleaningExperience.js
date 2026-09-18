@@ -5,7 +5,7 @@ export const cleaningPhotos = {
   office: { src: '/images/commercial-workspace.jpg', alt: 'Illustrative view of a professional wiping an office desk', position: '65% center' },
   windows: { src: '/images/commercial-windows.jpg', alt: 'Illustrative view of a professional cleaning large shopfront windows', position: '65% center' },
   builders: { src: '/images/hindmarsh-retail-after-builders.jpg', alt: 'Original post-construction cleaning project photo of a Hindmarsh shop with clear carpeted floors and empty display racks', position: 'center', width: 1536, height: 1152, caption: 'After-builders cleaning at a shop in Hindmarsh.' },
-  deep: { src: '/images/commercial-deep-clean-detailing.jpg', alt: 'Illustrative view of a cleaner scrubbing tiled floor edges during a commercial premises deep clean', position: '68% 65%' },
+  deep: { src: '/images/commercial-washroom-after-cleaning.jpg', alt: 'Original MisterClean project photograph of a cleaned toilet cubicle with tiled walls and floor', position: '60% center', width: 1200, height: 900, caption: 'A washroom cubicle from one of our cleaning jobs.' },
   retail: { src: '/images/hindmarsh-shopfront-interior.jpg', alt: 'Original MisterClean project photo looking across a carpeted Hindmarsh retail floor towards the glass shopfront', position: 'center', width: 1536, height: 1152, caption: 'One of our retail jobs in Hindmarsh.' },
   restaurant: { src: '/images/restaurant-dining-cleaning.jpg', alt: 'Illustrative view of a cleaner wiping dining tables in a restaurant before opening', position: '68% 65%' }
 };

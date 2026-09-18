@@ -51,7 +51,68 @@
       "file": "cafe-kitchen-installation-before.jpg",
       "original": "used/pre clean zitto dirty kitchen.jpg",
       "use": "Project gallery, before cleaning"
+    },
+    {
+      "file": "washroom-floor-before-cleaning.jpg",
+      "original": "dirty bathroom2.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "Footprints and pale residue across the tiles, around the basin and along the cubicles."
+    },
+    {
+      "file": "washroom-floor-after-cleaning.jpg",
+      "original": "cleanbathroom2.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "The same washroom, with the floor tiles visible again after cleaning."
+    },
+    {
+      "file": "toilet-cubicle-before-cleaning.jpg",
+      "original": "Dirty bathroom.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "Paper debris and tracked residue on the tiled floor."
+    },
+    {
+      "file": "toilet-cubicle-after-cleaning.jpg",
+      "original": "cleanbathroom3.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "The same cubicle after cleaning, including the floor around the toilet base."
+    },
+    {
+      "file": "amenities-tiles-before-cleaning.jpg",
+      "original": "toilets sale 1.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "A wide view of the tiled floor, with dust and footprints near the wall pipes and drain."
+    },
+    {
+      "file": "amenities-tiles-after-cleaning.jpg",
+      "original": "toilet propre 1.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "A closer view of the same floor area. The framing is different; compare the tiles around the drain and pipes."
+    },
+    {
+      "file": "commercial-washroom-after-cleaning.jpg",
+      "original": "Cleanbathroom.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "An additional view of the cubicles, showing the floor, toilet and tiled walls."
+    },
+    {
+      "file": "amenities-entrance-after-cleaning.jpg",
+      "original": "toilet propre 2.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "The cleaned tiles at the entrance to the amenities, beside the timber corridor."
+    },
+    {
+      "file": "timber-corridor-after-cleaning.jpg",
+      "original": "Post construction king willliam.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "A view along the timber floor after cleaning. The existing finish and character of the boards remain."
+    },
+    {
+      "file": "timber-room-after-cleaning.jpg",
+      "original": "Parquet propre piece.jpg",
+      "sourceFolder": "Photos Pro a utiliser",
+      "use": "The floor around stored office equipment after cleaning, with the existing timber finish retained."
     }
   ],
-  "excluded": "Supplied PNG after views were not used as cleaning-result evidence because changed fittings and unavailable provenance make a cleaning-only comparison uncertain."
+  "excluded": "Supplied PNG after views were not used as cleaning-result evidence because changed fittings and unavailable provenance make a cleaning-only comparison uncertain.",
+  "selectionNotes": "September 2026 additions: only matching original photographs are paired. The amenities after photograph shows a closer view of the floor, not a completed view of the entire toilet. Repeated timber corridor files were represented by one photograph. No after image was generated or retouched."
 }

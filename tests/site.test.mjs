@@ -147,8 +147,10 @@ test('real project photos remain visible before JavaScript and are light without
   }
   assert.ok(projects.includes('cafe-fitout-kitchen-before.jpg'));
   assert.ok(projects.includes('cafe-fitout-kitchen-after.jpg'));
+  assert.ok(home.includes('washroom-floor-before-cleaning.jpg'), 'home shows the original washroom before photograph');
+  assert.ok(home.includes('washroom-floor-after-cleaning.jpg'), 'home shows the matching washroom result');
   assert.ok(home.includes('id="quick-quote"'));
-  assert.ok(home.indexOf('id="quick-quote"') < home.indexOf('cafe-fitout-kitchen-before.jpg'), 'quote appears before project photography');
+  assert.ok(home.indexOf('id="quick-quote"') < home.indexOf('washroom-floor-before-cleaning.jpg'), 'quote appears before project photography');
   for (const route of ['/', '/contact']) {
     const html = await readFile(fileFor(route), 'utf8');
     assert.match(html, /Continue by email/);
