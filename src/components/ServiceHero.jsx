@@ -13,7 +13,7 @@ const ServiceHero = ({ title, tagline }) => {
   return (
     <section className="relative flex items-center bg-brand-ink border-b-2 border-brand-lime overflow-hidden pt-16 md:pt-20">
       <div className="absolute inset-y-0 right-0 z-0 w-full lg:w-1/2 lg:max-w-[1100px]">
-        <CleaningPhoto photo={photo} priority className="w-full h-full object-cover" />
+        <CleaningPhoto photo={photo} priority sizes="(min-width: 2200px) 1100px, (min-width: 1024px) 50vw, 100vw" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-brand-ink/80 lg:bg-transparent" />
         {cleaningPhotos[photo]?.caption && <p className="hidden lg:block absolute bottom-0 inset-x-0 bg-white/95 text-slate-700 text-xs px-4 py-3">{cleaningPhotos[photo].caption}</p>}
       </div>

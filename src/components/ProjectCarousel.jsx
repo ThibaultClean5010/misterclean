@@ -6,7 +6,7 @@ import ProjectLightbox from '@/components/ProjectLightbox.jsx';
 import { comparisonOrder, projectComparisons } from '@/data/projects.js';
 import { trackEnquiry } from '@/lib/quote.js';
 
-export default function ProjectCarousel({ comparisons = comparisonOrder, onOpen, label = 'Cleaning before-and-after projects' }) {
+export default function ProjectCarousel({ comparisons = comparisonOrder, onOpen, label = 'Cleaning before-and-after projects', photoSizes }) {
   const [viewportRef, api] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selected, setSelected] = useState(0);
   const [photo, setPhoto] = useState(null);
@@ -56,7 +56,7 @@ export default function ProjectCarousel({ comparisons = comparisonOrder, onOpen,
         <div className="project-carousel-track flex touch-pan-y touch-pinch-zoom">
           {comparisons.map((comparison, index) => <div key={comparison} className="project-carousel-slide min-w-0 flex-[0_0_100%] pr-1" role="group" aria-roledescription="slide" aria-label={(index + 1) + ' of ' + comparisons.length + ': ' + projectComparisons[comparison].title} aria-hidden={ready ? index !== selected : undefined} inert={ready && index !== selected ? '' : undefined}>
             <h3 className="text-lg sm:text-xl mb-4">{projectComparisons[comparison].title}</h3>
-            <ProjectComparison comparison={comparison} onOpen={openPhoto} />
+            <ProjectComparison comparison={comparison} onOpen={openPhoto} photoSizes={photoSizes} />
           </div>)}
         </div>
       </div>

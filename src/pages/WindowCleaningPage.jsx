@@ -36,7 +36,7 @@ const WindowCleaningPage = () => {
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl font-bold mb-6">Cleaning your shopfront or workplace windows</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From shopfronts and entrance doors to office windows and internal partitions, we clean the glass that shapes the first impression of your premises. Book a one-off visit, arrange a recurring schedule or combine your windows with our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> service.
+              From shopfronts and entrance doors to office windows and internal partitions, we clean the glass that shapes the first impression of your premises. Book a one-off visit, arrange a recurring schedule or combine your windows with our <Link to="/services/commercial-cleaning" className="text-primary hover:underline">commercial cleaning</Link> service. Our guide to <Link to="/blog/how-often-clean-commercial-windows-adelaide" className="text-primary underline">window-cleaning frequency</Link> can help you plan the visits.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -48,7 +48,7 @@ const WindowCleaningPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">What Your Window Clean Can Include</h2>
-            <p className="text-lg text-muted-foreground">A clear scope, suitable access and attention to the finishing details.</p>
+            <p className="text-lg text-muted-foreground">A clear scope, suitable access and attention to the finishing details. See <Link to="/blog/commercial-cleaning-quote-adelaide" className="text-primary underline">what to include in your cleaning quote request</Link> so we can assess the job.</p>
           </div>
           <div className="pl-4 md:pl-0">
             {steps.map((step, index) => <ProcessStep key={step.title} number={index + 1} {...step} isLast={index === steps.length - 1} />)}

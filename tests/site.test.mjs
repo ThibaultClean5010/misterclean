@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { publicPaths, SITE_URL, CONTACT_EMAIL, serviceOptions } from '../src/data/site.js';
+import { publicPaths, SITE_URL, RESIDENTIAL_URL, CONTACT_EMAIL, serviceOptions } from '../src/data/site.js';
 import { quoteEmail } from '../src/lib/quote.js';
 import { render } from '../.prerender/entry-server.js';
 import { cleaningOffers, cleaningPlans, cleaningQuotePath, cleaningPhotos, servicePhotoKeys } from '../src/data/cleaningExperience.js';
@@ -47,7 +47,8 @@ test('every public page has visible content, unique SEO metadata and valid links
     assert.equal(matches(html, /<h1\b/g).length, 1, route + ': one main heading');
     assert.ok(!html.includes('<!--app-html-->'), route + ': rendered content');
     assert.ok(!html.includes('style="opacity:0'), route + ': visible before JavaScript');
-    assert.ok(!html.includes('misterclean.com.au'), route + ': no old domain');
+    assert.ok(html.includes('href="' + RESIDENTIAL_URL + '"'), route + ': residential website linked separately');
+    assert.ok(!/<(?:link|meta)\b[^>]*(?:href|content)="https:\/\/www\.misterclean\.com\.au[^"]*"/.test(html), route + ': B2B metadata retains its own domain');
     assert.ok(!titles.has(title[0][1]), route + ': distinct title');
     assert.ok(!descriptions.has(description[0][1]), route + ': distinct description');
     titles.add(title[0][1]);

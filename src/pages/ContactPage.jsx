@@ -2,7 +2,7 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import QuoteForm from '@/components/QuoteForm.jsx';
 import QuoteProcess from '@/components/QuoteProcess.jsx';
-import { CONTACT_EMAIL, PHONE, PHONE_HREF } from '@/data/site.js';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF, RESIDENTIAL_URL } from '@/data/site.js';
 import { trackEnquiry } from '@/lib/quote.js';
 export default function ContactPage() {
   return <>
@@ -23,6 +23,7 @@ export default function ContactPage() {
           <div className="rounded-lg border border-slate-200 p-6">
             <h2 className="text-xl mb-3 flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" />Adelaide businesses</h2>
             <p className="text-muted-foreground">Let us know your suburb so we can check availability. If you need windows cleaned at height, include a few details about access.</p>
+            <p className="text-sm text-muted-foreground mt-4">Need a cleaner for your house or apartment? Visit <a href={RESIDENTIAL_URL} className="text-primary underline underline-offset-2">MisterClean for home cleaning</a>.</p>
           </div>
         </aside>
       </div>

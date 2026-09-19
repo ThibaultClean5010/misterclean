@@ -5,6 +5,8 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { serviceOptions, LOGO, PHONE, PHONE_HREF } from '@/data/site.js';
 import { trackEnquiry } from '@/lib/quote.js';
+import { responsivePhoto } from '@/lib/responsivePhotos.js';
+const logoPhoto = responsivePhoto(LOGO);
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
@@ -12,7 +14,7 @@ export default function Header() {
   return <header className="header-wrapper">
     <a href="#main-content" className="skip-link">Skip to content</a>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 md:h-20 items-center justify-between gap-4">
-      <Link to="/" aria-label="MisterClean home" className="shrink-0"><img src={LOGO} alt="MisterClean" width="128" height="56" className="w-28 md:w-32 h-12 object-contain" /></Link>
+      <Link to="/" aria-label="MisterClean home" className="shrink-0"><picture className="contents"><source type="image/webp" srcSet={logoPhoto.webpSrcSet} sizes="(min-width: 768px) 128px, 112px" /><img src={LOGO} alt="MisterClean" width={logoPhoto.width} height={logoPhoto.height} className="w-28 md:w-32 h-12 object-contain" /></picture></Link>
       <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-4 xl:gap-6">
         <Link to="/" className="header-nav-link" aria-current={pathname === '/' ? 'page' : undefined}>Home</Link>
         <DropdownMenu>

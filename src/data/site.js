@@ -1,5 +1,6 @@
 import { blogPosts } from './blogPosts.js';
 export const SITE_URL = 'https://www.mistercleanb2b.com';
+export const RESIDENTIAL_URL = 'https://www.misterclean.com.au/';
 export const CONTACT_EMAIL = 'mistercleanadelaide@gmail.com';
 export const PHONE = '0474 597 325';
 export const PHONE_HREF = 'tel:+61474597325';

@@ -20,7 +20,7 @@ export default function AfterBuildersCleaningPage() {
     <ServiceHero title="After-Builders Cleaning in Adelaide" tagline="Detailed cleaning after construction or renovation, with dust removal, surface cleaning and finishing details agreed around your handover." />
     <ServiceNavigation />
     <section className="py-14 md:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mb-10"><h2 className="mb-5">From building work to a cleaner premises</h2><p className="text-lg text-slate-600 mb-4">Renovation and fit-out work can leave dust across floors, glazing and newly installed surfaces. We assess what needs attention and agree a cleaning scope around the condition of your Adelaide premises.</p><p className="text-slate-600">Tell us which trades are still working, which rooms are ready and when you need access. A staged clean may suit an ongoing fit-out; a final clean is planned around your handover.</p></div>
+      <div className="max-w-3xl mb-10"><h2 className="mb-5">From building work to a cleaner premises</h2><p className="text-lg text-slate-600 mb-4">Renovation and fit-out work can leave dust across floors, glazing and newly installed surfaces. We assess what needs attention and agree a cleaning scope around the condition of your Adelaide premises.</p><p className="text-slate-600">Tell us which trades are still working, which rooms are ready and when you need access. A staged clean may suit an ongoing fit-out; a final clean is planned around your handover. Our <Link to="/blog/after-builders-cleaning-before-handover" className="text-primary underline">handover cleaning guide</Link> explains the areas and timing to consider.</p></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">{tasks.map(([title, description]) => <div key={title} className="p-6 bg-white border border-slate-200 rounded-xl"><Check className="text-primary w-5 h-5 mb-4" /><h3 className="text-xl mb-3">{title}</h3><p className="text-slate-600">{description}</p></div>)}</div>
     </div></section>
     <section className="py-14 md:py-20 bg-white">
@@ -31,7 +31,7 @@ export default function AfterBuildersCleaningPage() {
     </section>
     <section className="py-14 md:py-20 bg-brand-mist"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">What helps us quote your handover clean?</h2>
       <ul className="grid sm:grid-cols-2 gap-4 text-slate-700">{['Your suburb, premises type and approximate size', 'The rooms and surfaces needing attention', 'Remaining trades, loose materials and access', 'Your preferred cleaning or handover date'].map(item => <li key={item} className="flex gap-3"><Check className="text-primary w-5 h-5 shrink-0" />{item}</li>)}</ul>
-      <p className="mt-6 text-slate-600">Floor treatments, bulky waste and specialist work are assessed separately. Your quote sets out the tasks and access arrangements before work begins.</p>
+      <p className="mt-6 text-slate-600">Floor treatments, bulky waste and specialist work are assessed separately. Your quote sets out the tasks and access arrangements before work begins. Check <Link to="/blog/commercial-cleaning-quote-adelaide" className="text-primary underline">what to include in a cleaning quote request</Link> when preparing your details.</p>
     </div></section>
     <QuoteProcess />
     <section className="py-14 md:py-20"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="mb-6">After-builders cleaning questions</h2>

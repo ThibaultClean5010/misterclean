@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { CONTACT_EMAIL, PHONE, PHONE_HREF, serviceOptions } from '@/data/site.js';
+import { CONTACT_EMAIL, PHONE, PHONE_HREF, RESIDENTIAL_URL, serviceOptions } from '@/data/site.js';
 import { trackEnquiry } from '@/lib/quote.js';
 
 const Footer = () => {
@@ -15,6 +15,7 @@ const Footer = () => {
             <p className="text-sm leading-relaxed">
               Regular cleaning, deep cleaning, window cleaning and after builders cleaning for Adelaide businesses. Offices, shops, restaurants and shared premises.
             </p>
+            <p className="text-sm leading-relaxed">Looking for a cleaner for your home? Visit <a href={RESIDENTIAL_URL} className="text-brand-lime underline underline-offset-4 hover:text-white">MisterClean home cleaning</a>.</p>
           </div>
 
           <div>

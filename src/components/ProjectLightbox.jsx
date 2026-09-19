@@ -18,7 +18,7 @@ export default function ProjectLightbox({ selected, onSelect, onClose, returnFoc
     }}>
       <DialogTitle className="pr-10">{current.title}</DialogTitle>
       <DialogDescription>{current.stage} · {current.caption}</DialogDescription>
-      <ProjectPhoto photo={current.key} priority sizes="(min-width: 1024px) 960px, 100vw" className="w-full max-h-[65dvh] object-contain bg-slate-50" />
+      <ProjectPhoto photo={current.key} priority original sizes="(min-width: 1024px) 960px, 100vw" className="w-full max-h-[65dvh] object-contain bg-slate-50" />
       <div className="flex items-center justify-between gap-3">
         <Button type="button" className="min-h-11 min-w-11" variant="outline" onClick={() => move(-1)} aria-label="Previous project photo"><ChevronLeft className="w-4 h-4" /><span className="hidden sm:inline">Previous</span></Button>
         <p className="text-sm text-slate-600" aria-live="polite">Photo {index + 1} of {projectGallery.length}</p>

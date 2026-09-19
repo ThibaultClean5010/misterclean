@@ -1,0 +1,1243 @@
+{
+  "/images/amenities-entrance-after-cleaning.jpg": {
+    "width": 900,
+    "height": 1200,
+    "fallback": [
+      {
+        "src": "/images/amenities-entrance-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/amenities-entrance-after-cleaning.jpg",
+        "width": 900,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/amenities-entrance-after-cleaning-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 10948
+      },
+      {
+        "src": "/images/responsive/amenities-entrance-after-cleaning-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 22700
+      },
+      {
+        "src": "/images/responsive/amenities-entrance-after-cleaning-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 37348
+      },
+      {
+        "src": "/images/responsive/amenities-entrance-after-cleaning-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 55356
+      },
+      {
+        "src": "/images/responsive/amenities-entrance-after-cleaning-900.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 70796
+      }
+    ]
+  },
+  "/images/amenities-tiles-after-cleaning.jpg": {
+    "width": 900,
+    "height": 1200,
+    "fallback": [
+      {
+        "src": "/images/amenities-tiles-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/amenities-tiles-after-cleaning.jpg",
+        "width": 900,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/amenities-tiles-after-cleaning-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 10282
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-after-cleaning-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 20384
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-after-cleaning-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 34748
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-after-cleaning-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 50808
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-after-cleaning-900.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 64796
+      }
+    ]
+  },
+  "/images/amenities-tiles-before-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/amenities-tiles-before-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/amenities-tiles-before-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/amenities-tiles-before-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 6882
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-before-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 13934
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-before-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 21450
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-before-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 31882
+      },
+      {
+        "src": "/images/responsive/amenities-tiles-before-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 61058
+      }
+    ]
+  },
+  "/images/business-foyer-cleaning.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": [
+      {
+        "src": "/images/business-foyer-cleaning-800.jpg",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/images/business-foyer-cleaning.jpg",
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/business-foyer-cleaning-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 9372
+      },
+      {
+        "src": "/images/responsive/business-foyer-cleaning-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16798
+      },
+      {
+        "src": "/images/responsive/business-foyer-cleaning-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 26030
+      },
+      {
+        "src": "/images/responsive/business-foyer-cleaning-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 35430
+      },
+      {
+        "src": "/images/responsive/business-foyer-cleaning-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 62298
+      },
+      {
+        "src": "/images/responsive/business-foyer-cleaning-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 89374
+      }
+    ]
+  },
+  "/images/cafe-fitout-floor-before.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/cafe-fitout-floor-before-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/cafe-fitout-floor-before.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-fitout-floor-before-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 20014
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-floor-before-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 39612
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-floor-before-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 62464
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-floor-before-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 86502
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-floor-before-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 160134
+      }
+    ]
+  },
+  "/images/cafe-fitout-kitchen-after.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/cafe-fitout-kitchen-after-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/cafe-fitout-kitchen-after-800.jpg",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/cafe-fitout-kitchen-after.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-after-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 17932
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-after-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 36328
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-after-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 56782
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-after-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 80522
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-after-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 151840
+      }
+    ]
+  },
+  "/images/cafe-fitout-kitchen-before.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/cafe-fitout-kitchen-before-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/cafe-fitout-kitchen-before.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-before-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 18902
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-before-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 37788
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-before-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 60030
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-before-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 86262
+      },
+      {
+        "src": "/images/responsive/cafe-fitout-kitchen-before-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 163306
+      }
+    ]
+  },
+  "/images/cafe-kitchen-installation-before.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/cafe-kitchen-installation-before-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/cafe-kitchen-installation-before.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-kitchen-installation-before-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 17578
+      },
+      {
+        "src": "/images/responsive/cafe-kitchen-installation-before-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34816
+      },
+      {
+        "src": "/images/responsive/cafe-kitchen-installation-before-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 54944
+      },
+      {
+        "src": "/images/responsive/cafe-kitchen-installation-before-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 75350
+      },
+      {
+        "src": "/images/responsive/cafe-kitchen-installation-before-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 138478
+      }
+    ]
+  },
+  "/images/cafe-service-aisle-before.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "fallback": [
+      {
+        "src": "/images/cafe-service-aisle-before-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/cafe-service-aisle-before.jpg",
+        "width": 1200,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-service-aisle-before-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 21784
+      },
+      {
+        "src": "/images/responsive/cafe-service-aisle-before-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 44392
+      },
+      {
+        "src": "/images/responsive/cafe-service-aisle-before-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 73690
+      },
+      {
+        "src": "/images/responsive/cafe-service-aisle-before-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 108234
+      },
+      {
+        "src": "/images/responsive/cafe-service-aisle-before-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 205280
+      }
+    ]
+  },
+  "/images/cafe-service-counter-before.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/cafe-service-counter-before-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/cafe-service-counter-before.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/cafe-service-counter-before-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 16868
+      },
+      {
+        "src": "/images/responsive/cafe-service-counter-before-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34962
+      },
+      {
+        "src": "/images/responsive/cafe-service-counter-before-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 56404
+      },
+      {
+        "src": "/images/responsive/cafe-service-counter-before-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 81416
+      },
+      {
+        "src": "/images/responsive/cafe-service-counter-before-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 149112
+      }
+    ]
+  },
+  "/images/commercial-washroom-after-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/commercial-washroom-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/commercial-washroom-after-cleaning-800.jpg",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/commercial-washroom-after-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/commercial-washroom-after-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 6266
+      },
+      {
+        "src": "/images/responsive/commercial-washroom-after-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 11290
+      },
+      {
+        "src": "/images/responsive/commercial-washroom-after-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 16758
+      },
+      {
+        "src": "/images/responsive/commercial-washroom-after-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 24398
+      },
+      {
+        "src": "/images/responsive/commercial-washroom-after-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 47508
+      }
+    ]
+  },
+  "/images/commercial-windows.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": [
+      {
+        "src": "/images/commercial-windows-800.jpg",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/images/commercial-windows.jpg",
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/commercial-windows-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 15274
+      },
+      {
+        "src": "/images/responsive/commercial-windows-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 27474
+      },
+      {
+        "src": "/images/responsive/commercial-windows-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 42118
+      },
+      {
+        "src": "/images/responsive/commercial-windows-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 57182
+      },
+      {
+        "src": "/images/responsive/commercial-windows-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 104220
+      },
+      {
+        "src": "/images/responsive/commercial-windows-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 151036
+      }
+    ]
+  },
+  "/images/commercial-workspace.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": [
+      {
+        "src": "/images/commercial-workspace-800.jpg",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/images/commercial-workspace.jpg",
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/commercial-workspace-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 12316
+      },
+      {
+        "src": "/images/responsive/commercial-workspace-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 19974
+      },
+      {
+        "src": "/images/responsive/commercial-workspace-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 28664
+      },
+      {
+        "src": "/images/responsive/commercial-workspace-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 38048
+      },
+      {
+        "src": "/images/responsive/commercial-workspace-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 63652
+      },
+      {
+        "src": "/images/responsive/commercial-workspace-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 90416
+      }
+    ]
+  },
+  "/images/entrance-glass-before-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/entrance-glass-before-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/entrance-glass-before-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/entrance-glass-before-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 15988
+      },
+      {
+        "src": "/images/responsive/entrance-glass-before-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 31598
+      },
+      {
+        "src": "/images/responsive/entrance-glass-before-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 48894
+      },
+      {
+        "src": "/images/responsive/entrance-glass-before-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 68686
+      },
+      {
+        "src": "/images/responsive/entrance-glass-before-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 121740
+      }
+    ]
+  },
+  "/images/hindmarsh-retail-after-builders.jpg": {
+    "width": 1536,
+    "height": 1152,
+    "fallback": [
+      {
+        "src": "/images/hindmarsh-retail-after-builders-800.jpg",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/hindmarsh-retail-after-builders.jpg",
+        "width": 1536,
+        "height": 1152
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 16040
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 33718
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 57224
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 86416
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 176668
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-after-builders-1536.webp",
+        "width": 1536,
+        "height": 1152,
+        "bytes": 229902
+      }
+    ]
+  },
+  "/images/hindmarsh-retail-counter.jpg": {
+    "width": 1536,
+    "height": 1152,
+    "fallback": [
+      {
+        "src": "/images/hindmarsh-retail-counter-800.jpg",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/hindmarsh-retail-counter.jpg",
+        "width": 1536,
+        "height": 1152
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 14874
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 30702
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 53770
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 83736
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 179076
+      },
+      {
+        "src": "/images/responsive/hindmarsh-retail-counter-1536.webp",
+        "width": 1536,
+        "height": 1152,
+        "bytes": 230646
+      }
+    ]
+  },
+  "/images/hindmarsh-shopfront-interior.jpg": {
+    "width": 1536,
+    "height": 1152,
+    "fallback": [
+      {
+        "src": "/images/hindmarsh-shopfront-interior-800.jpg",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/hindmarsh-shopfront-interior.jpg",
+        "width": 1536,
+        "height": 1152
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 15662
+      },
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34036
+      },
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 62362
+      },
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 98342
+      },
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 213354
+      },
+      {
+        "src": "/images/responsive/hindmarsh-shopfront-interior-1536.webp",
+        "width": 1536,
+        "height": 1152,
+        "bytes": 255544
+      }
+    ]
+  },
+  "/images/misterclean-logo.png": {
+    "width": 508,
+    "height": 250,
+    "fallback": [
+      {
+        "src": "/images/misterclean-logo.png",
+        "width": 508,
+        "height": 250
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/misterclean-logo-128.webp",
+        "width": 128,
+        "height": 63,
+        "bytes": 5748
+      },
+      {
+        "src": "/images/responsive/misterclean-logo-256.webp",
+        "width": 256,
+        "height": 126,
+        "bytes": 14076
+      },
+      {
+        "src": "/images/responsive/misterclean-logo-384.webp",
+        "width": 384,
+        "height": 189,
+        "bytes": 24660
+      },
+      {
+        "src": "/images/responsive/misterclean-logo-508.webp",
+        "width": 508,
+        "height": 250,
+        "bytes": 30778
+      }
+    ]
+  },
+  "/images/restaurant-dining-cleaning.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": [
+      {
+        "src": "/images/restaurant-dining-cleaning-800.jpg",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/images/restaurant-dining-cleaning.jpg",
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 14316
+      },
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 25066
+      },
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 36604
+      },
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 49396
+      },
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 83198
+      },
+      {
+        "src": "/images/responsive/restaurant-dining-cleaning-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 113946
+      }
+    ]
+  },
+  "/images/timber-corridor-after-cleaning.jpg": {
+    "width": 900,
+    "height": 1200,
+    "fallback": [
+      {
+        "src": "/images/timber-corridor-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/timber-corridor-after-cleaning.jpg",
+        "width": 900,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/timber-corridor-after-cleaning-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 9890
+      },
+      {
+        "src": "/images/responsive/timber-corridor-after-cleaning-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 18804
+      },
+      {
+        "src": "/images/responsive/timber-corridor-after-cleaning-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 31430
+      },
+      {
+        "src": "/images/responsive/timber-corridor-after-cleaning-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 44792
+      },
+      {
+        "src": "/images/responsive/timber-corridor-after-cleaning-900.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 56488
+      }
+    ]
+  },
+  "/images/timber-room-after-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/timber-room-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/timber-room-after-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/timber-room-after-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 5524
+      },
+      {
+        "src": "/images/responsive/timber-room-after-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10350
+      },
+      {
+        "src": "/images/responsive/timber-room-after-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 16274
+      },
+      {
+        "src": "/images/responsive/timber-room-after-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 23258
+      },
+      {
+        "src": "/images/responsive/timber-room-after-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 45520
+      }
+    ]
+  },
+  "/images/toilet-cubicle-after-cleaning.jpg": {
+    "width": 900,
+    "height": 1200,
+    "fallback": [
+      {
+        "src": "/images/toilet-cubicle-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/toilet-cubicle-after-cleaning.jpg",
+        "width": 900,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/toilet-cubicle-after-cleaning-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 10852
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-after-cleaning-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 22468
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-after-cleaning-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 38648
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-after-cleaning-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 56770
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-after-cleaning-900.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 70958
+      }
+    ]
+  },
+  "/images/toilet-cubicle-before-cleaning.jpg": {
+    "width": 900,
+    "height": 1200,
+    "fallback": [
+      {
+        "src": "/images/toilet-cubicle-before-cleaning-600.jpg",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "src": "/images/toilet-cubicle-before-cleaning.jpg",
+        "width": 900,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/toilet-cubicle-before-cleaning-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 12918
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-before-cleaning-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 25820
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-before-cleaning-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 42808
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-before-cleaning-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 62506
+      },
+      {
+        "src": "/images/responsive/toilet-cubicle-before-cleaning-900.webp",
+        "width": 900,
+        "height": 1200,
+        "bytes": 77352
+      }
+    ]
+  },
+  "/images/washroom-floor-after-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/washroom-floor-after-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/washroom-floor-after-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/washroom-floor-after-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 7026
+      },
+      {
+        "src": "/images/responsive/washroom-floor-after-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 15126
+      },
+      {
+        "src": "/images/responsive/washroom-floor-after-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 25684
+      },
+      {
+        "src": "/images/responsive/washroom-floor-after-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 41010
+      },
+      {
+        "src": "/images/responsive/washroom-floor-after-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 88400
+      }
+    ]
+  },
+  "/images/washroom-floor-before-cleaning.jpg": {
+    "width": 1200,
+    "height": 900,
+    "fallback": [
+      {
+        "src": "/images/washroom-floor-before-cleaning-600.jpg",
+        "width": 600,
+        "height": 450
+      },
+      {
+        "src": "/images/washroom-floor-before-cleaning.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/washroom-floor-before-cleaning-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 11426
+      },
+      {
+        "src": "/images/responsive/washroom-floor-before-cleaning-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24836
+      },
+      {
+        "src": "/images/responsive/washroom-floor-before-cleaning-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 41436
+      },
+      {
+        "src": "/images/responsive/washroom-floor-before-cleaning-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 61574
+      },
+      {
+        "src": "/images/responsive/washroom-floor-before-cleaning-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 115760
+      }
+    ]
+  }
+}

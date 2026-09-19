@@ -33,7 +33,7 @@ const CommercialDeepCleaningPage = () => {
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl font-bold mb-6">A Complete Refresh for Your Premises</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              If dirt has built up or parts of your workplace need extra attention, tell us what needs doing. We’ll discuss the rooms, surfaces and condition of the space, then list the work in your quote.
+              If dirt has built up or parts of your workplace need extra attention, tell us what needs doing. We’ll discuss the rooms, surfaces and condition of the space, then list the work in your quote. Our guide explains the <Link to="/blog/regular-cleaning-vs-deep-cleaning-adelaide" className="text-primary underline">difference between regular and deep cleaning</Link>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Arrange a fresh start before reopening, prepare for a new occupier or add a periodic deep clean to your <Link to="/services/commercial-cleaning" className="text-primary hover:underline">regular commercial cleaning</Link>. For work following construction or renovation, explore our dedicated <Link to="/services/after-builders-cleaning" className="text-primary hover:underline">after-builders cleaning</Link> service.
@@ -50,7 +50,7 @@ const CommercialDeepCleaningPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">A Detailed Clean from Workspaces to Amenities</h2>
-            <p className="text-lg text-muted-foreground">We’ll look at what needs attention and agree which areas to include.</p>
+            <p className="text-lg text-muted-foreground">We’ll look at what needs attention and agree which areas to include. For ongoing upkeep, read our guide to <Link to="/blog/how-often-should-business-schedule-deep-cleaning" className="text-primary underline">planning deep-cleaning frequency</Link>.</p>
           </div>
           <div className="pl-4 md:pl-0">
             {steps.map((step, index) => <ProcessStep key={step.title} number={index + 1} {...step} isLast={index === steps.length - 1} />)}

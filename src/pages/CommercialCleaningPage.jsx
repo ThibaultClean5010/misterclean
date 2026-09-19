@@ -68,7 +68,7 @@ const CommercialCleaningPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">One regular cleaning plan for your premises</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We help Adelaide businesses keep on top of everyday dust, spills and foot traffic. Office cleaning, shop cleaning and restaurant customer-area cleaning all sit within our Regular Cleaning service. Your plan lists the areas and tasks your business needs.
+                  We help Adelaide businesses keep on top of everyday dust, spills and foot traffic. Office cleaning, shop cleaning and restaurant customer-area cleaning all sit within our Regular Cleaning service. Your plan lists the areas and tasks your business needs. Our guides cover <Link to="/blog/commercial-cleaning-checklist-adelaide-offices" className="text-primary underline">office cleaning checklists</Link>, <Link to="/blog/retail-cleaning-first-impressions" className="text-primary underline">shop presentation</Link> and <Link to="/blog/restaurant-cleaning-commercial-kitchens" className="text-primary underline">restaurant cleaning routines</Link>.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Tell us your opening hours, how the space is used and how often you would like a visit. We discuss suitable cleaning times, access and any restricted areas, then confirm the scope and frequency in your quote. You can contact us directly when your requirements change.

@@ -13,7 +13,7 @@ export default function ProjectShowcase() {
           <Link to="/projects" className="inline-flex items-center gap-2 text-primary font-semibold py-3">See more of our work <ArrowRight className="h-4 w-4" /></Link>
           <Link to="/contact" className="block text-sm font-semibold text-slate-700 underline py-3">Ask about a clean for your premises</Link>
         </div>
-        <ProjectCarousel />
+        <ProjectCarousel photoSizes="(min-width: 1280px) 356px, (min-width: 1024px) calc((100vw - 211px) / 3), (min-width: 640px) calc((100vw - 114px) / 2), calc((100vw - 74px) / 2)" />
       </div>
     </div>
   </section>;
