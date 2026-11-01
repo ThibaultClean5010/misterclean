@@ -1,5 +1,129 @@
 export const newBlogPosts = [
   {
+    "slug": "sticky-floors-after-mopping-adelaide",
+    "title": "Why are your business floors still sticky after mopping?",
+    "excerpt": "Sticky or streaky floors after mopping? Check detergent dosing, dirty tools and floor care methods before booking a deep clean for your Adelaide business.",
+    "category": "Floor care",
+    "date": "2026-11-01",
+    "image": "/images/amenities-entrance-after-cleaning.jpg",
+    "imageAlt": "Grey tiled amenities entrance beside a doorway leading to a timber corridor",
+    "imageCaption": "Original MisterClean project photo: an amenities entrance beside a timber corridor. Adjoining floor finishes can need different care methods.",
+    "intro": "The floor has been mopped, but shoes still catch on a tacky patch or streaks appear as it dries. Before adding more cleaner, check what is being left behind and whether the method suits the surface. For an Adelaide office, shop or hospitality venue, a useful starting point is the floor type, the product used and the condition of the cleaning tools. Appearance alone cannot identify the cause.",
+    "sections": [
+      {
+        "heading": "Start with where and when the problem appears",
+        "body": [
+          "Make a short note before the next clean. Is the problem across the whole room, around a drinks station, near the entrance or along the same mop path? Does it appear immediately after cleaning, once the floor dries, or only after staff and customers return? These observations give your cleaner something specific to investigate.",
+          "For example, if one patch near the lunchroom becomes sticky during the working day, record what happens there between cleans. If a whole corridor looks streaky straight after each visit, review the cleaning process together. Neither pattern proves a cause, but it helps you decide where to start. Take a photo in consistent lighting and mark the location on a simple floor plan."
+        ]
+      },
+      {
+        "heading": "Identify the floor and its finish first",
+        "body": [
+          "Ask the building manager for the flooring name, finish and care guide. A timber-look surface could be timber, laminate or vinyl; the appearance is not enough to choose a product. Tell the cleaner about any recent coating, sealing or building work as well.",
+          "Kärcher’s parquet and laminate guidance explains why moisture matters: these floors need damp cleaning with minimal water. A rinse-and-recover method suitable for a particular resilient floor should not automatically be carried through an adjoining timber area.",
+          "Texture also changes the job. Forbo’s STEP guide for the slip-resistant ranges it lists specifies brushing and dirty-water removal rather than ordinary damp mopping. That instruction belongs to those products. Use the current guide for your exact floor instead of applying one method to every room."
+        ],
+        "links": [
+          {
+            "text": "Kärcher guidance: cleaning parquet and laminate",
+            "path": "https://www.kaercher.com/us/en/home-and-garden/know-how/cleaning-parquet-and-laminate-c3803"
+          },
+          {
+            "text": "Forbo STEP slip-resistant flooring cleaning guide (PDF)",
+            "path": "https://forbo.blob.core.windows.net/forbodocuments/17410/STEP%20Extra%20slip%20R11%20R12%20cleaning.pdf"
+          }
+        ]
+      },
+      {
+        "heading": "Measure the detergent instead of adding an extra splash",
+        "body": [
+          "Check the product label against the floor care instructions, including the dilution for the task. Measure both the water and concentrate. As an arithmetic example only, a label specifying 10 mL per litre of water would require 50 mL for 5 litres of water. That is not a recommended dose for every cleaner.",
+          "Kärcher notes that old detergent residue can affect cleaning results. Its guidance also identifies repeated care-product use as a possible source of a sticky, dust-binding layer on oiled or waxed wood. That does not establish what is on a tiled floor, but it shows why more product is not always the answer.",
+          "Keep the product name and dilution in the cleaning notes so a change can be traced. If someone has switched products or started estimating the dose, discuss that before changing anything else. Follow the label and safety data sheet; do not mix cleaning chemicals."
+        ],
+        "links": [
+          {
+            "text": "Altro resilient flooring guide: dilution, equipment and rinsing",
+            "path": "https://www.altro.com/uk/technical-documents/altro-resilient-flooring-cleaning-guide"
+          }
+        ]
+      },
+      {
+        "heading": "Check what the mop is picking up",
+        "body": [
+          "Altro’s guide, updated in March 2026, makes a useful distinction between loosening dirt and removing it. For the resilient floors covered, it calls for loose debris to be removed first, a correctly diluted detergent, a clean microfibre mop and clean-water rinsing. Mop heads are replaced as needed. Dirty tools can spread soil back over the floor.",
+          "Review the mop head, bucket and water-change routine with the person doing the work. Where the floor instructions require rinsing, keep the rinse water clean and recover the dirty liquid. Do not leave it to dry back onto the surface.",
+          "Agree who cleans and stores the equipment after each visit. A written task list can cover this as well as the floor itself, so the next person starts with tools ready to use."
+        ],
+        "links": [
+          {
+            "text": "Plan the tasks in a regular commercial cleaning service",
+            "path": "/services/commercial-cleaning"
+          }
+        ]
+      },
+      {
+        "heading": "When a scrubber-drier may be worth assessing",
+        "body": [
+          "If the floor’s care instructions call for mechanical scrubbing, or the current method is struggling with the agreed area, discuss suitable equipment during a site assessment. The size of the machine is only one consideration: the surface, obstacles and access all matter.",
+          "Kärcher explains that a scrubber-drier uses brushes to loosen soil and a squeegee with suction to collect dirty water in a separate tank. A single-disc scrubbing machine works differently and needs a separate way to collect the loosened dirt. Ask how the proposed method will recover the dirty solution, not just how it will scrub.",
+          "Confirm compatibility of the brush or pad, detergent and settings with the flooring instructions. Include corners and edges in the scope, and agree how the area will be kept out of use until it is ready. A machine is an option to assess, not a guarantee that an unknown mark will disappear."
+        ],
+        "links": [
+          {
+            "text": "Kärcher: how commercial floor scrubbers work",
+            "path": "https://www.karcher.com/us/en/commercial/products/floor-scrubbers-c4428"
+          },
+          {
+            "text": "Discuss floor detailing within a commercial deep clean",
+            "path": "/services/commercial-deep-cleaning"
+          }
+        ]
+      },
+      {
+        "heading": "Use a small, agreed trial before changing the whole routine",
+        "body": [
+          "Once the floor and product instructions are confirmed, agree a trial in a discreet area using the approved method. Keep a record of what was done and inspect it after it dries, before normal traffic resumes. Compare it again at the next visit. This separates the immediate cleaning result from what happens during daily use.",
+          "If the issue remains, pause further changes and seek advice from the flooring supplier or arrange an assessment. Explain the cleaning history and share the product details. Avoid escalating chemical strength or abrasion simply because the first attempt did not resolve the problem."
+        ],
+        "bullets": [
+          "Record the floor product and finish, where known.",
+          "Note the cleaner, measured dilution and equipment used.",
+          "Check the result when dry, under the same lighting.",
+          "Record any remaining tackiness, streaks or marks.",
+          "Agree the next step and who is responsible for it."
+        ]
+      },
+      {
+        "heading": "Turn the findings into a clear cleaning scope",
+        "body": [
+          "The outcome may be a change to routine upkeep, a separate deep clean or a flooring question that needs specialist advice. For an Adelaide business, the useful booking details are the suburb, floor type, affected area, recent cleaning products and a suitable time to inspect the premises.",
+          "Send MisterClean those details when requesting a quote. We can discuss the areas and tasks you want assessed, then agree the scope and access arrangements before work. Keep any ongoing changes in the regular cleaning plan so the same issue can be reviewed at the next visit."
+        ],
+        "links": [
+          {
+            "text": "Compare regular cleaning and deep cleaning",
+            "path": "/blog/regular-cleaning-vs-deep-cleaning-adelaide"
+          },
+          {
+            "text": "Prepare the details for a commercial cleaning quote",
+            "path": "/blog/commercial-cleaning-quote-adelaide"
+          }
+        ]
+      }
+    ],
+    "relatedSlugs": [
+      "regular-cleaning-vs-deep-cleaning-adelaide",
+      "commercial-cleaning-quote-adelaide",
+      "commercial-cleaning-checklist-adelaide-offices"
+    ],
+    "cta": {
+      "text": "Request a floor cleaning assessment",
+      "path": "/contact?service=commercial-deep-cleaning"
+    }
+  },
+  {
     "slug": "how-often-clean-commercial-windows-adelaide",
     "title": "How often should Adelaide businesses clean their windows?",
     "excerpt": "Plan window cleaning around your Adelaide shopfront, office glass and access needs, with practical checks for choosing one-off or recurring visits.",
